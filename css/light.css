@@ -1,0 +1,398 @@
+@import url("./spa_content.css");
+@import url("./vendor/solarized-light.css");
+@font-face { font-family: "BreeSerif"; src: url("../fonts/BreeSerif-Regular.ttf"); }
+@font-face { font-family: "Lato-Regular"; src: url("../fonts/Lato-Regular.ttf"); }
+
+body {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: "BreeSerif", "sans-serif", "monospace";
+}
+
+ul { margin: 0; padding: 0 }
+li { display: block; }
+a  { text-decoration: none; color: inherit; }
+td, tr, th { padding: 10px; border: 1px solid hsl(0, 0%, 35%); }
+table { border-spacing: 0px; border-collapse: collapse; }
+
+/*-------------------------------------------------------*/
+/*---------------------- GENERIC ------------------------*/
+
+.inline-link {
+    color: hsl(0, 0%, 50%);
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.quotes { font-style: italic;}
+.quotes:before {content: ' "'}
+.quotes:after {content: '" '}
+
+.little-note {
+    font-style: italic;
+    font-size: 0.8em;
+}
+.little-note:before {content: " → ";}
+
+.disabled {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+}
+
+.flex             { display: flex; padding: 0px 10% 0px 10%; }
+.no-padding       { padding: 0; }
+.full-height      { height: 100%; }
+.transition-color { transition: all 0.5s; }
+
+.color1 { color: hsl(0, 0%, 100%); }
+.color2 { color: hsl(0, 0%, 85%); }
+.color3 { color: hsl(0, 0%, 50%); }
+/*.color4 { color: hsl(0, 0%, 35%); }*/
+.color5 { color: hsl(0, 0%, 5%); }
+
+.color2 a:hover { color: hsl(0, 0%, 35%); }
+.color3:hover { color: hsl(0, 0%, 15%); }
+
+.theme-color1 { background: hsl(0, 0%, 100%); }
+.theme-color2 { background: hsl(0, 0%, 90%); }
+
+.theme-blue { background: hsla(214, 100%, 20%, 0.6); }
+
+/*-------------------------------------------------------*/
+/*------------------ JAVASCRIPT CHECK -------------------*/
+
+.jsCheck .nojs {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: hsl(0, 0%, 14%);
+    z-index: 1000;
+}
+
+.nojs {
+    display: none;
+}
+
+.nojs.banner {
+    background: hsl(0, 0%, 10%);
+    height: 300px;
+    top: 50%;
+    text-align: right;
+    transform: translateY(-50%);
+    background-image: url("../icons/cookieMonster.png");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.banner-wrapper {
+    display: inline-block;
+    text-align: left;
+    margin-right: 5%;
+}
+
+.banner-wrapper p {
+    color: aliceblue;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px hsl(0, 0%, 10%);
+}
+
+/*-------------------------------------------------------*/
+/*----------------------- HEADER ------------------------*/
+
+header {
+    box-shadow: 0px 4px 5px 0px hsl(0, 0%, 40%);
+    position: fixed;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    z-index: 100;
+    padding: 0px 3% 0px 3%;
+    box-sizing: border-box;
+}
+
+.header-title {
+    position: relative;
+    height: 100%;
+    flex: 4;
+    min-width: 300px;
+}
+    
+.header-title img {
+    position: relative;
+    top: 10px;
+    height: 50px;
+    border-radius: 3px
+}
+
+.header-title a::after {
+    content: "Cheat Sheet";
+    font-size: 2.2em;
+    padding: 0px 10px;
+}
+
+.header-nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.header-links {
+    margin: 0px 9px;
+    transition: 0.5s;
+    filter: grayscale(0.9);
+    -webkit-filter: grayscale(0.9);
+    height: 55px;
+    width: 55px;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 30px;
+}
+
+.header-links:hover {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    border: 1px solid hsl(0, 0%, 40%);
+    border-radius: 10px;
+}
+
+.active-header-links {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    border: 1px solid hsl(0, 0%, 40%);
+    border-radius: 10px;
+}
+
+.search-container {
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.search-form {
+    width: 100%;
+    text-align: right;
+    margin: 0px 20px;
+}
+
+.search-input {
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    padding: 10px;
+    color: hsl(0, 0%, 70%);
+    transition: all 0.3s;
+    width: 65px;
+    box-sizing: border-box;
+}
+.search-input:focus { width: 100%; }
+
+/*-------------------------------------------------------*/
+/*----------------------- Footer ------------------------*/
+
+footer {
+    z-index: 100;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    bottom: 0px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0px 0px;
+    display: inline-block;
+}
+
+/*-------------------------*/
+/*--- Buttons CSS Theme ---*/
+
+.button-css {
+    float: right;
+    display: flex;
+}
+.button-css button {
+    width: 40px;
+    cursor: pointer;
+    height: 20px;
+    border: none;
+    margin: 0px 5px;
+}
+
+.css-button-light { background: hsl(0, 0%, 90%); }
+.css-button-dark  { background: hsl(0, 0%, 0%); }
+
+/*-------------------------------------------------------*/
+/*------------------------- SPA -------------------------*/
+
+#spa {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+    padding: 70px 0% 50px 0%
+}
+
+.content-wrapper { flex: 1; overflow-y: auto; }
+
+/*-------------------------------------------------------*/
+/*--------------------- SPA CONTENT ---------------------*/
+
+#spa-content {
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 100%;
+}
+
+/*-------------------------------------------------------*/
+/*---------------------- SPA LINKS ----------------------*/
+
+.spa-links {
+    box-shadow: 4px 0px 5px 0px hsl(0, 0%, 50%);
+    overflow-y: hidden;
+    position: relative;
+    height: 100%;
+    width: 270px;
+    box-sizing: border-box;
+}
+
+.spa-links:hover {
+    overflow-y: auto;
+}
+
+.links {
+    padding: 10px;
+    transition: 0.3s;
+    display: block;
+    color: hsl(0, 0%, 45%);
+    text-align: initial;
+}
+
+.links:hover {
+    background: hsl(0, 3%, 25%);
+    color: aliceblue;
+}
+
+.active-links {
+    background: hsl(0, 3%, 25%) !important;
+    color: aliceblue !important;
+}
+
+/*-------------------------*/
+/*------ Hidden Links -----*/
+
+.more-links ~ ul {
+    display: none; 
+    background: hsl(0, 0%, 80%);
+}
+
+.more-links ~ ul li { padding-left: 30px; }
+
+.more-links:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid hsl(0, 0%, 70%);
+    border-radius: 10px;
+    margin-top: 7px;
+    margin-left: 15px;
+    background: none;
+}
+
+.opened-links:after { background: hsl(0, 0%, 70%); }
+
+/*-------------------------------------------------------*/
+/*--------------------- MEDIA QUERY ---------------------*/
+
+@media screen and (max-width: 1200px) {
+    
+    .flex { padding: 0px 0% 0px 0%; }
+}
+
+@media screen and (max-width: 780px) {
+    
+    header           { height: 60px}
+    footer           { display: none;}
+    #spa             { padding: 0px; }
+    .flex            { flex-flow: column; }
+    .content-wrapper { padding: 60px 0 0 0; }
+    
+    .header-title { min-width: initial;}
+    .header-title a::after { content: none; }
+    .header-title img {
+        height: 45px;
+        width: 80px;
+        top: 8px;
+    }
+    
+    .header-links {
+        height: 45px;
+        width: 45px;
+        padding: 0px
+    }
+
+    .links-wrapper {
+        z-index: 1;
+        padding: 60px 0px 0px 0px;
+        position: absolute;
+        box-sizing: border-box;
+        height: 100%;
+        transition: all 0.5s;
+    }
+
+    .spa-links {
+        border-radius: 0px 0px 30px 0px;
+        border-right: 8px solid hsl(0, 0%, 50%);
+        width: 35px;
+        height: 30px;
+        transition: all 0.2s;
+        overflow: hidden;
+        padding-bottom: 0px;
+    }
+    
+    .spa-links:hover {
+        transition-delay: 0s;
+        height: 100%;
+        border-radius: 0px;
+        border: none;
+        width: 250px;
+    }
+    
+    .spa-links::before {
+        content: '';
+        position: fixed;
+        width: 10px;
+        height: 20px;
+        border-radius: 0px 0px 30px 0px;
+        border-right: 8px solid hsl(0, 0%, 50%);
+        transition: all 0.5s;
+    }
+    
+    .spa-links:hover::before {
+        background: none;
+        border-right: none;
+    }
+    
+    .spa-links .links {
+        width: 0px;
+        transition: all 0.8s ease;
+        transform: translateX(-200px);
+        white-space: nowrap;
+    }
+    
+    .links:hover {
+        background: hsl(0, 0%, 90%);
+        color: black;
+    }
+    
+    .spa-links:hover .links {
+        width: 100%;
+        transform: translateX(0px);
+    }
+}

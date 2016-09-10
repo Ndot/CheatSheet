@@ -1,0 +1,140 @@
+{
+    "html": {
+        "name": "html",
+        "icon": "./icons/logo_html.svg",
+        "extension": ".html",
+        "chapters": [
+            "Element Reference",
+            "<!-->",
+            "<!DOCTYPE>",
+            "<a>",
+            "<abbr>",
+            "<address>",
+            "<area>",
+            "<article>",
+            "<aside>",
+            "<audio>",
+            "<b>",
+            "<base>",
+            "<bdi>",
+            "<bdo>",
+            "<blockquote>",
+            "<body>",
+            "<br>",
+            "<button>",
+            "<canvas>",
+            "<caption>",
+            "<cite>",
+            "<code>",
+            "<col>",
+            "<colgroup>",
+            "<data>",
+            "<datalist>",
+            "<dd>",
+            "<del>",
+            "<details>",
+            "<dfn>",
+            "<div>",
+            "<dl>",
+            "<dt>",
+            "<em>",
+            "<embed>",
+            "<fieldset>",
+            "<figcaption>",
+            "<figure>"
+        ]
+    },
+    "css": {
+        "name": "css",
+        "icon": "./icons/logo_css.svg",
+        "extension": ".json",
+        "chapters": [
+            "CSS Property Groups",
+            "Color",
+            {
+                "name": "css/Color",
+                "chapters": [
+                    "Color Property",
+                    "Opacity"
+                ]
+            },
+            "Background and Borders",
+            "Basic Box",
+            "Flexible Box",
+            {
+                "name": "css/Flexible Box",
+                "chapters": [
+                    "Align-content",
+                    "Align-items",
+                    "Align-self",
+                    {
+                        "name": "css/Flexible Box/Align-self",
+                        "chapters": [
+                            "test",
+                            "test1",
+                            "recursive test",
+                            {
+                                "name": "css/Flexible Box/Align-self/recursive test",
+                                "chapters": [
+                                    "recursive test0",
+                                    "recursive test1",
+                                    "recursive test3"
+                                ]
+                            },
+                            "test3"
+                        ]
+                    },
+                    "Flex",
+                    "Flex-basis",
+                    "Flex-direction",
+                    "Flex-flow",
+                    "Flex-grow",
+                    "Flex-shrink",
+                    "Flex-wrap",
+                    "Justify-content",
+                    "Order"
+                ]
+            },
+            "Text",
+            "Text Decoration",
+            "Fonts",
+            "Writing Modes",
+            "Table",
+            "Lists and Counters",
+            "Animation",
+            "Transform",
+            "Transition",
+            "Basic User Interface",
+            "Multi-Column",
+            "Paged Media",
+            "Generated Content",
+            "Filter Effects",
+            "Image-Replace Content",
+            "Masking",
+            "Speech",
+            "Marquee"
+        ]
+    },
+    "javascript": {
+        "name": "javascript",
+        "icon": "./icons/logo_javascript.svg",
+        "extension": ".json",
+        "chapters": [
+            "Constructor Pattern",
+            "Object Literal Pattern",
+            "Revealing Module Pattern",
+            "Singleton Pattern",
+            "Observer Pattern",
+            "Publish-Subscribe Pattern",
+            "State Pattern",
+            "Mediator Pattern",
+            "Prototype Pattern",
+            "Command Pattern",
+            "Facade Pattern",
+            "Factory Pattern",
+            "Mixin Pattern",
+            "Decorator Pattern",
+            "Flyweight Pattern"
+        ]
+    }
+}

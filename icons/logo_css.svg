@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -15 512 512">
+    <title>CSS Logo</title>
+    <!-- Dark shield -->
+    <polygon fill="#0070ba" points="107.644,420.88 74.633,50.62 437.367,50.62 404.321,420.819 255.778,462"/>
+    <!-- Light shield -->
+    <polygon fill="#28a9e2" points="256,430.523 376.03,397.246 404.27,80.894 256,80.894"/>
+
+    <!--  Dark side upper part of letter  -->
+    <polygon fill="#EBEBEB" points="
+        142,126
+        256,126
+        256,263
+        154,263
+        150,218
+        256,171
+        146,171"/>
+
+    <!--  Dark side lower part of letter  -->
+    <polygon fill="#EBEBEB" points="
+        156,286
+        201,286
+        205,322
+        256,336
+        256,383
+        162,357
+        "/>
+    <!--  Light side of letter  -->
+    <polygon fill="#FFF" points="
+        256,126
+        369,126
+        365,171
+        256,218
+        361,218
+        349,349
+        256,383
+        256,336
+        306,322
+        311,263
+        256,263
+        "/>
+</svg>

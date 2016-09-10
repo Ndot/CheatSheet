@@ -1,0 +1,59 @@
+<div class="wrapper-loaded-content">
+    <!-- Explanation and Attributes -->
+    <article>
+        <h2>HTML Fieldset Element</h2>
+        <p>The HTML &lt;fieldset&gt; Element is used to group several controls as well as &lt;label&gt; tags within a web form.</p>
+        <section class="attributes-inline">
+            <h5>Attributes :</h5>
+            <p>disable, form, name</p>
+        </section>
+    </article>
+
+    <!-- Code and Result -->
+    <div>
+        <h5>Example</h5>
+        <code class="code html">
+            &lt;form action="#" method="POST"&gt;<br />
+                &ensp;&lt;fieldset&gt;<br />
+                    &ensp;&ensp;&lt;legend&gt;Title&lt;/legend&gt;<br />
+                    &ensp;&ensp;&lt;label&gt;Name &lt;/label&gt;&lt;input type="text"&gt;<br /><br />
+                    &ensp;&ensp;&lt;fieldset&gt;<br />
+                        &ensp;&ensp;&ensp;&lt;legend&gt;Title in Title&lt;/legend&gt;<br />
+                        &ensp;&ensp;&ensp;&lt;label&gt;Name &lt;/label&gt;&lt;input type="text"&gt;<br />
+                    &ensp;&ensp;&lt;/fieldset&gt;<br /><br />
+                &ensp;&lt;/fieldset&gt;<br />
+            &lt;/form&gt;
+        </code>
+
+        <h5>Result</h5>
+        <div class="code">
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Title</legend>
+                    <label>Name </label><input type="text">
+
+                    <fieldset>
+                        <legend>Title in Title</legend>
+                        <label>Name </label><input type="text">
+                    </fieldset>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <!-- Browser Support -->
+    <div class="browser-support">
+        <h5>Browser Support</h5>
+        <div>
+            <li><span class="browser-icons icon-firefox"></span><div class="browser-version">Yes</div></li>
+            <li><span class="browser-icons icon-chrome" ></span><div class="browser-version">Yes</div></li>
+            <li><span class="browser-icons icon-ie"     ></span><div class="browser-version">Yes</div></li>
+            <li><span class="browser-icons icon-opera"  ></span><div class="browser-version">Yes</div></li>
+            <li><span class="browser-icons icon-safari" ></span><div class="browser-version">Yes</div></li>
+        </div>
+    </div>
+
+    <!-- Mozilla Developer Link -->
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset" target="_blank">MDN - Mozilla Developer Documentation</a>
+</div>
