@@ -227,6 +227,8 @@ div.code a { text-decoration: underline; color: hsl(240, 52%, 64%);}
     
     .paper-sheet-img { max-height: 100px; }
     
+    .main-title-container { background-attachment: scroll; }
+    
     .main-title { 
         font-size: 4em;
         padding: 0px;
