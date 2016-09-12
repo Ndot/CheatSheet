@@ -188,7 +188,7 @@ header {
     width: 0px;
     box-sizing: border-box;
     background: transparent;
-    background-image: url("/icons/logo_search.svg");
+    background-image: url("../icons/logo_search.svg");
     background-repeat: no-repeat;
     cursor: pointer;
 }
