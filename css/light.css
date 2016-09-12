@@ -188,12 +188,18 @@ header {
     width: 0px;
     box-sizing: border-box;
     background: transparent;
-    background-image: url("../icons/logo_search.svg");
-    background-repeat: no-repeat;
     cursor: pointer;
 }
 
 .search-input:focus { width: 100%; }
+
+.search-icon {
+    position: absolute;
+    width: 1.8em;
+    pointer-events: none;
+    fill: #a6a6a6;
+    top: 5px;
+}
 
 /*-------------------------------------------------------*/
 /*----------------------- Footer ------------------------*/
@@ -299,19 +305,8 @@ footer p {
 
 .more-links ~ ul li { padding-left: 30px; }
 
-.more-links:after {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border: 1px solid hsl(0, 0%, 70%);
-    border-radius: 10px;
-    margin-top: 7px;
-    margin-left: 15px;
-    background: none;
-}
-
-.opened-links:after { background: hsl(0, 0%, 70%); }
+.more-links:after { content: "\2001\2001 \25b9"; }
+.opened-links:after { content: "\2001\2001 \25be"; }
 
 /*-------------------------------------------------------*/
 /*--------------------- MEDIA QUERY ---------------------*/

@@ -49,7 +49,6 @@
         "icon": "./icons/logo_css.svg",
         "extension": ".json",
         "chapters": [
-            "CSS Property Groups",
             "Color",
             {
                 "name": "css/Color",
@@ -59,7 +58,41 @@
                 ]
             },
             "Background and Borders",
+            {
+                "name": "css/Background and Borders",
+                "chapters": [
+                    "Background",
+                    "Border",
+                    "Box-shadow"
+                ]
+            },
             "Basic Box",
+             {
+                "name": "css/Basic Box",
+                "chapters": [
+                    "Bottom",
+                    "Clear",
+                    "Clip",
+                    "Display",
+                    "Float",
+                    "Height",
+                    "Left",
+                    "Margin",
+                    "Max-height",
+                    "Max-width",
+                    "Min-height",
+                    "Min-width",
+                    "Overflow",
+                    "Padding",
+                    "Position",
+                    "Right",
+                    "Top",
+                    "Visibility",
+                    "Width",
+                    "Vertical-align",
+                    "Z-index"
+                ]
+            },
             "Flexible Box",
             {
                 "name": "css/Flexible Box",
@@ -67,23 +100,6 @@
                     "Align-content",
                     "Align-items",
                     "Align-self",
-                    {
-                        "name": "css/Flexible Box/Align-self",
-                        "chapters": [
-                            "test",
-                            "test1",
-                            "recursive test",
-                            {
-                                "name": "css/Flexible Box/Align-self/recursive test",
-                                "chapters": [
-                                    "recursive test0",
-                                    "recursive test1",
-                                    "recursive test3"
-                                ]
-                            },
-                            "test3"
-                        ]
-                    },
                     "Flex",
                     "Flex-basis",
                     "Flex-direction",
@@ -96,22 +112,155 @@
                 ]
             },
             "Text",
+             {
+                "name": "css/Text",
+                "chapters": [
+                    "Hanging-punctuation",
+                    "Hyphens",
+                    "Letter-spacing",
+                    "Line-break",
+                    "Line-height",
+                    "Overflow-wrap",
+                    "Tab-size",
+                    "Text-align",
+                    "Text-align-last",
+                    "Text-combine-upright",
+                    "Text-indent",
+                    "Text-justify",
+                    "Text-transform",
+                    "White-space",
+                    "Word-break",
+                    "Word-spacing",
+                    "Word-wrap"
+                ]
+            },
             "Text Decoration",
+              {
+                "name": "css/Text Decoration",
+                "chapters": [
+                    "Text-decoration",
+                    "Text-decoration-color",
+                    "Text-decoration-line",
+                    "Text-decoration-style",
+                    "Text-shadow",
+                    "Text-underline-position"
+                ]
+            },
             "Fonts",
+              {
+                "name": "css/Fonts",
+                "chapters": [
+                    "@Font-face",
+                    "@Font-feature-values",
+                    "Font"
+                ]
+            },
             "Writing Modes",
+              {
+                "name": "css/Writing Modes",
+                "chapters": [
+                    "Direction",
+                    "Text-orientation",
+                    "Text-combine-upright",
+                    "Unicode-bidi",
+                    "Writing-mode"
+                ]
+            },
             "Table",
+              {
+                "name": "css/Table",
+                "chapters": [
+                    "Border-collapse",
+                    "Border-spacing",
+                    "Caption-side",
+                    "Empty-cells",
+                    "Table-layout"
+                ]
+            },
             "Lists and Counters",
+              {
+                "name": "css/Lists and Counters",
+                "chapters": [
+                    "Counter",
+                    "List-style"
+                ]
+            },
             "Animation",
+              {
+                "name": "css/Animation",
+                "chapters": [
+                    "@Keyframes",
+                    "Animation"
+                ]
+            },
             "Transform",
+              {
+                "name": "css/Transform",
+                "chapters": [
+                    "Backface-visibility",
+                    "Perspective",
+                    "Transform"
+                ]
+            },
             "Transition",
             "Basic User Interface",
+              {
+                "name": "css/Basic User Interface",
+                "chapters": [
+                    "Box-sizing",
+                    "Content",
+                    "Cursor",
+                    "Ime-mode",
+                    "Outline",
+                    "Resize",
+                    "Text-overflow"
+                ]
+            },
             "Multi-Column",
+              {
+                "name": "css/Multi-Column",
+                "chapters": [
+                    "Break",
+                    "Columns",
+                    "Widows"
+                ]
+            },
             "Paged Media",
+              {
+                "name": "css/Paged Media",
+                "chapters": [
+                    "Orphans",
+                    "Page-break"
+                ]
+            },
             "Generated Content",
+              {
+                "name": "css/Generated Content",
+                "chapters": [
+                    "Marks",
+                    "Quotes"
+                ]
+            },
             "Filter Effects",
             "Image-Replace Content",
+              {
+                "name": "css/Image-Replace Content",
+                "chapters": [
+                    "Image",
+                    "Object"
+                ]
+            },
             "Masking",
             "Speech",
+              {
+                "name": "css/Speech",
+                "chapters": [
+                    "Mark",
+                    "Phonemes",
+                    "Rest",
+                    "Voice"
+                ]
+            },
             "Marquee"
         ]
     },
