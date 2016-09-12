@@ -85,6 +85,7 @@
     display: flex;
     flex-flow: wrap;
     font-family: "BreeSerif";
+    background: inherit;
 }
 
 .reference ul a {

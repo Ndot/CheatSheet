@@ -301,7 +301,7 @@ footer p {
 .links ~ ul { background: hsl(0, 0%, 80%); }
 .links ~ ul li { padding-left: 30px; }
 
-.more-links ~ ul {
+.links ~ ul {
     height: 0px;
     overflow: hidden;
     transition: height 0.4s;
