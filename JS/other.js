@@ -53,14 +53,16 @@ var $ = (function () {
     
     // Open Close hidden links
     linkOpenClose = function (e) {
-        var link = (e.target) ? this : e;
-           
-        if (link.dataset.hidden === 'true') {
-            link.nextSibling.style.display = 'block';
+        var link = (e.target) ? this : e,
+            tall;
+        
+         if (link.dataset.hidden === 'true') {
+            tall = link.nextElementSibling.scrollHeight;
+            link.nextElementSibling.style.height = tall + 'px';
             link.dataset.hidden = 'false';
             link.classList.add('opened-links');
         } else {
-            link.nextSibling.style.display = 'none';
+            link.nextElementSibling.style.height = '0';
             link.dataset.hidden = 'true';
             link.classList.remove('opened-links');
         }

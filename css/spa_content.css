@@ -85,13 +85,22 @@
     display: flex;
     flex-flow: wrap;
     font-family: "BreeSerif";
-    margin-bottom: 20px;
 }
 
 .reference ul a {
     margin: 2px;
     text-align: center;
     width: 100px;
+}
+.reference h2:first-child { margin-top: 50px }
+
+.reference h2 {
+    background: hsl(0, 0%, 95%);
+    color: hsl(0, 0%, 40%);
+    cursor: pointer;
+    box-shadow: 2px 2px  5px #ccc;
+    margin: 20px 0 0 0;
+    padding: 10px 20px;
 }
 
 /*-------------------------------------------------------*/

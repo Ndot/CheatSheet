@@ -298,14 +298,21 @@ footer p {
 /*-------------------------*/
 /*------ Hidden Links -----*/
 
+.links ~ ul { background: hsl(0, 0%, 80%); }
+.links ~ ul li { padding-left: 30px; }
+
 .more-links ~ ul {
-    display: none; 
-    background: hsl(0, 0%, 80%);
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.4s;
+}
+.open-ul {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.4s;
 }
 
-.more-links ~ ul li { padding-left: 30px; }
-
-.more-links:after { content: "\2001\2001 \25b9"; }
+.more-links:after { content: "\2001\2001 \25bf"; font-size: 0.7em;}
 .opened-links:after { content: "\2001\2001 \25be"; }
 
 /*-------------------------------------------------------*/
