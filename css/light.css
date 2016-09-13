@@ -1,7 +1,6 @@
 @import url("./spa_content.css");
 @import url("./vendor/solarized-light.css");
 @font-face { font-family: "BreeSerif"; src: url("../fonts/BreeSerif-Regular.ttf"); }
-@font-face { font-family: "Lato-Regular"; src: url("../fonts/Lato-Regular.ttf"); }
 
 body {
     border: 0;
@@ -356,10 +355,10 @@ footer p {
     }
 
     .spa-links {
-        border-radius: 0px 0px 30px 0px;
-        border-right: 8px solid hsl(0, 0%, 50%);
+        border-radius: 0px 0px 5px 0px;
+/*        border-right: 8px solid hsl(0, 0%, 50%);*/
         width: 35px;
-        height: 30px;
+        height: 35px;
         transition: all 0.2s;
         overflow: hidden;
         padding-bottom: 0px;
@@ -375,11 +374,18 @@ footer p {
     
     .spa-links::before {
         content: '';
-        position: fixed;
-        width: 10px;
+        position: absolute;
+        top: 11px; left: 8px;
+        width: 20px;
         height: 20px;
-        border-radius: 0px 0px 30px 0px;
-        border-right: 8px solid hsl(0, 0%, 50%);
+        background: red;
+        background: 
+            -moz-linear-gradient( #555555, #555555),
+            -moz-linear-gradient( #555555, #555555),
+            -moz-linear-gradient( #555555, #555555);
+        background-size: 100% 2px;
+        background-position: 0px 0px, 0px 7px, 0px 14px;
+        background-repeat: no-repeat;
         transition: all 0.5s;
     }
     

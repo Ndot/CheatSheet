@@ -153,10 +153,10 @@
 /*---------------- HTML (Loaded Content) ----------------*/
 
 .wrapper-loaded-content, .reference {
-    font-family: "Lato-Regular";
+    font-family: "BreeSerif";
     line-height: 1.4;
     text-align: justify;
-    word-spacing: 2.5px;
+    word-spacing: 0.5px;
     font-size: 1.0em;
     padding: 0px 30% 0px 20%;
 }
