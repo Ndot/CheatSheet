@@ -49,6 +49,7 @@
     animation-name: to-initial;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+    opacity: 0;
 }
 
 .main-title:last-child {
@@ -56,9 +57,15 @@
     animation-name: to-initial;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+    opacity: 0;
 }
 
-@keyframes to-initial { to { transform: translateY(0); } }
+@keyframes to-initial { 
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    } 
+}
 
 /*-------------------------*/
 /*-------------------------*/

@@ -355,10 +355,9 @@ footer p {
     }
 
     .spa-links {
-        border-radius: 0px 0px 5px 0px;
-/*        border-right: 8px solid hsl(0, 0%, 50%);*/
-        width: 35px;
-        height: 35px;
+        border-radius: 0px 0px 2px 0px;
+        width: 30px;
+        height: 20px;
         transition: all 0.2s;
         overflow: hidden;
         padding-bottom: 0px;
@@ -375,16 +374,23 @@ footer p {
     .spa-links::before {
         content: '';
         position: absolute;
-        top: 11px; left: 8px;
-        width: 20px;
-        height: 20px;
-        background: red;
-        background: 
-            -moz-linear-gradient( #555555, #555555),
-            -moz-linear-gradient( #555555, #555555),
-            -moz-linear-gradient( #555555, #555555);
-        background-size: 100% 2px;
-        background-position: 0px 0px, 0px 7px, 0px 14px;
+        top: 6px; left: 6px;
+        width: 19px;
+        height: 10px;
+        background:
+            -webkit-linear-gradient(#555555, #555555),
+            -webkit-linear-gradient(#555555, #555555),
+            -webkit-linear-gradient(#555555, #555555);
+        background:
+            -o-linear-gradient(#555555, #555555),
+            -o-linear-gradient(#555555, #555555),
+            -o-linear-gradient(#555555, #555555);
+        background:
+            linear-gradient(#555555, #555555),
+            linear-gradient(#555555, #555555),
+            linear-gradient(#555555, #555555);
+        background-size: 100% 1px;
+        background-position: 0px 0px, 0px 4px, 0px 8px;
         background-repeat: no-repeat;
         transition: all 0.5s;
     }
