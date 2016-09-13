@@ -184,14 +184,14 @@ header {
     border: none;
     padding: 10px 10px 10px 35px;
     color: hsl(0, 0%, 70%);
-    transition: all 0.3s;
+    transition: all 0.6s;
     width: 0px;
     box-sizing: border-box;
     background: transparent;
     cursor: pointer;
 }
 
-.search-input:focus { width: 100%; }
+.search-input:focus { width: 100%; outline: none;}
 
 .search-icon {
     position: absolute;
@@ -278,6 +278,7 @@ footer p {
 }
 
 .links {
+    cursor: pointer;
     padding: 10px;
     transition: 0.3s;
     display: block;
