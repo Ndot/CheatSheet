@@ -373,8 +373,8 @@ footer p {
     
     .spa-links::before {
         content: '';
-        position: absolute;
-        top: 6px; left: 6px;
+        position: fixed;
+        top: 66px; left: 6px;
         width: 19px;
         height: 10px;
         background:
