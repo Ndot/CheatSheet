@@ -249,7 +249,31 @@ footer p {
     padding: 70px 0% 50px 0%
 }
 
-.content-wrapper { flex: 1; overflow-y: auto; }
+.content-wrapper { flex: 1; overflow-y: auto; position: relative; }
+
+.loading {
+    position: absolute;
+    opacity: 0.8;
+    width:100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.loading:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 5px solid #ccc;
+    border-top-color: #1b51e2;
+    border-radius: 50%;
+    animation: 1.5s loading infinite;
+    top: 25px;
+    right: 25px;
+    transform: rotate(0deg);
+}
+
+@keyframes loading { to { transform: rotate(360deg); } }
 
 /*-------------------------------------------------------*/
 /*--------------------- SPA CONTENT ---------------------*/

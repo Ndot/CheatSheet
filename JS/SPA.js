@@ -70,6 +70,7 @@ Subject.prototype.notify = function (context) {
         id_spa = document.getElementById('spa'),
         id_link = id_spa.querySelector('#spa-links'),
         id_content = id_spa.querySelector('#spa-content'),
+        id_loading = id_spa.querySelector('#loading'),
         links = {},
         content = {},
         activeClass = {},
@@ -134,6 +135,7 @@ Subject.prototype.notify = function (context) {
             if (code) {
                 hljs.highlightBlock(id_content.querySelector('code'));
             }
+            id_loading.classList.remove('loading');
         },
         "cacheThis": function (key, value) {
             $.takeThatDataCrazyMan(key, value);
@@ -151,6 +153,7 @@ Subject.prototype.notify = function (context) {
             this.hashString = hash.join('/');
             this.data = this.isThisHere(this.hashString);
             if (this.data === undefined) {
+                id_loading.classList.add('loading');
                 $.getRequest('contents/' + this.hashString + '.html', this.callback.bind(this));
             } else {
                 this.render(this.data);
