@@ -5,7 +5,8 @@ var $ = (function () {
     'use strict';
     
     var storage = {},
-        linkOpenClose;
+        linkOpenClose,
+        transitionEventEnd;
 
     // Store file
     function store(key, value) {
@@ -50,24 +51,58 @@ var $ = (function () {
             }
         }
     }
+
+    // Account for Browser Prefixes
+    function whichTransitionEvent() {
+        var t,
+            el = document.createElement('fakeelement'),
+            transitions = {
+            'transition':'transitionend',
+            'OTransition':'oTransitionEnd',
+            'MozTransition':'transitionend',
+            'WebkitTransition':'webkitTransitionEnd'
+        };
+
+        for (t in transitions) {
+            if ( el.style[t] !== undefined ) {
+                return transitions[t];
+            }
+        }
+    }
+    
+    transitionEventEnd = whichTransitionEvent();
     
     // Open Close hidden links
     linkOpenClose = function (e) {
         var link = (e.target) ? this : e,
-            tall;
+            tall,
+            heightAuto = function () {
+                // The height auto allows the element height to 
+                // ajust when nested elements are opened.
+                this.style.height = 'auto';
+                this.removeEventListener(transitionEventEnd, heightAuto);
+            },
+            heightRemove = function () {
+                link.nextElementSibling.style.height = '0';
+            };
         
          if (link.dataset.hidden === 'true') {
             tall = link.nextElementSibling.scrollHeight;
+            link.nextElementSibling.addEventListener(transitionEventEnd, heightAuto);
             link.nextElementSibling.style.height = tall + 'px';
             link.dataset.hidden = 'false';
             link.classList.add('opened-links');
         } else {
-            link.nextElementSibling.style.height = '0';
+            tall = link.nextElementSibling.scrollHeight;
+            link.nextElementSibling.style.height = tall + 'px';
             link.dataset.hidden = 'true';
             link.classList.remove('opened-links');
+            // Allow the function to exit and then apply height=0
+            // this way it allows the CSS transition to be applyed.
+            setTimeout(heightRemove, 50);
         }
     };
-   
+    
     // Exposed methods
     return {
         getRequest: getRequest,
