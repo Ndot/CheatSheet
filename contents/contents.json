@@ -41,7 +41,10 @@
             "<embed>",
             "<fieldset>",
             "<figcaption>",
-            "<figure>"
+            "<figure>",
+            "<footer>",
+            "<form>",
+            "<h1>"
         ]
     },
     "css": {
