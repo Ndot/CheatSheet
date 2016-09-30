@@ -44,7 +44,11 @@
             "<figure>",
             "<footer>",
             "<form>",
-            "<h1>"
+            "<h1>",
+            "<head>",
+            "<header>",
+            "<hr>",
+            "<html>"
         ]
     },
     "css": {
