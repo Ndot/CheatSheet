@@ -48,7 +48,12 @@
             "<head>",
             "<header>",
             "<hr>",
-            "<html>"
+            "<html>",
+            "<i>",
+            "<iframe>",
+            "<img>",
+            "<input>",
+            "<ins>"
         ]
     },
     "css": {
