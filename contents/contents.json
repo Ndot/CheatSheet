@@ -53,7 +53,12 @@
             "<iframe>",
             "<img>",
             "<input>",
-            "<ins>"
+            "<ins>",
+            "<kbd>",
+            "<label>",
+            "<legend>",
+            "<li>",
+            "<link>"
         ]
     },
     "css": {
