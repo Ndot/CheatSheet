@@ -321,11 +321,25 @@ footer p {
     color: aliceblue !important;
 }
 
+.active-links-html {
+    background: hsl(12, 78%, 52%) !important;
+    color: aliceblue !important;
+}
+
+.active-links-css {
+    background: hsl(204, 100%, 36%) !important;
+    color: aliceblue !important;
+}
+
+.active-links-javascript {
+    background: hsl(52, 76%, 58%) !important;
+    color: aliceblue !important;
+}
+
 /*-------------------------*/
 /*------ Hidden Links -----*/
 
-.links ~ ul { background: hsl(0, 0%, 80%); }
-.links ~ ul li { padding-left: 30px; }
+.links ~ ul { background: white; }
 
 .links ~ ul {
     height: 0px;

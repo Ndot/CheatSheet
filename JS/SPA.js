@@ -85,6 +85,7 @@ Subject.prototype.notify = function (context) {
         "hashCheck": "",
         "render": function (elem, objArr) {
             var innerText, activeElement, ulElememt = elem.creatEl('ul');
+            elem.dataset.classActive = "active-links-" + objArr.name;
             
             objArr.chapters.forEach(function (val) {
                 if (typeof val === 'object') {
@@ -217,7 +218,7 @@ Subject.prototype.notify = function (context) {
         },
         "update": function (hash) {
             if (hash[1] !== 'home') {
-                this.ifVisible(id_link.querySelector('.active-links'));
+                this.ifVisible(id_link.querySelector('a[class*="active-links-"]'));
             }
             id_content.scrollTop = 0;
         }
