@@ -352,8 +352,14 @@ footer p {
     transition: height 0.4s;
 }
 
-.more-links:after { content: "\2001\2001 \25bf"; font-size: 0.7em;}
-.opened-links:after { content: "\2001\2001 \25be"; }
+/*.more-links:before { content: "\2001\2001 \25bf"; font-size: 0.7em;}*/
+.more-links:before { content: "\25bf \2001"; font-size: 0.7em;}
+.opened-links:before { content: "\25be \2001 "; }
+
+[data-class-active="active-links-css"] .opened-links {
+    background: linear-gradient(180deg, #87a1b3 30%, #646464 110%) !important;
+    color: aliceblue;
+}
 
 /*-------------------------------------------------------*/
 /*--------------------- MEDIA QUERY ---------------------*/
