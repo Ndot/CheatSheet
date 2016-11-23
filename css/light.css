@@ -312,7 +312,7 @@ footer p {
 }
 
 .links:hover {
-    background: hsl(0, 3%, 25%);
+    background: hsl(0, 3%, 60%);
     color: aliceblue;
 }
 
