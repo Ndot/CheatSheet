@@ -3,8 +3,8 @@
 @import 'vars';
 
 [data-class-active="active-links-css"] .opened-links {
-    background: linear-gradient(180deg, #87a1b3 30%, #646464 110%) !important;
     color: whitesmoke !important;
+    background: #24466680;
 }
 
 .links-wrapper {
@@ -22,6 +22,7 @@
         
         @media (max-width: 740px) {
             overflow-y: scroll;
+            padding-top: 80px;
         }
         
         > ul {
@@ -65,13 +66,20 @@
                 color: white;
                 background: @javascript_color !important;
             }
+            
+            @media (max-width: 740px) {
+                text-align: left;
+                padding: 10px 10px 10px 20px;
+            }
         }
     }
     
     footer {
         position: absolute;
         display: flex;
+        background: hsla(0, 0%, 40%, 0.3);
         align-items: center;
+        justify-content: space-around;
         box-sizing: border-box;
         bottom: 0px;
         width: 100%;
@@ -104,7 +112,7 @@
     .btn-open-links {
         width: 50px;
         height: 50px;
-        background: rgba(80, 80, 80, 0.1);
+        background: rgba(80, 80, 80, 0.3);
         position: absolute;
         top: 0px;
         left: 100%;
@@ -116,18 +124,22 @@
 
         &.rotate {
             transform: rotate(45deg);
+            left: 70%;
         }
         
         @media (max-width: 740px) {
             display: block;
+            
         }
         .plus {
-            .color3;
-            font-size: 2em;
-            font-family: initial;
+            width: 20px;
+            height: 3px;
             position: absolute;
-            left: 12px;
-            top: 5px;
+            left: 15px;
+            top: 24px;
+        }
+        .plus-vertical {
+            transform: rotate(90deg);
         }
     }
 }

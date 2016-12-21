@@ -14,7 +14,7 @@
   display: flex;
 }
 .spa .links-wrapper {
-  z-index: 1;
+  z-index: 101;
   height: 100vh;
   width: 250px;
   position: relative;
@@ -70,7 +70,7 @@
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-image: url("assets/img/cookieMonster.png");
+  background-image: url("../img/cookieMonster.png");
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;
@@ -191,9 +191,8 @@
 /*-------------------------------------------------------*/
 /*---------------------- SPA LINKS ----------------------*/
 [data-class-active="active-links-css"] .opened-links {
-  background: -webkit-linear-gradient(top, #87a1b3 30%, #646464 110%) !important;
-  background: linear-gradient(180deg, #87a1b3 30%, #646464 110%) !important;
   color: whitesmoke !important;
+  background: #24466680;
 }
 .links-wrapper {
   font-family: "BreeSerif";
@@ -212,6 +211,7 @@
 @media (max-width: 740px) {
   .links-wrapper .links-container {
     overflow-y: scroll;
+    padding-top: 80px;
   }
 }
 .links-wrapper .links-container > ul {
@@ -255,16 +255,26 @@
   color: white;
   background: #e5d043 !important;
 }
+@media (max-width: 740px) {
+  .links-wrapper .links-container .links {
+    text-align: left;
+    padding: 10px 10px 10px 20px;
+  }
+}
 .links-wrapper footer {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background: rgba(102, 102, 102, 0.3);
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   box-sizing: border-box;
   bottom: 0px;
   width: 100%;
@@ -294,7 +304,7 @@
 .links-wrapper .btn-open-links {
   width: 50px;
   height: 50px;
-  background: rgba(80, 80, 80, 0.1);
+  background: rgba(80, 80, 80, 0.3);
   position: absolute;
   top: 0px;
   left: 100%;
@@ -309,6 +319,7 @@
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
+  left: 70%;
 }
 @media (max-width: 740px) {
   .links-wrapper .btn-open-links {
@@ -316,12 +327,16 @@
   }
 }
 .links-wrapper .btn-open-links .plus {
-  color: #808080;
-  font-size: 2em;
-  font-family: initial;
+  width: 20px;
+  height: 3px;
   position: absolute;
-  left: 12px;
-  top: 5px;
+  left: 15px;
+  top: 24px;
+}
+.links-wrapper .btn-open-links .plus-vertical {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 /*-------------------------------------------------------*/
 /*--------------------- SPA CONTENT ---------------------*/

@@ -1,10 +1,10 @@
-@import url("assets/css/vendor/railscasts.css");
+@import url("../vendor/railscasts.css");
 
 .color2 { color: #595959; }
 .color4 { color: hsl(0, 0%, 85%); }
 .color5 { color: #0eeb30; }
 
-.theme-color1 { background: #000000 }
+.theme-color1 { background: #333333 }
 .theme-color2 { background: #141414; }
 
 /*-------------------------------------------------------*/
@@ -23,15 +23,18 @@
             color: aliceblue;
         }
     }
+    .plus {
+        background: hsl(0, 0%, 70%);
+    }
 }
 .links:hover {
     background: darkgreen !important;
 }
 
-[data-class-active="active-links-css"] .opened-links {
-  background: -webkit-linear-gradient(top, #87a1b3, transparent) !important;
-  background: linear-gradient(180deg, #87a1b3, transparent) !important;
-}
+//[data-class-active="active-links-css"] .opened-links {
+//  background: -webkit-linear-gradient(top, #87a1b3, transparent) !important;
+//  background: linear-gradient(180deg, #87a1b3, transparent) !important;
+//}
 
 /*-------------------------------------------------------*/
 /*----------------- SPA LOADED CONTENT ------------------*/
