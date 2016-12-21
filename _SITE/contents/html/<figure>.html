@@ -1,0 +1,25 @@
+<div class="wrapper-html-tmpl"><article><h2>HTML Figure Element</h2><div><p>The HTML &lt;figure&gt; element represents self-contained content, frequently with a caption &lt;figcaption&gt;, and is typically referenced as a single unit. Usually this is an image, an illustration, a diagram, a code snippet, or a schema that is referenced in the main text, but that can be moved to another page or to an appendix without affecting the main flow.</p></div><section><h5>Attributes :</h5><p>Global Attributes</p></section></article><div><h5>Example</h5><code class="box code html"><pre>
+&lt;figure&gt;
+&#x0009;&lt;figcaption&gt;Get browser details using navigator&lt;/figcaption&gt;
+&#x0009;&lt;pre&gt;
+&#x0009;&#x0009;function NavigatorExample() {
+&#x0009;&#x0009;&#x0009;var txt;
+&#x0009;&#x0009;&#x0009;txt = "Browser CodeName: " + navigator.appCodeName;
+&#x0009;&#x0009;&#x0009;txt+= "Browser Name: " + navigator.appName;
+&#x0009;&#x0009;&#x0009;txt+= "Browser Version: " + navigator.appVersion ;
+&#x0009;&#x0009;&#x0009;txt+= "Cookies Enabled: " + navigator.cookieEnabled;
+&#x0009;&#x0009;&#x0009;txt+= "Platform: " + navigator.platform;
+&#x0009;&#x0009;&#x0009;txt+= "User-agent header: " + navigator.userAgent;
+&#x0009;&#x0009;}
+&#x0009;&lt;/pre&gt;
+&lt;/figure&gt;</pre></code><h5>Result</h5><div class="box result"><figure><figcaption>Get browser details using navigator</figcaption><pre>
+        function NavigatorExample() {
+            var txt;
+            txt = "Browser CodeName: " + navigator.appCodeName;
+            txt+= "Browser Name: " + navigator.appName;
+            txt+= "Browser Version: " + navigator.appVersion ;
+            txt+= "Cookies Enabled: " + navigator.cookieEnabled;
+            txt+= "Platform: " + navigator.platform;
+            txt+= "User-agent header: " + navigator.userAgent;
+        }
+    </pre></figure></div></div><div class="browser-support"><h5>Browser Support</h5><div class="box"><li><span class="browser-icons icon-firefox"></span><div class="browser-version">4.0</div></li><li><span class="browser-icons icon-chrome"></span><div class="browser-version">8</div></li><li><span class="browser-icons icon-ie"></span><div class="browser-version">9.0</div></li><li><span class="browser-icons icon-opera"></span><div class="browser-version">11.10</div></li><li><span class="browser-icons icon-safari"></span><div class="browser-version">5.1</div></li></div></div><a class="mdn-link" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure" target="_blank">MDN - Mozilla Developer Documentation</a></div>
