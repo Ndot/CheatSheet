@@ -188,6 +188,7 @@ Object.prototype.creatEl = function (tag, obj) {
 /*------------------ Translate Links --------------------*/
     
     var translateLinks = function (e) {
+        e.stopPropagation();
         this.classList.toggle('rotate');
         this.parentElement.classList.toggle('translate-links');
     };
