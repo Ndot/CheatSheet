@@ -9,13 +9,13 @@ exampleCode: |
     <pre>
     &lt;audio controls="controls"&gt;
     &#x0009;Your browser does not support this audio element.
-    &#x0009;&lt;source src="/assets/media/1.ogg" /&gt;
+    &#x0009;&lt;source src="assets/media/1.ogg" /&gt;
     &lt;/audio&gt;</pre>
         
 resultCode: |
             <audio controls="controls">
                 Your browser does not support this audio element.
-                <source src="/assets/media/1.ogg" />
+                <source src="assets/media/1.ogg" />
             </audio>
         
 bs:

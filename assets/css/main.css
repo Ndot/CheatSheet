@@ -70,7 +70,7 @@
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-image: url("/assets/img/cookieMonster.png");
+  background-image: url("assets/img/cookieMonster.png");
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;
