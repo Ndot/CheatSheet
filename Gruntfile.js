@@ -80,7 +80,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         src: [
-                            'assets/css/_main.css',
+                            'assets/css/main.css',
                             'assets/css/theme/*.css',
                             'assets/css/vendor/*.css'
                         ],
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
                         expand: true,
                         cwd: './assets/css/less/',
                         src: [
-                            '_main.less',
+                            'main.less',
                             'theme/*.less'
                         ],
                         dest: 'assets/css/',
