@@ -1,0 +1,40 @@
+<div class="wrapper-html-tmpl">
+    <!-- Explanation and Attributes -->
+    <article>
+        <h2>{{= title }}</h2>
+        <div>{{= content }}</div>
+        <section>
+            <h5>Attributes :</h5>
+            <p>{{= attributes }}</p>
+        </section>
+    </article>
+
+    <!-- Code and Result -->
+    <div>
+        <h5>Example</h5>
+        <code class="box code html">
+{{= exampleCode }}
+        </code>
+        
+        <h5>Result</h5>
+        <div class="box result">
+{{= resultCode }}
+        </div>
+        
+    </div>
+
+    <!-- Browser Support -->
+    <div class="browser-support">
+        <h5>Browser Support</h5>
+        <div class="box">
+            <li><span class="browser-icons icon-firefox {{= bs.fsdisable}}"></span><div class="browser-version">{{= bs.firefox }}</div></li>
+            <li><span class="browser-icons icon-chrome {{= bs.chdisable}}"  ></span><div class="browser-version">{{= bs.chrome }}</div></li>
+            <li><span class="browser-icons icon-ie {{= bs.iedisable}}"          ></span><div class="browser-version">{{= bs.ie }}</div></li>
+            <li><span class="browser-icons icon-opera {{= bs.opdisable}}"    ></span><div class="browser-version">{{= bs.opera }}</div></li>
+            <li><span class="browser-icons icon-safari {{= bs.sfdisable}}"  ></span><div class="browser-version">{{= bs.safari }}</div></li>
+        </div>
+    </div>
+
+    <!-- Mozilla Developer Link -->
+    <a class="mdn-link" href="{{= mdnLink }}" target="_blank">{{= mdnLinkinnerHTML }}</a>
+</div>

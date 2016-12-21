@@ -286,6 +286,7 @@
         "icon": "./icons/logo_javascript.svg",
         "extension": ".json",
         "chapters": [
+            "Regex",
             "Constructor Pattern",
             "Object Literal Pattern",
             "Revealing Module Pattern",

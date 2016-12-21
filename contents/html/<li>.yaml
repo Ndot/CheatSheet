@@ -1,0 +1,39 @@
+---
+title: HTML List Item Element
+content: |
+    <p>The HTML &lt;li&gt; Element is used to represent an item in a list. It must be contained in a parent element: an ordered list &lt;ol&gt;, an unordered list &lt;ul&gt;, or a menu &lt;menu&gt;. In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.</p>
+attributes: value
+exampleCode: |
+    <pre>
+    &lt;ol type="1"&gt;
+    &#x0009;&lt;li value="3"&gt;third item&lt;/li&gt;
+    &#x0009;&lt;li&gt;fourth item&lt;/li&gt;
+    &#x0009;&#x0009;&lt;ol type="I"&gt;
+    &#x0009;&#x0009;&#x0009;&lt;li&gt;fourth item first sub-item&lt;/li&gt;
+    &#x0009;&#x0009;&#x0009;&lt;li&gt;fourth item second sub-item&lt;/li&gt;
+    &#x0009;&#x0009;&#x0009;&lt;li&gt;fourth item third sub-item&lt;/li&gt;
+    &#x0009;&#x0009;&lt;/ol&gt;
+    &#x0009;&lt;/li&gt;
+    &#x0009;&lt;li&gt;fifth item&lt;/li&gt;
+    &lt;/ol&gt;</pre>
+resultCode: |
+    <ol type="1">
+        <li style="display: list-item;" value="3">third item</li>
+        <li style="display: list-item;">fourth item</li>
+            <ol type="I">
+                <li style="display: list-item;">fourth item first sub-item</li>
+                <li style="display: list-item;">fourth item second sub-item</li>
+                <li style="display: list-item;">fourth item third sub-item</li>
+            </ol>
+        </li>
+        <li style="display: list-item;">fifth item</li>
+    </ol>
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

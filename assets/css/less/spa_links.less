@@ -1,0 +1,133 @@
+/*-------------------------------------------------------*/
+/*---------------------- SPA LINKS ----------------------*/
+@import 'vars';
+
+[data-class-active="active-links-css"] .opened-links {
+    background: linear-gradient(180deg, #87a1b3 30%, #646464 110%) !important;
+    color: whitesmoke !important;
+}
+
+.links-wrapper {
+    font-family: "BreeSerif";
+    box-shadow: 4px 4px 5px hsl(0, 0%, 70%);
+    
+    .links-container {
+        box-sizing: border-box;
+        height: calc(100vh - 50px);
+        overflow-y: hidden;
+        overflow-x: hidden;
+        &:hover {
+            overflow-y: scroll;
+        }
+        
+        @media (max-width: 740px) {
+            overflow-y: scroll;
+        }
+        
+        > ul {
+            padding: 10px 0;
+            width: @links_width;
+        }
+        li {list-style: none;}
+        
+        .links {
+            .color3;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 10px 40px 10px 10px;
+            transition: 0.3s;
+            display: block;
+            text-align: right;
+            position: relative;
+            
+            & ~ ul {
+                height: 0px;
+                overflow: hidden;
+                transition: height 0.4s;
+                background: white;
+            }
+            
+            
+            &:hover {
+                background: hsl(0, 3%, 60%);
+                color: aliceblue;
+            }
+            
+            &.active-links-html { 
+                color: white;
+                background: @html_color !important;
+            }
+            &.active-links-css { 
+                color: white;
+                background: @css_color !important;
+            }
+            &.active-links-javascript { 
+                color: white;
+                background: @javascript_color !important;
+            }
+        }
+    }
+    
+    footer {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        bottom: 0px;
+        width: 100%;
+        height: 50px;
+        padding: 5px;
+        
+        button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 15%;
+            cursor: pointer;
+            margin: 0px 0px 0px 10px;
+            
+            &.css-button-light {
+                background: white;
+            }
+            &.css-button-dark {
+                background: black;
+            }
+            &.css-button-pink {
+                background: deeppink;
+            }
+            &.css-button-green {
+                background: green;
+            }
+        }
+    }
+    
+    .btn-open-links {
+        width: 50px;
+        height: 50px;
+        background: rgba(80, 80, 80, 0.1);
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        border-radius: 50%;
+        margin: 10px;
+        display: none;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+
+        &.rotate {
+            transform: rotate(45deg);
+        }
+        
+        @media (max-width: 740px) {
+            display: block;
+        }
+        .plus {
+            .color3;
+            font-size: 2em;
+            font-family: initial;
+            position: absolute;
+            left: 12px;
+            top: 5px;
+        }
+    }
+}

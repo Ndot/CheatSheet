@@ -1,0 +1,39 @@
+/*-------------------------------------------------------*/
+/*---------------------- STRUCTURE ----------------------*/
+
+.navigation-header {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 100;
+}
+
+.spa {
+    display: flex;
+    
+    .links-wrapper {
+        z-index: 1;
+        height: 100vh;
+//        width: 270px;
+        width: @links_width;
+        position: relative;
+        transition: transform 0.2s ease-in-out;
+        transform: translate(0px);
+        
+        @media (max-width: 740px) {
+            position: fixed;
+            transform: translate(-@links_width);
+            margin-right: 100px;
+        }
+    }
+    .translate-links {
+        transform: translate(0px);
+    }
+    
+    .content-wrapper {
+        position: relative;
+        height: 100vh;
+        flex: 1;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,39 @@
+---
+title: HTML Details Element
+content: |
+    <p>The HTML &lt;details&gt; Element specifies additional that can be used to create an interactive widget that the user can open and close.</p>
+        <p class="little-note">The attribute open=&quot;open&quot; defaults to false, so if ommited the &lt;details&gt; content will be hidden.</p>
+        <p class="little-note">If the &lt;details&gt; tag is supported, the &lt;summary&gt; tag gives a title to the &lt;details&gt; tag, if ommited you should see instead the word <span class="quotes">Details</span>.</p>
+        <p class="little-note">You should not see the content within the &lt;details&gt; tag. If you do your browser either does not support the tag or as it disabled.</p>
+        
+attributes: open
+exampleCode: |
+    <pre>
+    &lt;details&gt;
+    &#x0009;&lt;summary&gt;Some details about something...&lt;/summary&gt;
+    &#x0009;&lt;p&gt;More info about the details.&lt;/p&gt;
+    &#x0009;&lt;p&gt;Even more info about the details.&lt;/p&gt;
+    &#x0009;&lt;p&gt;And some more info about the details.&lt;/p&gt;
+    &lt;/details&gt;</pre>
+        
+resultCode: |
+            <details>
+                <p>More info about the details.</p>
+                <p>Even more info about the details.</p>
+                <p>And some more info about the details.</p>
+            </details>
+        
+bs:
+    firefox: !!str 49.0
+    chrome:  !!str 12
+    ie: !!str 
+    opera: !!str 15
+    safari: !!str 6
+    fsdisable: 
+    chdisable: 
+    iedisable: disable
+    opdisable: 
+    sfdisable: 
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

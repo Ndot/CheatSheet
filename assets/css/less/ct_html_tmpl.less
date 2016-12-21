@@ -1,0 +1,82 @@
+/*-------------------------------------------------------*/
+/*-------------------- HTML TEMPLATE --------------------*/ 
+
+.wrapper-html-tmpl {
+    
+    section {
+        h5, p {
+            display: inline;
+        }
+        p {
+            font-family: monospace;
+            font-style: italic;
+        }
+    }
+    
+    h5 {
+        margin-top: 50px;
+    }
+    
+    .box {
+        box-shadow: 4px 4px 3px hsl(0, 0%, 87%);
+        border-right: 7px solid transparent;
+        padding: 20px 15px;
+        
+        &.code {
+            border-left: 7px solid hsl(140, 40%, 55%);
+            overflow-x: auto;
+            display: block;
+            white-space: nowrap;
+            -moz-tab-size: 3;
+            
+            pre {
+                margin: 0;
+            }
+        }
+        &.result {
+            border-left: 7px solid @redish;
+            
+            ul {
+                padding: 10px;
+            }
+        }
+        
+    }
+    
+    .browser-support .box {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 10px;
+        
+        li {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .browser-icons {
+            width: 50px;
+            height: 50px;
+            display: block;
+            background-image: url(/assets/img/browser_icons.png);
+            
+            &.icons-firefox { background-position: 0px 0px; }
+            &.icon-chrome { background-position: 0px -50px; }
+            &.icon-ie { background-position: 0px -100px; }
+            &.icon-opera { background-position: 0px -150px; }
+            &.icon-safari { background-position: 0px -200px; }
+        }
+        
+        .browser-version {
+            font-size: 0.7em;
+        }
+        
+    }
+    
+    .mdn-link {
+        font-size: 12px;
+        color: hsl(0, 0%, 50%);
+        display: block;
+        margin: 30px 0px;
+    }
+    
+}

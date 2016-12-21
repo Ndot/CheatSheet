@@ -1,0 +1,23 @@
+---
+title: HTML Anchor Element
+content: <p>Defines an hyperlink to a location on the same page or any other page on the Web. It can also be used to create an anchor point to some place within the contents of the same page.</p>
+attributes: download, href, hreflang, ping, rel, target, type
+exampleCode: |
+    &lt;a href="https://developer.mozilla.org/en-US/" target="_blank"&gt;MDN Mozilla Developer.&lt;/a&gt;
+    <br />
+    <br />
+    &lt;a href="#html"&gt;This will take you to the HTML Home on this page.&lt;/a&gt;
+resultCode: |
+    <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Mozilla Developer.</a>
+    <br />
+    <br />
+    <a href="#html">This will take you to the HTML Home on this page.</a>
+bs:
+    firefox: !!str 1.7
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

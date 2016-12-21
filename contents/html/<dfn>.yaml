@@ -1,0 +1,39 @@
+---
+title: HTML Definition Element
+content: <p>The HTML &lt;dfn&gt; Element represents the defining instance of a term.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;dl&gt;
+    &#x0009;&lt;dt&gt;
+    &#x0009;&#x0009;&lt;dfn id="html-definition"&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;&lt;/dfn&gt;
+    &#x0009;&lt;/dt&gt;
+    &#x0009;&lt;dd&gt;Is the standard markup language for creating web pages.&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;br /&gt;
+    &lt;hr /&gt;
+    &lt;p&gt;Later in the page you can reference that definition.&lt;/p&gt;
+    &lt;p&gt;Learn some &lt;a href="#html-definition"&gt;HTML&lt;/a&gt; tomorrow.&lt;/p&gt;</pre>
+        
+resultCode: |
+            <dl>
+                <dt>
+                    <dfn id="html-definition"><abbr title="HyperText Markup Language">HTML</abbr></dfn>
+                </dt>
+                <dd>Is the standard markup language for creating web pages.</dd>
+            </dl>
+            <br />
+            <hr />
+            <p>Later in the page you can reference that definition.</p>
+            <p>Learn some <a>HTML</a> tomorrow.</p>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

@@ -1,0 +1,29 @@
+---
+title: HTML Audio Element
+content: <p>The &lt;audio&gt; element is used to embed sound content in your html document. Fallback content for non supporting browsers can be added inside the audio block.</p>
+        <p>The supported file formats are MP3, Wav and Ogg.</p>
+        <p>Use of src attribute in the &lt;audio&gt; element is optional you can use the &lt;source&gt; element inside the audio block to specify the audio to embed.</p>
+        
+attributes: autoplay, buffered, controls, loop, muted, played,preload, src, volume
+exampleCode: |
+    <pre>
+    &lt;audio controls="controls"&gt;
+    &#x0009;Your browser does not support this audio element.
+    &#x0009;&lt;source src="/assets/media/1.ogg" /&gt;
+    &lt;/audio&gt;</pre>
+        
+resultCode: |
+            <audio controls="controls">
+                Your browser does not support this audio element.
+                <source src="/assets/media/1.ogg" />
+            </audio>
+        
+bs:
+    firefox: !!str 3.5
+    chrome:  !!str 3.0
+    ie: !!str 9.0
+    opera: !!str 10.5
+    safari: !!str 3.1
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

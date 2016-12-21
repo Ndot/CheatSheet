@@ -1,0 +1,20 @@
+---
+title: HTML Image Element
+content: <p>The HTML &lt;img&gt; Element represents an image in the document.</p>
+        
+attributes: alt, crossorigin, height, ismap, longdesc, sizes, src, srcset, width, usemap
+exampleCode: |
+            &lt;img src="/assets/img/logo_page.png" alt="Page Logo"&gt;
+        
+resultCode: |
+            <img src="/assets/img/logo_page.png" alt="Page Logo">
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

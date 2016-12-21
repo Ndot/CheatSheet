@@ -1,0 +1,22 @@
+---
+title: HTML Canvas Element
+content: <p>The HTML &lt;canvas&gt; Element can be used to draw graphics via scripting. For example, it can be used to draw graphs, make photo compositions or even perform animations. You should provide alternate content inside the &lt;canvas&gt; block. That content will be rendered in older browsers or browsers with JavaScript disabled.</p>
+        
+attributes: height, width
+exampleCode: |
+            &lt;canvas id="myCanvas"&gt;<br />
+                Your browser does not support the canvas tag.<br />
+            &lt;/canvas&gt;
+        
+resultCode: |
+    
+    
+bs:
+    firefox: !!str 12.0
+    chrome:  !!str 1.0
+    ie: !!str 9.0
+    opera: !!str 9.0
+    safari: !!str 2.0
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

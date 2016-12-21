@@ -1,0 +1,21 @@
+---
+title: HTML Citation Element
+content: <p>The HTML &lt;cite&gt; Element represents a reference to a creative work &#40;e.g. a book, a song, a movie, a TV show, a painting, a sculpture, etc.&#41;.</p>
+        <p class="little-note">It should not include a person's name, not even the author's name.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+            &lt;p&gt;The &lt;cite&gt;Mona Lisa&lt;/cite&gt; was painted by Leonardo di ser Piero da Vinci.&lt;/p&gt;
+        
+resultCode: |
+            <p>The <cite>Mona Lisa</cite> was painted by Leonardo di ser Piero da Vinci.</p>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

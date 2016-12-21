@@ -1,0 +1,25 @@
+---
+title: HTML Footer Element
+content: <p>The HTML &lt;footer&gt; element represents a footer for its nearest sectioning content or sectioning root element. A footer typically contains information about the author of the section, copyright data or links to related documents.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;footer&gt;
+    &#x0009;Some copyright info here
+    &lt;/footer&gt;</pre>
+        
+resultCode: |
+            <footer style="display: block; position: relative;">
+              Some copyright info here
+            </footer>
+        
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str 5
+    ie: !!str 9.0
+    opera: !!str 11.10
+    safari: !!str 4.1
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

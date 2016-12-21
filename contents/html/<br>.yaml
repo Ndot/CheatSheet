@@ -1,0 +1,20 @@
+---
+title: Line Break
+content: <p>The tag &lt;br /&gt; produces a line break in text (carriage-return).</p>
+        
+attributes: Global Attributes
+exampleCode: |
+            &lt;span&gt;Hello!!!&lt;/span&gt;&lt;br /&gt;&lt;span&gt;GoodBye!!!&lt;/span&gt;
+        
+resultCode: |
+           <span>Hello!!!</span><br /><span>GoodBye!!!</span>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str 1.0
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

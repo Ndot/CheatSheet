@@ -1,0 +1,31 @@
+---
+title: HTML Aside Element
+content: <p>The &lt;aside&gt; tag defines some content aside from the content it is placed in. The aside content should be related to the surrounding content. They often contain the definitions on the sidebars, such as definitions from the glossary; there may also be other types of information, such as related advertisements; the biography of the author; web applications; profile information or related links on the blog.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;p&gt;My family and I visited France.&lt;/p&gt;
+    &lt;aside&gt;
+    &#x0009;&lt;h4&gt;France&lt;/h4&gt;
+    &#x0009;&lt;p&gt;The capital of France is Paris.&lt;/p&gt;
+    &lt;/aside&gt;
+    &lt;p&gt;We had so much fun on our vacations...&lt;/p&gt;</pre>
+        
+resultCode: |
+    <p>My family and I visited France.</p>
+    <aside>
+      <h4>France</h4>
+      <p>The capital of France is Paris.</p>
+    </aside>
+    <p>We had so much fun on our vacations...</p>
+        
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str 5
+    ie: !!str 9.0
+    opera: !!str 11.10
+    safari: !!str 4.1
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

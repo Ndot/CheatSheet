@@ -1,0 +1,22 @@
+---
+title: HTML Bidirectional Override Element
+content: <p>The HTML &lt;bdo&gt; Element is used to override the current directionality of text.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+            &lt;p&gt;This text will go left to right.&lt;/p&gt;<br />
+            &lt;p&gt;&lt;bdo dir="rtl"&gt;This text will go right to left.&lt;/bdo&gt;&lt;/p&gt;
+        
+resultCode: |
+            <p>This text will go left to right.</p>
+            <p><bdo dir="rtl">This text will go right to left.</bdo></p>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

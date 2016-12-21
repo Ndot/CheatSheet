@@ -1,0 +1,20 @@
+---
+title: HTML Button Element
+content: <p>The HTML &lt;button&gt; Element represents a clickable button.</p>
+        
+attributes: autofocus, disabled, form, formaction,formenctype, formmethod, formnovalidate, formtarget, name, type, value
+exampleCode: |
+            &lt;button name="button"&gt;Click me&lt;/button&gt;
+        
+resultCode: |
+            <button name="button">Click me</button>
+        
+bs:
+    firefox: !!str 1.0
+    chrome:  !!str 1.0
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

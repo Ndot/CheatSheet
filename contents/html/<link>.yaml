@@ -1,0 +1,26 @@
+---
+title: HTML Link Element
+content: <p>The HTML &lt;link&gt; Element specifies relationships between the current document and an external resource. Possible uses for this element include defining a relational framework for navigation. This Element is most used to link to style sheets.</p>
+        <p class="little-note">The rel attribute can be set to a lot of different values. They are listed in <a class="inline-link quotes" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types" target="_blank">this</a> separate page.</p>
+        
+attributes: crossorigin, disable, href, hreflang, media, methods, rel, sizes, target, title, type
+exampleCode: |
+            &lt;!-- This stylesheet is PERSISTENT --&gt;<br />
+            &lt;link href="index.css" rel="stylesheet"&gt;<br />
+            &lt;!-- This stylesheet is PREFERRED --&gt;<br />
+            &lt;link href="default.css" rel="stylesheet" title="Default Style"&gt;<br />
+            &lt;!-- This stylesheets are ALTERNATIVE --&gt;<br />
+            &lt;link href="fancy.css" rel="alternate stylesheet" title="Fancy"&gt;<br />
+            &lt;link href="basic.css" rel="alternate stylesheet" title="Basic"&gt;<br />
+        
+resultCode: |
+         
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

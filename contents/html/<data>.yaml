@@ -1,0 +1,36 @@
+---
+title: HTML Data Element
+content: <p>The HTML &lt;data&gt; Element links a given content with a machine-readable translation. If the content is time or date-related, the &lt;time&gt; must be used.</p>
+        
+attributes: value
+exampleCode: |
+    <pre>
+    &lt;p&gt;New Products&lt;/p&gt;
+    &lt;ul&gt;
+    &#x0009;&lt;li&gt;&lt;data value="3967381398"&gt;Mini Ketchup&lt;/data&gt;&lt;/li&gt;
+    &#x0009;&lt;li&gt;&lt;data value="3967381399"&gt;Jumbo Ketchup&lt;/data&gt;&lt;/li&gt;
+    &#x0009;&lt;li&gt;&lt;data value="3967381400"&gt;Mega Jumbo Ketchup&lt;/data&gt;&lt;/li&gt;
+    &lt;/ul&gt;</pre>
+        
+resultCode: |
+            <p>New Products</p>
+            <ul>
+                <li><data value="3967381398">Mini Ketchup</data></li>
+                <li><data value="3967381399">Jumbo Ketchup</data></li>
+                <li><data value="3967381400">Mega Jumbo Ketchup</data></li>
+            </ul>
+        
+bs:
+    firefox: !!str 22.0
+    chrome:  !!str 
+    ie: !!str 
+    opera: !!str 
+    safari: !!str 
+    fsdisable: 
+    chdisable: disable
+    iedisable: disable
+    opdisable: disable
+    sfdisable: disable
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

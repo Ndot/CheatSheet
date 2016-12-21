@@ -1,0 +1,29 @@
+---
+title: HTML Thematic Break Element
+content: <p>In previous versions of HTML, it represented a horizontal rule. Now the HTML &lt;hr&gt; element represents a thematic break. It may still be displayed as a horizontal rule visually, but is now defined in semantic terms.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;h1&gt;HTML&lt;/h1&gt;
+    &lt;p&gt;HTML is a language for describing web pages.....&lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h1&gt;CSS&lt;/h1&gt;
+    &lt;p&gt;CSS defines how to display HTML elements.....&lt;/p&gt;</pre>
+        
+resultCode: |
+            <h1>HTML</h1>
+            <p>HTML is a language for describing web pages.....</p>
+            <hr>
+            <h1>CSS</h1>
+            <p>CSS defines how to display HTML elements.....</p>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

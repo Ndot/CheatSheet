@@ -1,0 +1,59 @@
+/*-------------------------------------------------------*/
+/*------------------------ HOME -------------------------*/
+
+.wrapper-main-title {
+    background-color: #000;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: none !important;
+    
+    &:after {
+        content: "";
+        background-image: url('/assets/img/img_code_monitor_dark.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: 20% 0%;
+        background-size: cover;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+    }
+    
+    .title-container {
+        text-align: center;
+        z-index: 1;
+        letter-spacing: 0.1em;
+        word-spacing: 0.2em;
+        font-size: 3em;
+        font-family: "BreeSerif";
+        line-height: 1.5em;
+        @media (max-width: 740px) {
+            font-size: 1.4em;
+        }
+        
+        .title:first-child {
+            transform: translateY(-100%);
+            animation: to-initial 2s forwards;
+            opacity: 0;
+        }
+        
+        .title:last-child {
+            transform: translateY(100%);
+            animation-name: to-initial;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        
+        @keyframes to-initial { 
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            } 
+        }
+    }
+}

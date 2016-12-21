@@ -1,0 +1,37 @@
+---
+title: HTML Input Element
+content: <p>The &lt;input&gt; Element specifies an input field where the user can enter data. An input field can vary in many ways, depending on the type attribute.</p>
+        
+attributes: type, accept, autocomplete, autofocus, capture, checked, disabled, form, formaction, formmethod, formnovalidate, formtarget, height, inputmode, list, max, maxlength, min, minlength, multiple, name, pattern, placeholder, readonly, required, selectionDirection, size, spellcheck, src, step, tabindex, value, width
+exampleCode: |
+    <pre>
+    &lt;form&gt;
+    &#x0009;&lt;label&gt;Text: &lt;input type="text" placeholder="Type something..."/&gt;&lt;/label&gt;&lt;br/&gt;
+    &#x0009;&lt;label&gt;Password: &lt;input type="password" /&gt;&lt;/label&gt;&lt;br/&gt;
+    &#x0009;&lt;label&gt;Number: &lt;input type="number" value="54" step="34"/&gt;&lt;/label&gt;&lt;br/&gt;
+    &#x0009;&lt;label&gt;Button: &lt;input type="button" value="Click Me"/&gt;&lt;/label&gt;&lt;br/&gt;
+    &#x0009;&lt;label&gt;File: &lt;input type="file"/&gt;&lt;/label&gt;&lt;br/&gt;
+    &#x0009;&lt;label&gt;Color: &lt;input type="color" value="#7CDA33"/&gt;&lt;/label&gt;&lt;br/&gt;
+    &#x0009;&lt;label&gt;Reset: &lt;input type="reset" value="Reset Form"/&gt;&lt;/label&gt;&lt;br/&gt;
+    &lt;/form&gt;</pre>
+        
+resultCode: |
+            <form>
+                <label>Text: <input type="text" placeholder="Type something..."/></label><br/>
+                <label>Password: <input type="password" /></label><br/>
+                <label>Number: <input type="number" value="54" step="34"/></label><br/>
+                <label>Button: <input type="button" value="Click Me"/></label><br/>
+                <label>File: <input type="file"/></label><br/>
+                <label>Color: <input type="color" value="#7CDA33"/></label><br/>
+                <label>Reset: <input type="reset" value="Reset Form"/></label><br/>
+            </form>
+        
+bs:
+    firefox: !!str 1.0
+    chrome:  !!str 1.0
+    ie: !!str 1.0
+    opera: !!str 1.0
+    safari: !!str 1.0
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

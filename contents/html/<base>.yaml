@@ -1,0 +1,24 @@
+---
+title: HTML Base Element
+content: <p>The &lt;base&gt; tag specifies the base URL/target for all relative URLs in a document.</p>
+        <p>Normally the &lt;base&gt; element shows as the first element inside the &lt;head&gt; element this way all other elements on the page will use it's information.</p>
+        <p>The base URL of a document can be queried from a script using document.baseURI.</p>
+        
+attributes: href, target
+exampleCode: |
+            &lt;base href="http://www.example.com/someFolder/" target="_blank"&gt;
+        
+resultCode: |
+            <p>The code above will do two things.</p>
+                <span class="little-note">Make all relative paths look inside <span class="quotes">someFolder</span></span><br />
+                <span class="little-note">Make all links open as if they had an attribute of <span class="quotes">target=_blank</span></span>
+        
+bs:
+    firefox: !!str 1.7
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

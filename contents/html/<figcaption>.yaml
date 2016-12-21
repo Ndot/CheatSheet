@@ -1,0 +1,27 @@
+---
+title: HTML Figure Caption Element
+content: <p>HTML &lt;figcaption&gt; Element defines a caption for a &lt;figure&gt; element. This element is optional.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;figure&gt;
+    &#x0009;&lt;img src="/assets/img/logo_page.png" alt="Logo" /&gt;
+    &#x0009;&lt;figcaption&gt;This is a logo.&lt;/figcaption&gt;
+    &lt;/figure&gt;</pre>
+        
+resultCode: |
+            <figure>
+                <img src="/assets/img/logo_page.png" alt="Logo" />
+                <figcaption>This is a logo.</figcaption>
+            </figure>
+        
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str 8
+    ie: !!str 9.0
+    opera: !!str 11.10
+    safari: !!str 5.1
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

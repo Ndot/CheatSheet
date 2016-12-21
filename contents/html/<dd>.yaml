@@ -1,0 +1,31 @@
+---
+title: HTML Description Element
+content: <p>The HTML &lt;dd&gt; Element indicates the description of a term in a &lt;dt&gt; tag &#40;Definition Term Element&#41;. </p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;dl&gt;
+    &#x0009;&lt;dt&gt;Oranges&lt;/dt&gt;
+    &#x0009;&lt;dd&gt;Are fruits of the citrus species, they are round, orange and delicious.&lt;/dd&gt;
+    &#x0009;&lt;dt&gt;Apples&lt;/dt&gt;
+    &#x0009;&lt;dd&gt;They are ok.&lt;/dd&gt;
+    &lt;/dl&gt;</pre>
+        
+resultCode: |
+            <dl>
+                <dt>Oranges</dt>
+                <dd>Are fruits of the citrus species, they are round, orange and delicious.</dd>
+                <dt>Apples</dt>
+                <dd>They are ok.</dd>
+            </dl>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

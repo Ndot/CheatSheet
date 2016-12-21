@@ -1,0 +1,20 @@
+---
+title: HTML Deleted Text Element
+content: <p>The HTML &lt;del&gt; Element represents a range of text that has been deleted from a document.</p>
+        
+attributes: cite, datetime
+exampleCode: |
+            &lt;p&gt;&lt;del datetime="1996-04-24" &gt;This is way to old.&lt;/del&gt; So it had to go.&lt;/p&gt;
+        
+resultCode: |
+            <p><del datetime="1996-04-24" >This is way to old.</del> So it had to go.</p>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

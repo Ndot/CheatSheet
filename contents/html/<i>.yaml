@@ -1,0 +1,21 @@
+---
+title: HTML &lt;i&gt; Element
+content: <p>The HTML &lt;i&gt; Element represents a range of text that is set off from the normal text for some reason, for example, technical terms, foreign language phrases, or fictional character thoughts. It is typically displayed in italic type.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;p&gt;The Latin phrase &lt;i&gt;Veni, vidi, vici&lt;/i&gt; is often mentioned in music, art, and literature&lt;/p&gt;</pre>
+        
+resultCode: |
+            <p>The Latin phrase <i>Veni, vidi, vici</i> is often mentioned in music, art, and literature</p>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

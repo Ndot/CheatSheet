@@ -1,0 +1,23 @@
+---
+title: Comments
+content: <p>The comment tag is used to insert a comment in the source code. Comments will not appear in the browser it's only for the programmer to guide the code. Be carefull of what you insert in comments, they can be viewed when viewing the souce code.</p>
+        
+attributes: 'null'
+exampleCode: |
+            &#60;!-- This is a comment and they are not displayed in the browser! --&#62;
+            <br />
+            &#60;p&#62;This will be rendered by the browser&#60;/p&#62;
+        
+resultCode: |
+            <!-- This is a comment and they are not displayed in the browser! -->
+            <p>This will be rendered by the browser</p>
+        
+bs:
+    firefox: !!str 
+    chrome:  !!str 
+    ie: !!str 
+    opera: !!str 
+    safari: !!str 
+mdnLink: 
+mdnLinkinnerHTML: 
+...
