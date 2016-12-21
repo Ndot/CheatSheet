@@ -11,6 +11,9 @@
     font-family: "BreeSerif";
     box-shadow: 4px 4px 5px hsl(0, 0%, 70%);
     
+    @media (max-width: 740px) {
+        box-shadow: none;
+    }
     .links-container {
         box-sizing: border-box;
         height: calc(100vh - 50px);
@@ -141,5 +144,13 @@
         .plus-vertical {
             transform: rotate(90deg);
         }
+    }
+    
+    .touch-element {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 110%;
+        z-index: -1;
     }
 }

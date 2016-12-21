@@ -338,6 +338,13 @@
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
+.links-wrapper .touch-element {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 110%;
+  z-index: -1;
+}
 /*-------------------------------------------------------*/
 /*--------------------- SPA CONTENT ---------------------*/
 .content-container {
