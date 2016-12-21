@@ -1,0 +1,41 @@
+---
+title: HTML Table Column Group Element
+content: <p>The HTML &lt;colgroup&gt; Element defines a group of columns within a table for formatting.</p>
+        
+attributes: span
+exampleCode: |
+    <pre>
+    &lt;table&gt;
+    &#x0009;&lt;colgroup span="1" style="background-color: hsl(0, 0%, 55%)"&gt;&lt;/colgroup&gt;
+    &#x0009;&lt;tr&gt;
+    &#x0009;&#x0009;&lt;th&gt;Lime&lt;/th&gt;
+    &#x0009;&#x0009;&lt;th&gt;Lemon&lt;/th&gt;
+    &#x0009;&lt;/tr&gt;
+    &#x0009;&lt;tr&gt;
+    &#x0009;&#x0009;&lt;td&gt;Green&lt;/td&gt;
+    &#x0009;&#x0009;&lt;td&gt;Yellow&lt;/td&gt;
+    &#x0009;&lt;/tr&gt;
+    &lt;/table&gt;</pre>
+        
+resultCode: |
+            <table>
+                <colgroup span="1" style="background-color: hsl(0, 0%, 55%)"></colgroup>
+                <tr>
+                    <th>Lime</th>
+                    <th>Lemon</th>
+                </tr>
+                <tr>
+                    <td>Green</td>
+                    <td>Yellow</td>
+                </tr>
+            </table>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

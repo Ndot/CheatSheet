@@ -1,0 +1,27 @@
+---
+title: HTML Article Element
+content: <p>The HTML &lt;article&gt; element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication). This could be a forum post, a magazine or newspaper article, a blog entry, an object, or any other independent item of content. Each &lt;article&gt; should be identified, typically by including a heading (&lt;h1&gt; to &lt;h6&gt; element) as a child of the &lt;article&gt; element.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;article&gt;
+    &#x0009;&lt;h3&gt;Post 1&lt;/h3&gt;
+    &#x0009;&lt;p&gt;This is my post.&lt;/p&gt;
+    &lt;/article&gt;</pre>
+        
+resultCode: |
+            <article>
+                <h3>Post 1</h3>
+                <p>This is my post number 1.</p>
+            </article>
+        
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str 5
+    ie: !!str 9.0
+    opera: !!str 11.10
+    safari: !!str 4.1
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

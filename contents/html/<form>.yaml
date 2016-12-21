@@ -1,0 +1,35 @@
+---
+title: HTML Form Element
+content: <p>The HTML &lt;form&gt; element represents a document section that contains interactive controls to submit information to a web server.</p>
+        
+attributes: Accept-charset, action, autocapitalize, autocomplete, enctype, method, name, novalidate, target
+exampleCode: |
+    <pre>
+    &lt;form action="" method="GET"&gt;
+    &#x0009;&lt;fieldset&gt;
+    &#x0009;&#x0009;&lt;legend&gt;New Form&lt;/legend&gt;
+    &#x0009;&#x0009;&lt;label for="name"&gt;Name: &lt;/label&gt;
+    &#x0009;&#x0009;&lt;input type="input" id="name" name="LookAtMe" placeholder="Write here"/&gt;
+    &#x0009;&#x0009;&lt;input type="submit" value="Click Me"/&gt;
+    &#x0009;&lt;/fieldset&gt;
+    &lt;/form&gt;</pre>
+        
+resultCode: |
+            <form action="" method="GET">
+                <fieldset>
+                    <legend>New Form</legend>
+                    <label for="name">Name: </label>
+                    <input type="input" id="name" name="LookAtMe" placeholder="Write here"/>
+                    <input type="submit" value="Click Me"/>
+                </fieldset>
+            </form>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

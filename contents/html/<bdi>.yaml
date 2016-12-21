@@ -1,0 +1,30 @@
+---
+title: HTML Bi-Directional Isolation Element
+content: <p>The HTML &lt;bdi&gt; Element isolates a span of text that might be formatted in a different direction from other text outside it.</p>
+        <p class="little-note">Note the <span class="quotes">dir</span> attribute is not inherited. If not set, its default value is the <span class="quotes">auto</span> which let the browser decide the direction based on the element's content.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+            &lt;bdo dir="rtl"&gt;This text &lt;bdi&gt;SOME TEXT HERE&lt;/bdi&gt; is automatically displayed left-to-right.&lt;/bdo&gt;<br /><br />
+            &lt;p&gt;The text inside the bdi tag is left-to-right. Because that is the default.&lt;/p&gt;<br />
+            &lt;p&gt;Everything else follows the bdo direction attribute.&lt;/p&gt;
+        
+resultCode: |
+            <bdo dir="rtl">This text <bdi>SOME TEXT HERE</bdi> is automatically displayed left-to-right.</bdo>
+            <p>The text inside the bdi tag is left-to-right. Because that is the default.</p>
+            <p>Everything else follows the bdo direction attribute.</p>
+        
+bs:
+    firefox: !!str 10
+    chrome:  !!str 16
+    ie: !!str 
+    opera: !!str 
+    safari: !!str 
+    fsdisable: 
+    chdisable: 
+    iedisable: disable
+    opdisable: disable
+    sfdisable: disable
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

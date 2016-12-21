@@ -1,0 +1,20 @@
+---
+title: HTML Emphasis Element
+content: <p>The HTML &lt;em&gt; Element marks text that has stress emphasis. The &lt;em&gt; element can be nested, with each level of nesting indicating a greater degree of emphasis.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+            &lt;p&gt;This is some normal text. And this is &lt;em&gt;really important.&lt;/em&gt;&lt;/p&gt;
+        
+resultCode: |
+            <p>This is some normal text. And this is <em>really important.</em></p>
+        
+bs:
+    firefox: !!str 
+    chrome:  !!str 
+    ie: !!str 
+    opera: !!str 
+    safari: !!str 
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

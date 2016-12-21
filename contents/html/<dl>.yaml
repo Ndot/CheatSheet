@@ -1,0 +1,57 @@
+---
+title: HTML Description List Element
+content: <p>The HTML &lt;dl&gt; Element encloses a list of pairs of terms and descriptions. Common uses for this element are to implement a glossary or to display metadata &#40;a list of key-value pairs&#41;.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;!-- Single term and description --&gt;
+    &lt;dl&gt;
+    &#x0009;&lt;dt&gt;Firefox&lt;/dt&gt;
+    &#x0009;&lt;dd&gt;A free, open source, cross-platform, graphical web browser.&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;hr /&gt;
+    &lt;!-- Multiple terms, single description --&gt;
+    &lt;dl&gt;
+    &#x0009;&lt;dt&gt;Oranges&lt;/dt&gt;
+    &#x0009;&lt;dt&gt;Apples&lt;/dt&gt;
+    &#x0009;&lt;dd&gt;All fruits.&lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;hr /&gt;
+    &lt;!-- Single term, multiple descriptions --&gt;
+    &lt;dl&gt;
+    &#x0009;&lt;dt&gt;Orange&lt;/dt&gt;
+    &#x0009;&lt;dd&gt;A fruit of the citrus species, round, orange and delicious.&lt;/dd&gt;
+    &#x0009;&lt;dd&gt;A color.&lt;/dd&gt;
+    &lt;/dl&gt;</pre>
+        
+resultCode: |
+            <!-- Single term and description -->
+            <dl>
+                <dt>Firefox</dt>
+                <dd>A free, open source, cross-platform, graphical web browser.</dd>
+            </dl>
+            <hr />
+            <!-- Multiple terms, single description -->
+            <dl>
+                <dt>Oranges</dt>
+                <dt>Apples</dt>
+                <dd>All fruits.</dd>
+            </dl>
+            <hr />
+            <!-- Single term, multiple descriptions -->
+            <dl>
+                <dt>Orange</dt>
+                <dd>A fruit of the citrus species, round, orange and delicious.</dd>
+                <dd>A color.</dd>
+            </dl>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

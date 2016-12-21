@@ -1,0 +1,23 @@
+---
+title: HTML Root Element
+content: <p>The HTML &lt;html&gt; Element represents the root of an HTML document. All other elements must be descendants of this element. Although this tag can be implied, or not required, with HTML, it is required to be opened and closed in XHTML.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &#x0009;&lt;head&gt;...&lt;/head&gt;
+    &#x0009;&lt;body&gt;...&lt;/body&gt;
+    &lt;/html&gt;</pre>
+resultCode: |
+
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

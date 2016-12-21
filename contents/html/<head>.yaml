@@ -1,0 +1,28 @@
+---
+title: HTML Head Element
+content: <p>The HTML &lt;head&gt; Element provides general information &#40;metadata&#41; about the document, including its title and links to its scripts and style sheets.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>&#60;!DOCTYPE html&#62;
+    &#60;html lang="en"&#62;
+    &#x0009;&#60;head&#62;
+    &#x0009;&#x0009;&#60;meta charset="UTF-8"&#62;
+    &#x0009;&#x0009;&#60;title&#62;Title&#60;/title&#62;
+    &#x0009;&#60;/head&#62;
+    &#x0009;&#60;body&#62;
+    &#x0009;&#x0009;&#60;h1&#62;Thats all folks!!!&#60;/h1&#62;
+    &#x0009;&#60;/body&#62;
+    &#60;/html&#62;</pre>
+        
+resultCode: |
+         
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

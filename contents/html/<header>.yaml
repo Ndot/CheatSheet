@@ -1,0 +1,31 @@
+---
+title: HTML Header Element
+content: <p>The HTML &lt;header&gt; Element is a container for some introductory elements of a given content. It can contain elements like headings, logos, links, forms, authorship information, etc. </p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;header&gt;
+    &#x0009;&lt;h1&gt;My Page Title&lt;/h1&gt;
+    &#x0009;&lt;h3&gt;Some other less important title&lt;/h3&gt;
+    &#x0009;&lt;p&gt;This is &lt;cite style="color: orange;"&gt;Cheat Sheat&lt;/cite&gt; page.&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;p&gt;And here I will tell you all about my page...&lt;/p&gt;</pre>
+        
+resultCode: |
+            <header style="position: relative; height: auto; box-shadow: none; display: block;">
+              <h1>My Page Title</h1>
+              <h3>Some other less important title</h3>
+              <p>This is <cite style="color: orange;">Cheat Sheat</cite> page.</p>
+            </header>
+            <p>And here I will tell you all about my page...</p>
+        
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str 5
+    ie: !!str 9.0
+    opera: !!str 11.10
+    safari: !!str 4.1
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

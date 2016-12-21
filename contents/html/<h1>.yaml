@@ -1,0 +1,31 @@
+---
+title: HTML Heading Elements
+content: <p>Heading elements implement six levels of document headings, &lt;h1&gt; to &lt;h6&gt; tags are used to define HTML headings. The &lt;h1&gt; defines the most important heading, &lt;h6&gt; defines the least important heading.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;h1&gt;Heading level 1&lt;/h1&gt;
+    &lt;h2&gt;Heading level 2&lt;/h2&gt;
+    &lt;h3&gt;Heading level 3&lt;/h3&gt;
+    &lt;h4&gt;Heading level 4&lt;/h4&gt;
+    &lt;h5&gt;Heading level 5&lt;/h5&gt;
+    &lt;h6&gt;Heading level 6&lt;/h6&gt;</pre>
+        
+resultCode: |
+            <h1 style="margin: 4px;">Heading level 1</h1>
+            <h2 style="margin: 4px;">Heading level 2</h2>
+            <h3 style="margin: 4px;">Heading level 3</h3>
+            <h4 style="margin: 4px;">Heading level 4</h4>
+            <h5 style="margin: 4px;">Heading level 5</h5>
+            <h6 style="margin: 4px;">Heading level 6</h6>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

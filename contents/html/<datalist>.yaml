@@ -1,0 +1,42 @@
+---
+title: HTML Datalist Element
+content: <p>The HTML &lt;datalist&gt; Element contains a set of &lt;option&gt; tags that represent the values available for other controls.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;label&gt;Choose a color:&lt;/label&gt;
+    &lt;input list="colors" name="myBrowser" placeholder="Colors"/&gt;
+    &lt;datalist id="colors"&gt;
+    &#x0009;&lt;option value="Red"&gt;
+    &#x0009;&lt;option value="Blue"&gt;
+    &#x0009;&lt;option value="Orange"&gt;
+    &#x0009;&lt;option value="Green"&gt;
+    &#x0009;&lt;option value="Yellow"&gt;
+    &lt;/datalist&gt;</pre>
+        
+resultCode: |
+            <label>Choose a color:</label>
+            <input list="colors" name="myBrowser" placeholder="Colors"/>
+            <datalist id="colors">
+                <option value="Red"></option>
+                <option value="Blue">
+                <option value="Orange">
+                <option value="Green">
+                <option value="Yellow">
+            </datalist>
+        
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str 20
+    ie: !!str 10
+    opera: !!str 9.5
+    safari: !!str 
+    fsdisable: 
+    chdisable: 
+    iedisable: 
+    opdisable: 
+    sfdisable: disable
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

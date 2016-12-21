@@ -1,0 +1,36 @@
+---
+title: HTML Address element
+content: <p>The HTML &lt;address&gt; element supplies contact information for its nearest &#60;article&gt; or &#60;body&gt; ancestor; in the latter case, it applies to the whole document. Typically this element shows inside a footer tag.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+            &lt;address&gt;<br />
+                You can contact author at &lt;a href="http://www.somedomain.com"&gt;Some Domain&lt;/a&gt;.&lt;br&gt;<br />
+                You may also want to visit us:&lt;br&gt;<br />
+                Mozilla Foundation&lt;br&gt;<br />
+                1981 Landings Drive&lt;br&gt;<br />
+                Building K&lt;br&gt;<br />
+                Mountain View, CA 94043-0801&lt;br&gt;<br />
+                USA<br />
+            &lt;/address&gt;<br />
+        
+resultCode: |
+            <address>
+                You can contact author at <a href="#html/<address>">Some Domain</a>.<br>
+                You may also want to visit us:<br>
+                Mozilla Foundation<br>
+                1981 Landings Drive<br>
+                Building K<br>
+                Mountain View, CA 94043-0801<br>
+                USA
+            </address>
+        
+bs:
+    firefox: !!str 1.7
+    chrome: !!str Yes
+    ie: !!str 1.0
+    opera: !!str 5.12
+    safari: !!str 1.0
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

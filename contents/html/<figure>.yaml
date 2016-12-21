@@ -1,0 +1,47 @@
+---
+title: HTML Figure Element
+content: <p>The HTML &lt;figure&gt; element represents self-contained content, frequently with a caption &lt;figcaption&gt;, and is typically referenced as a single unit. Usually this is an image, an illustration, a diagram, a code snippet, or a schema that is referenced in the main text, but that can be moved to another page or to an appendix without affecting the main flow.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;figure&gt;
+    &#x0009;&lt;figcaption&gt;Get browser details using navigator&lt;/figcaption&gt;
+    &#x0009;&lt;pre&gt;
+    &#x0009;&#x0009;function NavigatorExample() {
+    &#x0009;&#x0009;&#x0009;var txt;
+    &#x0009;&#x0009;&#x0009;txt = "Browser CodeName: " + navigator.appCodeName;
+    &#x0009;&#x0009;&#x0009;txt+= "Browser Name: " + navigator.appName;
+    &#x0009;&#x0009;&#x0009;txt+= "Browser Version: " + navigator.appVersion ;
+    &#x0009;&#x0009;&#x0009;txt+= "Cookies Enabled: " + navigator.cookieEnabled;
+    &#x0009;&#x0009;&#x0009;txt+= "Platform: " + navigator.platform;
+    &#x0009;&#x0009;&#x0009;txt+= "User-agent header: " + navigator.userAgent;
+    &#x0009;&#x0009;}
+    &#x0009;&lt;/pre&gt;
+    &lt;/figure&gt;</pre>
+        
+resultCode: |
+            <figure>
+                <figcaption>Get browser details using navigator</figcaption>
+                <pre>
+                    function NavigatorExample() {
+                        var txt;
+                        txt = "Browser CodeName: " + navigator.appCodeName;
+                        txt+= "Browser Name: " + navigator.appName;
+                        txt+= "Browser Version: " + navigator.appVersion ;
+                        txt+= "Cookies Enabled: " + navigator.cookieEnabled;
+                        txt+= "Platform: " + navigator.platform;
+                        txt+= "User-agent header: " + navigator.userAgent;
+                    }
+                </pre>
+            </figure>
+        
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str 8
+    ie: !!str 9.0
+    opera: !!str 11.10
+    safari: !!str 5.1
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

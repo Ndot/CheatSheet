@@ -1,9 +1,9 @@
-<div class="wrapper-loaded-content">
+<div class="wrapper-html-tmpl">
     <!-- Explanation and Attributes -->
     <article>
         <h2>HTML Area element</h2>
-        <p>The HTML &lt;area&gt; element defines a hot-spot region&lpar;clickable area&rpar; on an image, and optionally associates it with a hypertext link. This element is always nested within a &lt;map&gt; element. The Area element is a Self-Closing Tag.</p>
-        <section class="attributes-inline">
+        <div><p>The HTML &lt;area&gt; element defines a hot-spot region&lpar;clickable area&rpar; on an image, and optionally associates it with a hypertext link. This element is always nested within a &lt;map&gt; element. The Area element is a Self-Closing Tag.</p></div>
+        <section>
             <h5>Attributes :</h5>
             <p>alt, coords, download, href, hreflang, media, rel, shape, target, type</p>
         </section>
@@ -12,37 +12,40 @@
     <!-- Code and Result -->
     <div>
         <h5>Example</h5>
-        <code class="code html">
-<pre>&lt;img src="./media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary"&gt;
+        <code class="box code html">
+<pre>&lt;img src="/assets/media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary"&gt;
 &lt;map name="primary"&gt;
 &#x0009;&lt;area shape="circle" coords="100,100,35" href="#html/home" title="Let's go Home"/&gt; 
 &lt;/map&gt;
 <br />
 &lt;p&gt;The blue circle on the Icon will take you to the HTML Home on this page&lt;/p&gt;</pre>
-        </code>
 
+        </code>
+        
         <h5>Result</h5>
-        <div class="code">
-            <img src="./media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary">
-            <map name="primary">
-                <area  shape="circle" coords="100,100,35" href="#html/home" title="Let's go Home"/>
-            </map>
-            <p>The blue circle on the Icon will take you to the HTML Home on this page</p>
+        <div class="box result">
+<img src="/assets/media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary">
+<map name="primary">
+    <area  shape="circle" coords="100,100,35" href="#html/home" title="Let's go Home"/>
+</map>
+<p>The blue circle on the Icon will take you to the HTML Home on this page</p>
+
         </div>
+        
     </div>
 
     <!-- Browser Support -->
     <div class="browser-support">
         <h5>Browser Support</h5>
-        <div>
-            <li><span class="browser-icons icon-firefox"></span><div class="browser-version">Yes</div></li>
-            <li><span class="browser-icons icon-chrome" ></span><div class="browser-version">Yes</div></li>
-            <li><span class="browser-icons icon-ie"     ></span><div class="browser-version">Yes</div></li>
-            <li><span class="browser-icons icon-opera"  ></span><div class="browser-version">Yes</div></li>
-            <li><span class="browser-icons icon-safari" ></span><div class="browser-version">Yes</div></li>
+        <div class="box">
+            <li><span class="browser-icons icon-firefox "></span><div class="browser-version">Yes</div></li>
+            <li><span class="browser-icons icon-chrome "  ></span><div class="browser-version">Yes</div></li>
+            <li><span class="browser-icons icon-ie "          ></span><div class="browser-version">Yes</div></li>
+            <li><span class="browser-icons icon-opera "    ></span><div class="browser-version">Yes</div></li>
+            <li><span class="browser-icons icon-safari "  ></span><div class="browser-version">Yes</div></li>
         </div>
     </div>
 
     <!-- Mozilla Developer Link -->
-    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area" target="_blank">MDN - Mozilla Developer Documentation</a>
+    <a class="mdn-link" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area" target="_blank">MDN - Mozilla Developer Documentation</a>
 </div>

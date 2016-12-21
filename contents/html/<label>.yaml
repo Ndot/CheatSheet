@@ -1,0 +1,26 @@
+---
+title: HTML Label Element
+content: <p>The HTML Label Element &lt;label&gt; represents a caption for an item in a user interface. If the user clicks on the text within the &lt;label&gt; element, it toggles the control. The for attribute of the &lt;label&gt; tag should be equal to the id attribute of the related element to bind them together.</p>
+        
+attributes: for
+exampleCode: |
+            &lt;label&gt;Name: &lt;input type="text" placeholder="Your name here..."&gt;&lt;/label&gt;<br />
+            <br />
+            &lt;label for="name"&gt;Name: &lt;/label&gt;<br />
+            &lt;input type="text" id="name" placeholder="Or maybe here..."&gt;<br />
+        
+resultCode: |
+            <label>Name: <input type="text" placeholder="Your name here..."></label>
+            <br />
+            <label for="name">Name: </label>
+            <input type="text" id="name" placeholder="Or maybe here...">
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

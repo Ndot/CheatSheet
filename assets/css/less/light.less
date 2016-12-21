@@ -1,0 +1,414 @@
+@import url("./spa_content.css");
+@import url("./vendor/solarized-light.css");
+@font-face { font-family: "BreeSerif"; src: url("../fonts/BreeSerif-Regular.ttf"); }
+
+body {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: "BreeSerif", "sans-serif", "monospace";
+}
+
+ul { margin: 0; padding: 0 }
+li { display: block; }
+a  { text-decoration: none; color: inherit; }
+td, tr, th { padding: 10px; border: 1px solid hsl(0, 0%, 35%); }
+table { border-spacing: 0px; border-collapse: collapse; }
+
+/*-------------------------------------------------------*/
+/*---------------------- GENERIC ------------------------*/
+
+.inline-link {
+    color: hsl(0, 0%, 50%);
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.quotes { font-style: italic;}
+.quotes:before {content: ' "'}
+.quotes:after {content: '" '}
+
+.little-note {
+    font-style: italic;
+    font-size: 0.8em;
+}
+.little-note:before {content: " → ";}
+
+.disabled {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+}
+
+.flex             { display: flex; padding: 0px 10% 0px 10%; }
+.no-padding       { padding: 0; }
+.full-height      { height: 100%; }
+.transition-color { transition: all 0.5s; }
+
+.color1 { color: hsl(0, 0%, 100%); }
+.color2 { color: hsl(0, 0%, 85%); }
+.color3 { color: hsl(0, 0%, 50%); }
+/*.color4 { color: hsl(0, 0%, 35%); }*/
+.color5 { color: hsl(0, 0%, 5%); }
+
+.color2 a:hover { color: hsl(0, 0%, 35%); }
+.color3:hover { color: hsl(0, 0%, 15%); }
+
+.theme-color1 { background: hsl(0, 0%, 100%); }
+.theme-color2 { background: hsl(0, 0%, 90%); }
+
+.theme-blue { background: hsla(214, 100%, 20%, 0.6); }
+
+/*-------------------------------------------------------*/
+/*------------------ JAVASCRIPT CHECK -------------------*/
+
+.jsCheck .nojs {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: hsl(0, 0%, 14%);
+    z-index: 1000;
+}
+
+.nojs {
+    display: none;
+}
+
+.nojs.banner {
+    background: hsl(0, 0%, 10%);
+    height: 300px;
+    top: 50%;
+    text-align: right;
+    transform: translateY(-50%);
+    background-image: url("/assets/img/cookieMonster.png");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.banner-wrapper {
+    display: inline-block;
+    text-align: left;
+    margin-right: 5%;
+}
+
+.banner-wrapper p {
+    color: aliceblue;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px hsl(0, 0%, 10%);
+}
+
+/*-------------------------------------------------------*/
+/*----------------------- HEADER ------------------------*/
+
+
+
+.search-container {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    padding-left: 5px;
+}
+
+.search-form {
+    width: 100%;
+    text-align: right;
+    position: relative;
+    top: 3px;
+}
+
+.search-input {
+    border: none;
+    padding: 10px 10px 10px 35px;
+    color: hsl(0, 0%, 70%);
+    transition: all 0.6s;
+    width: 0px;
+    box-sizing: border-box;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-input:focus { width: 100%; outline: none;}
+
+.search-icon {
+    position: absolute;
+    width: 1.8em;
+    pointer-events: none;
+    fill: #a6a6a6;
+    top: 5px;
+}
+
+/*-------------------------------------------------------*/
+/*----------------------- Footer ------------------------*/
+
+footer {
+    z-index: 1000;
+/*    position: absolute;*/
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    width: 270px;
+    bottom: 0px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0px 0px;
+    display: inline-block;
+}
+
+/*-------------------------*/
+/*--- Buttons CSS Theme ---*/
+
+.button-css {
+    float: right;
+    display: flex;
+}
+.button-css button {
+    width: 40px;
+    cursor: pointer;
+    height: 20px;
+    border: none;
+    margin: 0px 5px;
+}
+
+.css-button-light { background: hsl(0, 0%, 90%); }
+.css-button-dark  { background: hsl(0, 0%, 0%); }
+
+/*-------------------------------------------------------*/
+/*------------------------- SPA -------------------------*/
+
+#spa {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+    padding: 0px 0% 0px 0%
+}
+
+.content-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    position: relative; 
+}
+
+.loading {
+    position: fixed;
+    opacity: 0.8;
+    width:100%;
+    height: 100%;
+    z-index: 5;
+    left: 0;
+}
+
+.loading:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 5px solid #ccc;
+    border-top-color: #1b51e2;
+    border-radius: 50%;
+    animation: .6s loading linear infinite;
+    top: 25px;
+    right: 25px;
+    transform: rotate(0deg);
+}
+
+@keyframes loading { to { transform: rotate(360deg); } }
+
+/*-------------------------------------------------------*/
+/*--------------------- SPA CONTENT ---------------------*/
+
+#spa-content {
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 100%;
+}
+
+/*-------------------------------------------------------*/
+/*---------------------- SPA LINKS ----------------------*/
+
+.spa-links {
+    box-shadow: 4px 0px 5px 0px hsl(0, 0%, 50%);
+    overflow-y: hidden;
+    position: relative;
+    height: 100%;
+    width: 270px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.spa-links:hover {
+    overflow-y: auto;
+}
+
+.links {
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+    display: block;
+    color: hsl(0, 0%, 45%);
+    text-align: initial;
+}
+
+.links:hover {
+    background: hsl(0, 3%, 60%);
+    color: aliceblue;
+}
+
+.active-links {
+    background: hsl(0, 3%, 25%) !important;
+    color: aliceblue !important;
+}
+
+.active-links-html {
+    background: hsl(12, 78%, 52%) !important;
+    color: aliceblue !important;
+}
+
+.active-links-css {
+    background: hsl(204, 100%, 36%) !important;
+    color: aliceblue !important;
+}
+
+.active-links-javascript {
+    background: hsl(52, 76%, 58%) !important;
+    color: aliceblue !important;
+}
+
+/*-------------------------*/
+/*------ Hidden Links -----*/
+
+.links ~ ul { background: white; }
+
+.links ~ ul {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.4s;
+}
+.open-ul {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.4s;
+}
+
+/*.more-links:before { content: "\2001\2001 \25bf"; font-size: 0.7em;}*/
+.more-links:before { content: "\25bf \2001"; font-size: 0.7em;}
+.opened-links:before { content: "\25be \2001 "; }
+
+[data-class-active="active-links-css"] .opened-links {
+    background: linear-gradient(180deg, #87a1b3 30%, #646464 110%) !important;
+    color: aliceblue;
+}
+
+/*-------------------------------------------------------*/
+/*--------------------- MEDIA QUERY ---------------------*/
+
+@media screen and (max-width: 1200px) {
+    
+    .flex { padding: 0px 0% 0px 0%; }
+}
+
+@media screen and (max-width: 780px) {
+    
+    header           { height: 60px}
+/*    footer           { display: none;}*/
+    #spa             { padding: 0px; }
+    .flex            { flex-flow: column; }
+/*    .content-wrapper { padding: 0px 0 0 0; }*/
+    
+    .header-title { min-width: initial;}
+    .header-title a::after { content: none; }
+    .header-title img {
+        height: 45px;
+        width: 80px;
+        top: 8px;
+    }
+    
+    .header-nav li {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .header-links {
+        height: 45px;
+        width: 45px;
+        padding: 0px
+    }
+
+    .links-wrapper {
+        padding: 60px 0px 0px 0px;
+        position: absolute;
+        box-sizing: border-box;
+        height: 100%;
+        transition: all 0.5s;
+    }
+
+    .spa-links {
+        border-radius: 0px 0px 2px 0px;
+        width: 30px;
+        height: 20px;
+        transition: all 0.2s;
+        overflow: hidden;
+        padding-bottom: 0px;
+    }
+    
+    .spa-links:hover {
+        transition-delay: 0s;
+        height: 100%;
+        border-radius: 0px;
+        border: none;
+        width: 250px;
+    }
+    
+    .spa-links::before {
+        content: '';
+        position: fixed;
+        top: 66px; left: 6px;
+        width: 19px;
+        height: 10px;
+        background:
+            -webkit-linear-gradient(#555555, #555555),
+            -webkit-linear-gradient(#555555, #555555),
+            -webkit-linear-gradient(#555555, #555555);
+        background:
+            -o-linear-gradient(#555555, #555555),
+            -o-linear-gradient(#555555, #555555),
+            -o-linear-gradient(#555555, #555555);
+        background:
+            linear-gradient(#555555, #555555),
+            linear-gradient(#555555, #555555),
+            linear-gradient(#555555, #555555);
+        background-size: 100% 1px;
+        background-position: 0px 0px, 0px 4px, 0px 8px;
+        background-repeat: no-repeat;
+        transition: all 0.5s;
+    }
+    
+    .spa-links:hover::before {
+        background: none;
+        border-right: none;
+    }
+    
+    .spa-links .links {
+        width: 0px;
+        transition: all 0.8s ease;
+        transform: translateX(-200px);
+        white-space: nowrap;
+    }
+    
+    .links:hover {
+        background: hsl(0, 0%, 90%);
+        color: black;
+    }
+    
+    .spa-links:hover .links {
+        width: 100%;
+        transform: translateX(0px);
+    }
+}

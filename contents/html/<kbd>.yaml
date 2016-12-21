@@ -1,0 +1,20 @@
+---
+title: HTML Keyboard Input Element
+content: <p>The HTML Keyboard Input Element &lt;kbd&gt; represents user input and produces an inline element displayed in the browser's default monospace font.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+            &lt;p&gt;Save the document by pressing &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;&lt;/p&gt;
+        
+resultCode: |
+            <p>Save the document by pressing <kbd>Ctrl</kbd> + <kbd>S</kbd></p>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

@@ -1,0 +1,22 @@
+---
+title: 
+content: 
+attributes: 
+exampleCode: |
+    
+resultCode: |
+    
+bs:
+    firefox: !!str 
+    chrome:  !!str 
+    ie: !!str 
+    opera: !!str 
+    safari: !!str 
+    fsdisable: 
+    chdisable: 
+    iedisable: 
+    opdisable: 
+    sfdisable: 
+mdnLink: 
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

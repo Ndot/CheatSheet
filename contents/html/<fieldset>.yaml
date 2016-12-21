@@ -1,0 +1,41 @@
+---
+title: HTML Fieldset Element
+content: <p>The HTML &lt;fieldset&gt; Element is used to group several controls as well as &lt;label&gt; tags within a web form.</p>
+        
+attributes: disable, form, name
+exampleCode: |
+    <pre>
+    &lt;form action="#" method="POST"&gt;
+    &#x0009;&lt;fieldset&gt;
+    &#x0009;&#x0009;&lt;legend&gt;Title&lt;/legend&gt;
+    &#x0009;&#x0009;&lt;label&gt;Name &lt;/label&gt;&lt;input type="text"&gt;
+    &#x0009;&#x0009;&lt;fieldset&gt;
+    &#x0009;&#x0009;&#x0009;&lt;legend&gt;Title in Title&lt;/legend&gt;
+    &#x0009;&#x0009;&#x0009;&lt;label&gt;Name &lt;/label&gt;&lt;input type="text"&gt;
+    &#x0009;&#x0009;&lt;/fieldset&gt;
+    &#x0009;&lt;/fieldset&gt;
+    &lt;/form&gt;</pre>
+        
+resultCode: |
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Title</legend>
+                    <label>Name </label><input type="text">
+
+                    <fieldset>
+                        <legend>Title in Title</legend>
+                        <label>Name </label><input type="text">
+                    </fieldset>
+
+                </fieldset>
+            </form>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

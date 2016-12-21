@@ -1,0 +1,41 @@
+---
+title: HTML Caption Element
+content: <p>The HTML &lt;caption&gt; Element represents the title of a table. It is always the first element of a table tag, but using CSS it can be place elsewhere, relative to the table.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;table&gt;
+    &#x0009;&lt;caption&gt;This is a Caption&lt;/caption&gt;
+    &#x0009;&lt;tr&gt;
+    &#x0009;&#x0009;&lt;th&gt;Header 1&lt;/th&gt;
+    &#x0009;&#x0009;&lt;th&gt;Header 2&lt;/th&gt;
+    &#x0009;&lt;/tr&gt;
+    &#x0009;&lt;tr&gt;
+    &#x0009;&#x0009;&lt;td&gt;Data 1&lt;/td&gt;
+    &#x0009;&#x0009;&lt;td&gt;Data 2&lt;/td&gt;
+    &#x0009;&lt;/tr&gt;
+    &lt;/table&gt;</pre>
+        
+resultCode: |
+            <table>
+                <caption>This is a Caption</caption>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </table>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

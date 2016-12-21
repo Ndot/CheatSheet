@@ -1,9 +1,9 @@
-<div class="wrapper-loaded-content">
+<div class="wrapper-html-tmpl">
     <!-- Explanation and Attributes -->
     <article>
         <h2>Comments</h2>
-        <p>The comment tag is used to insert a comment in the source code. Comments will not appear in the browser it's only for the programmer to guide the code. Be carefull of what you insert in comments, they can be viewed when viewing the souce code.</p>
-        <section class="attributes-inline">
+        <div><p>The comment tag is used to insert a comment in the source code. Comments will not appear in the browser it's only for the programmer to guide the code. Be carefull of what you insert in comments, they can be viewed when viewing the souce code.</p></div>
+        <section>
             <h5>Attributes :</h5>
             <p>null</p>
         </section>
@@ -11,32 +11,35 @@
 
     <!-- Code and Result -->
     <div>
-        <h5>Code</h5>
-        <code class="code html">
-            &#60;!-- This is a comment and they are not displayed in the browser! --&#62;
-            <br />
-            &#60;p&#62;This will be rendered by the browser&#60;/p&#62;
+        <h5>Example</h5>
+        <code class="box code html">
+&#60;!-- This is a comment and they are not displayed in the browser! --&#62;
+<br />
+&#60;p&#62;This will be rendered by the browser&#60;/p&#62;
+
         </code>
         
         <h5>Result</h5>
-        <div class="code">
-            <!-- This is a comment and they are not displayed in the browser! -->
-            <p>This will be rendered by the browser</p>
+        <div class="box result">
+<!-- This is a comment and they are not displayed in the browser! -->
+<p>This will be rendered by the browser</p>
+
         </div>
+        
     </div>
-    
+
     <!-- Browser Support -->
     <div class="browser-support">
         <h5>Browser Support</h5>
-        <div>
-            <li><span class="browser-icons icon-firefox"></span></li>
-            <li><span class="browser-icons icon-chrome"></span></li>
-            <li><span class="browser-icons icon-ie"></span></li>
-            <li><span class="browser-icons icon-opera"></span></li>
-            <li><span class="browser-icons icon-safari"></span></li>
+        <div class="box">
+            <li><span class="browser-icons icon-firefox "></span><div class="browser-version"></div></li>
+            <li><span class="browser-icons icon-chrome "  ></span><div class="browser-version"></div></li>
+            <li><span class="browser-icons icon-ie "          ></span><div class="browser-version"></div></li>
+            <li><span class="browser-icons icon-opera "    ></span><div class="browser-version"></div></li>
+            <li><span class="browser-icons icon-safari "  ></span><div class="browser-version"></div></li>
         </div>
     </div>
-    
+
     <!-- Mozilla Developer Link -->
-<!--    <a href="#">MDN Mozilla Developer Documentation</a>-->
+    <a class="mdn-link" href="" target="_blank"></a>
 </div>

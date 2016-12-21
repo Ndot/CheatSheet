@@ -1,0 +1,35 @@
+---
+title: HTML Code Element
+content: <p>The HTML &lt;code&gt; Element represents a fragment of computer code. By default, it is displayed in the browser's default monospace font.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;code&gt;
+    &#x0009;&lt;!-- Do some code here... --&gt;
+    &#x0009;if (the code works) {
+    &#x0009;&#x0009;do this
+    &#x0009;} else {
+    &#x0009;&#x0009;do that
+    &#x0009;}
+    &lt;/code&gt;</pre>
+        
+resultCode: |
+            <code>
+                <!-- Do some code here... -->
+                if (the code works) {
+                    do this
+                } else {
+                    do that
+                }
+            </code>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

@@ -1,0 +1,25 @@
+---
+title: HTML Block Quotation Element
+content: <p>The HTML &lt;blockquote&gt; Element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation.</p>
+        
+attributes: cite
+exampleCode: |
+    <pre>
+    &lt;blockquote cite="http://developer.mozilla.org"&gt;
+    &#x0009;&lt;p&gt;This is a quotation taken from the Mozilla Developer Center.&lt;/p&gt;
+    &lt;/blockquote&gt;</pre>
+        
+resultCode: |
+            <blockquote cite="http://developer.mozilla.org">
+                <p>This is a quotation taken from the Mozilla Developer Center.</p>
+            </blockquote>
+        
+bs:
+    firefox: !!str 1.0
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

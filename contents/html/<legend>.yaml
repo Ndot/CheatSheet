@@ -1,0 +1,33 @@
+---
+title: HTML Legend Field Element
+content: <p>The HTML &lt;legend&gt; Element represents a caption for the content of its parent &lt;fieldset&gt;.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;form&gt;
+    &#x0009;&lt;fieldset&gt;
+    &#x0009;&#x0009;&lt;legend&gt;Username and Password&lt;/legend&gt;
+    &#x0009;&#x0009;&lt;label&gt;Username: &lt;input type="text"&gt;&lt;/label&gt;&lt;br&gt;
+    &#x0009;&#x0009;&lt;label&gt;Password: &lt;input type="password"&gt;&lt;/label&gt;&lt;br&gt;
+    &#x0009;&lt;/fieldset&gt;
+    &lt;/form&gt;</pre>
+        
+resultCode: |
+            <form>
+                <fieldset>
+                    <legend>Username and Password</legend>
+                    <label>Username: <input type="text"></label><br>
+                    <label>Password: <input type="password"></label><br>
+                </fieldset>
+            </form>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

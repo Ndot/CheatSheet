@@ -1,0 +1,31 @@
+---
+title: HTML Definition Term Element
+content: <p>The HTML &lt;dt&gt; Element identifies a term in a definition list.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;dl&gt;
+    &#x0009;&lt;dt&gt;dl&lt;/dt&gt;
+    &#x0009;&lt;dt&gt;dt&lt;/dt&gt;
+    &#x0009;&lt;dt&gt;dd&lt;/dt&gt;
+    &#x0009;&lt;dd&gt;They are a pain in my &#42;&#42;&#42;&lt;/dd&gt;
+    &lt;/dl&gt;</pre>
+        
+resultCode: |
+            <dl>
+                <dt>dl</dt>
+                <dt>dt</dt>
+                <dt>dd</dt>
+                <dd>They are a pain in my &#42;&#42;&#42;</dd>
+            </dl>
+        
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

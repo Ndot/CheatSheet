@@ -1,0 +1,82 @@
+/*-------------------------------------------------------*/
+/*----------------------- GENERIC -----------------------*/
+
+@import url("./vendor/solarized-light.css");
+@font-face { font-family: "BreeSerif"; src: url("../fonts/BreeSerif-Regular.ttf"); }
+
+body {
+    margin: 0;
+}
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+table {
+    border-collapse: collapse;
+}
+td, tr, th {
+    padding: 10px;
+    border: 1px solid hsl(0, 0%, 35%);
+}
+
+.links {
+    .color3;
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+    position: relative;
+
+    &:hover {
+        background: hsl(0, 3%, 60%);
+        color: aliceblue;
+    }
+}
+
+.more-links:after {
+    position: absolute;
+    content: "\25ff";
+    font-size: 0.5em;
+    right: 20px;
+    bottom: 12px;
+}
+.opened-links:after {
+    content: "\25e2";
+}
+.element-that-opens {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s;
+}
+
+.color1 { color: hsl(0, 0%, 100%); }
+.color2 { color: hsl(0, 0%, 85%); }
+.color3 { color: hsl(0, 0%, 50%); }
+.color4 { color: hsl(0, 0%, 35%); }
+.color5 { color: hsl(0, 0%, 5%); }
+
+.theme-color1 { background: hsl(0, 0%, 100%); }
+.theme-color2 { background: hsl(0, 0%, 90%); }
+
+.little-note {
+    font-style: italic;
+    font-size: 0.8em;
+}
+.little-note:before {content: " → ";}
+
+.disable {
+    filter: grayscale(1);
+}
+
+.inline-link {
+    color: hsl(240, 52%, 64%);
+    text-decoration: none;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.quotes { font-style: italic;}
+.quotes:before {content: ' "'}
+.quotes:after {content: '" '}

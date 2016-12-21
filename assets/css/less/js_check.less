@@ -1,0 +1,39 @@
+/*-------------------------------------------------------*/
+/*------------------ JAVASCRIPT CHECK -------------------*/
+
+.jsCheck .nojs {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: hsl(0, 0%, 14%);
+    z-index: 1000;
+}
+
+.nojs {
+    display: none;
+}
+
+.nojs.banner {
+    background: hsl(0, 0%, 10%);
+    height: 300px;
+    top: 50%;
+    text-align: right;
+    transform: translateY(-50%);
+    background-image: url("/assets/img/cookieMonster.png");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.banner-wrapper {
+    display: inline-block;
+    text-align: left;
+    margin-right: 5%;
+}
+
+.banner-wrapper p {
+    color: aliceblue;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px hsl(0, 0%, 10%);
+}

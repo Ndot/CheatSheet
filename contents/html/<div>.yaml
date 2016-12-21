@@ -1,0 +1,31 @@
+---
+title: HTML Document Division Element
+content: <p>The HTML &lt;div&gt; Element is the generic container for flow content, which does not inherently represent anything. It should be used only when no other semantic element &#40;such as &lt;article&gt; or &lt;nav&gt;&#41; is appropriate.</p>
+        
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;div style="border: 2px solid; padding: 15px;"&gt;
+    &#x0009;&lt;p&gt;I am inside a div tag.&lt;/p&gt;
+    &#x0009;&lt;div style="border: 2px solid; padding: 15px;"&gt;
+    &#x0009;&#x0009;&lt;p&gt;And so am I.&lt;/p&gt;
+    &#x0009;&lt;/div&gt;
+    &lt;/div&gt;</pre>
+        
+resultCode: |
+            <div style="border: 2px solid; padding: 15px;">
+                <p>I am inside a div tag.</p>
+                <div style="border: 2px solid; padding: 15px;">
+                    <p>And so am I.</p>
+                </div>
+            </div>
+                
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...
