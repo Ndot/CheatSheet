@@ -41,7 +41,7 @@ module.exports = function (grunt) {
                             'contents/**/*.html',
                             '!contents/**/_tmpl.html'
                         ],
-                        dest: '_SITE/',
+                        dest: 'docs/',
                         ext: '.html',
                         extDot: 'first'
                     }
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                             'assets/media/*',
                             'assets/js/vendor/*'
                         ],
-                        dest: '_SITE/'
+                        dest: 'docs/'
                     }
                 ]
             }
@@ -67,7 +67,7 @@ module.exports = function (grunt) {
         uglify: {
             DIST: {
                 src: 'assets/js/*.js',
-                dest: '_SITE/assets/js/app.js'
+                dest: 'docs/assets/js/app.js'
             }
         },
         less: {
@@ -84,7 +84,7 @@ module.exports = function (grunt) {
                             'assets/css/theme/*.css',
                             'assets/css/vendor/*.css'
                         ],
-                        dest: '_SITE/',
+                        dest: 'docs/',
                         ext: '.css'
                     }
                 ]
@@ -114,7 +114,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         src: ['assets/img/*'],
-                        dest: '_SITE'
+                        dest: 'docs'
                     }
                 ]
             }
@@ -147,7 +147,7 @@ module.exports = function (grunt) {
                     hostname: 'localhost',
                     open: true,
                     keepalive: true,
-                    base: './_SITE/'
+                    base: './docs/'
                 }
             }
         }
