@@ -4,10 +4,10 @@ content: <p>The HTML &lt;embed&gt; Element defines a container for an external a
         
 attributes: height, src, type, width
 exampleCode: |
-            &lt;embed type="audio/ogg" src="/assets/media/1.ogg" /&gt;
+            &lt;embed type="audio/ogg" src="assets/media/1.ogg" /&gt;
         
 resultCode: |
-            <embed type="audio/ogg" src="/assets/media/1.ogg" />
+            <embed type="audio/ogg" src="assets/media/1.ogg" />
         
 bs:
     firefox: !!str Yes

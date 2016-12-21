@@ -4,7 +4,7 @@ content: <p>The HTML &lt;area&gt; element defines a hot-spot region&lpar;clickab
         
 attributes: alt, coords, download, href, hreflang, media, rel, shape, target, type
 exampleCode: |
-            <pre>&lt;img src="/assets/media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary"&gt;
+            <pre>&lt;img src="assets/media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary"&gt;
             &lt;map name="primary"&gt;
             &#x0009;&lt;area shape="circle" coords="100,100,35" href="#html/home" title="Let's go Home"/&gt; 
             &lt;/map&gt;
@@ -12,7 +12,7 @@ exampleCode: |
             &lt;p&gt;The blue circle on the Icon will take you to the HTML Home on this page&lt;/p&gt;</pre>
         
 resultCode: |
-            <img src="/assets/media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary">
+            <img src="assets/media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary">
             <map name="primary">
                 <area  shape="circle" coords="100,100,35" href="#html/home" title="Let's go Home"/>
             </map>

@@ -4,10 +4,10 @@ content: <p>The HTML &lt;img&gt; Element represents an image in the document.</p
         
 attributes: alt, crossorigin, height, ismap, longdesc, sizes, src, srcset, width, usemap
 exampleCode: |
-            &lt;img src="/assets/img/logo_page.png" alt="Page Logo"&gt;
+            &lt;img src="assets/img/logo_page.png" alt="Page Logo"&gt;
         
 resultCode: |
-            <img src="/assets/img/logo_page.png" alt="Page Logo">
+            <img src="assets/img/logo_page.png" alt="Page Logo">
         
 bs:
     firefox: !!str Yes
