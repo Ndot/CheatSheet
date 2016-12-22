@@ -187,20 +187,40 @@ Object.prototype.creatEl = function (tag, obj) {
 /*-------------------------------------------------------*/
 /*------------------ Translate Links --------------------*/
     
-    var translateLinks = function (e) {
+    var translateLinks, stopEventPropagation;
+    
+    
+    translateLinks = function (e) {
         e.stopPropagation();
         this.classList.toggle('rotate');
         this.parentElement.classList.toggle('translate-links');
     };
     
-    // Event Listener
+    stopEventPropagation = function (e) {
+        e.stopPropagation();
+    };
+    
+    // Adding Event Listeners
     function winEvents() {
-        var cssBtn = document.querySelectorAll('[id*="-css"]'),i;
+        // Define variables needed
+        var cssBtn = document.querySelectorAll('[id*="-css"]'),
+            btnOpenLinks = document.getElementById('btn-open-links'),
+            i;
         
+        // Adding Events for the CHANGE THEME BUTTONS
         for (i = 0; i < cssBtn.length; i += 1) {
             document.getElementById(cssBtn[i].id).addEventListener('click', changeCss);
         }
-        document.getElementById('btn-open-links').addEventListener('click', translateLinks);
+        
+        // Adding Events for the OPEN AND CLOSE SIDE LINKS BUTTON
+        btnOpenLinks.addEventListener('click', translateLinks);
+        // Adding Touch Events to "btnOpenLinks" to STOP PROPAGATION
+        // of the touch event. This prevents the touch events on the
+        // parent (class=links-wrapper) to be called when this element
+        // is clicked / touched on a touch device.
+        btnOpenLinks.addEventListener('touchstart', stopEventPropagation);
+        btnOpenLinks.addEventListener('touchmove', stopEventPropagation);
+        btnOpenLinks.addEventListener('touchend', stopEventPropagation);
     }
 
     window.addEventListener('load', winEvents);
