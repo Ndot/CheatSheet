@@ -1,0 +1,60 @@
+---
+title: The Revealing Module Pattern
+###############################################
+################# PRE CONTENT #################
+preContent: 
+preExample:
+
+###############################################
+################### CONTENT ###################
+content: |
+    The Revealing Module Pattern is an updated to the Module Pattern where we would simply define all of our functions and variables in the private scope and return an anonymous object with pointers to the private functionality we wished to reveal as public.
+
+exampleCode: |
+    var myRevealingModule = (function () {
+            
+            // PRIVATE
+            var privateCounter = 0;
+
+            function privateIncremenFunction() {
+                privateCounter += 1;
+            }
+
+            // PUBLIC
+            function publicFunction() {
+                publicIncrement();
+            }
+
+            function publicIncrement() {
+                privateIncremenFunction();
+            }
+
+            function publicGetCount(){
+              return privateCounter;
+            }
+
+            // Reveal public pointers to
+            // private functions and properties
+
+           return {
+                start: publicFunction,
+                increment: publicIncrement,
+                count: publicGetCount
+            };
+
+        })();
+
+    myRevealingModule.start();
+    myRevealingModule.increment();
+    console.log('My count is: ' + myRevealingModule.count());
+    // My count is: 2
+
+###############################################
+################## CONCLUSION #################
+conclusion: 
+    advantages: 
+        - This pattern allows the syntax of our scripts to be more consistent. It also makes it more clear at the end of the module which of our functions and variables may be accessed publicly which eases readability.
+    disadvantages: 
+        - A disadvantage of this pattern is that if a private function refers to a public function, that public function can't be overridden if a patch is necessary. This is because the private function will continue to refer to the private implementation and the pattern doesn't apply to public members, only to functions.
+        - Public object members which refer to private variables are also subject to the no-patch rule notes above.
+...

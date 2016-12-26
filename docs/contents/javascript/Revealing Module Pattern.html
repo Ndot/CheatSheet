@@ -1,0 +1,38 @@
+<div class="wrapper-content-tmpl"><h2>The Revealing Module Pattern</h2><p>The Revealing Module Pattern is an updated to the Module Pattern where we would simply define all of our functions and variables in the private scope and return an anonymous object with pointers to the private functionality we wished to reveal as public.</p><div><h5>Pattern Example</h5><code class="box code js"><pre>var myRevealingModule = (function () {
+        
+        // PRIVATE
+        var privateCounter = 0;
+
+        function privateIncremenFunction() {
+            privateCounter += 1;
+        }
+
+        // PUBLIC
+        function publicFunction() {
+            publicIncrement();
+        }
+
+        function publicIncrement() {
+            privateIncremenFunction();
+        }
+
+        function publicGetCount(){
+          return privateCounter;
+        }
+
+        // Reveal public pointers to
+        // private functions and properties
+
+       return {
+            start: publicFunction,
+            increment: publicIncrement,
+            count: publicGetCount
+        };
+
+    })();
+
+myRevealingModule.start();
+myRevealingModule.increment();
+console.log('My count is: ' + myRevealingModule.count());
+// My count is: 2
+</pre></code></div><div class="advantages conclusion"><h5>Advantages</h5><p class="little-note">This pattern allows the syntax of our scripts to be more consistent. It also makes it more clear at the end of the module which of our functions and variables may be accessed publicly which eases readability.</p></div><div class="disadvantages conclusion"><h5>Disadvantages</h5><p class="little-note">A disadvantage of this pattern is that if a private function refers to a public function, that public function can't be overridden if a patch is necessary. This is because the private function will continue to refer to the private implementation and the pattern doesn't apply to public members, only to functions.</p><p class="little-note">Public object members which refer to private variables are also subject to the no-patch rule notes above.</p></div></div>

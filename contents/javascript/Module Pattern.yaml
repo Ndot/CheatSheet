@@ -1,0 +1,51 @@
+---
+title: The Module Pattern
+###############################################
+################# PRE CONTENT #################
+preContent: 
+preExample:
+
+###############################################
+################### CONTENT ###################
+content: |
+    The Module pattern was originally defined as a way to provide both private and public encapsulation for classes in conventional software engineering.<br /><br />
+
+    In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we're able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope. What this results in is a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts on the page.
+
+exampleCode: |
+    var myModule = (function () {
+        
+        // PRIVATE
+        var counter = 0;
+        var stuff = [];
+        
+        function increaseCounter() {
+            counter += 1;
+        }
+        
+        return {
+            
+            // PUBLIC
+            addStuff: function (value) {
+                stuff.push(value)
+                increaseCounter();
+            },
+            getStuff: function () {
+                return stuff;
+            },
+            getCounterTotal: function () {
+                return counter;
+            }
+        }
+        
+    }());
+
+###############################################
+################## CONCLUSION #################
+conclusion: 
+    advantages: []
+    disadvantages: 
+        - The disadvantages of the Module pattern are that as we access both public and private members differently, when we wish to change visibility, we actually have to make changes to each place the member was used.
+        - We also can't access private members in methods that are added to the object at a later point.
+        - Other disadvantages include the inability to create automated unit tests for private members and additional complexity when bugs require hot fixes. It's simply not possible to patch privates. Instead, one must override all public methods which interact with the buggy privates.
+...

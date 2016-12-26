@@ -134,7 +134,10 @@ Subject.prototype.notify = function (context) {
             id_content.innerHTML = cont;
             var code = id_content.querySelector('code');
             if (code) {
-                hljs.highlightBlock(id_content.querySelector('code'));
+                var elemArray = id_content.querySelectorAll('code');
+                for(var i = 0; i < elemArray.length; i += 1) {
+                    hljs.highlightBlock(elemArray[i]);
+                }
             }
             id_loading.classList.remove('loading');
         },
@@ -217,7 +220,8 @@ Subject.prototype.notify = function (context) {
             }
         },
         "update": function (hash) {
-                this.ifVisible(id_link.querySelector('a[class*="active-links-"]'));
+            this.ifVisible(id_link.querySelector('a[class*="active-links-"]'));
+            id_content.scrollTop = 0;
         }
     };
 

@@ -10,8 +10,7 @@ exampleCode: |
     &#x0009;&lt;head&gt;...&lt;/head&gt;
     &#x0009;&lt;body&gt;...&lt;/body&gt;
     &lt;/html&gt;</pre>
-resultCode: |
-
+resultCode: 
 bs:
     firefox: !!str Yes
     chrome:  !!str Yes

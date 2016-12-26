@@ -1,0 +1,58 @@
+<div class="wrapper-content-tmpl">
+    <!-- TITLE -->
+    <h2>{{= title }}</h2>
+
+    
+    <!-- PRE CONTENT -->
+    {{  if (preContent != undefined) {  }}
+        <p>{{= preContent }}</p>
+    {{ } }}
+
+        
+    {{  if (preExample != undefined) {  }}
+        <div>
+            <h5>Example</h5>
+            <code class="box result js">
+                <pre>{{= preExample }}</pre>
+            </code>
+        </div>
+    {{ } }}
+    
+    
+    <!-- CONTENT -->
+    <p>{{= content }}</p>
+
+    <div>
+        <h5>Pattern Example</h5>
+        <code class="box code js">
+            <pre>{{= exampleCode }}</pre>
+        </code>
+    </div>
+    
+    
+    <!-- CONCLUSION - Advantages -->
+    {{  if (conclusion.advantages.length != 0) {  }}
+        <div class="advantages conclusion">
+        <h5>Advantages</h5>
+        
+        {{  conclusion.advantages.forEach(function (val) {   }}
+            <p class="little-note">{{= val }}</p>
+        {{  });  }}
+
+        </div>
+    {{ } }}
+
+        
+    <!-- CONCLUSION - Disadvantages -->
+    {{  if (conclusion.disadvantages.length != 0) {  }}
+        <div class="disadvantages conclusion">
+        <h5>Disadvantages</h5>
+        
+        {{  conclusion.disadvantages.forEach(function (val) {   }}
+            <p class="little-note">{{= val }}</p>
+        {{  });  }}
+            
+        </div>
+    {{ } }}
+    
+</div>

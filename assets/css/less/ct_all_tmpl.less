@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /*-------------------- HTML TEMPLATE --------------------*/ 
 
-.wrapper-html-tmpl {
+.wrapper-content-tmpl {
     
     section {
         h5, p {
@@ -21,6 +21,7 @@
         box-shadow: 4px 4px 3px hsl(0, 0%, 87%);
         border-right: 7px solid transparent;
         padding: 20px 15px;
+        margin: 30px 0px;
         
         &.code {
             border-left: 7px solid hsl(140, 40%, 55%);
@@ -38,6 +39,9 @@
             
             ul {
                 padding: 10px;
+            }
+            pre {
+                margin: 0;
             }
         }
         
@@ -79,4 +83,32 @@
         margin: 30px 0px;
     }
     
+    .conclusion {
+        margin: 10px 0px;
+        padding: 30px;
+        border-radius: 5px;
+        
+        &.advantages {
+            color: seagreen;
+            border-color: darkgreen;
+            background: #d0ecd0;
+
+            h5 {
+                color: darkgreen;
+                margin: 0px;
+            }
+
+        }
+        &.disadvantages {
+            
+            color: brown;
+            border-color: darkred;
+            background: #f0dada;
+            
+            h5 {
+                color: darkred;
+                margin: 0px;
+            }
+        }
+    }
 }

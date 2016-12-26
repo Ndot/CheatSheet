@@ -34,12 +34,12 @@
 }
 /*-------------------------------------------------------*/
 /*----------------- SPA LOADED CONTENT ------------------*/
-.wrapper-html-reference h2 {
+.wrapper-content-reference h2 {
   background: #404040;
   color: #cccccc;
   box-shadow: 2px 2px  5px #111111;
 }
-.wrapper-html-tmpl .box {
+.wrapper-content-tmpl .box {
   background: #333333;
   box-shadow: 4px 4px 3px #1c1c1c;
 }

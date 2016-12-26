@@ -1,0 +1,53 @@
+<div class="wrapper-content-tmpl">
+    <!-- TITLE -->
+    <h2>The Object Literal Pattern</h2>
+
+    
+    <!-- PRE CONTENT -->
+    
+        <p>Modules are an integral piece of any robust application's architecture they help in keeping the units of code for a project both cleanly separated and organized.
+
+In JavaScript, there are several options for implementing modules. The Object Literal Pattern is one of them.
+</p>
+    
+
+        
+    
+    
+    
+    <!-- CONTENT -->
+    <p>In object literal notation, an object is described as a set of comma-separated name/value pairs enclosed in curly braces ({}). Names inside the object may be either strings or identifiers that are followed by a colon. There should be no comma used after the final name/value pair in the object as this may result in errors.</p>
+
+    <div>
+        <h5>Pattern Example</h5>
+        <code class="box code js">
+            <pre>var myObject = {
+    foo: ['Bar', 'Baz'],
+    init: function() {
+        this.sayHello(this.foo[0]);
+        this.sayGoodBye(this.foo[1]);
+    },
+    sayHello: function (name) {
+        console.log('Hello I am ' + name);
+    },
+    sayGoodBye: function (name) {
+        console.log('Good Bye from ' + name);
+    }
+};
+
+myObject.init();
+// Hello I am Bar
+// Good Bye from Baz
+</pre>
+        </code>
+    </div>
+    
+    
+    <!-- CONCLUSION - Advantages -->
+    
+
+        
+    <!-- CONCLUSION - Disadvantages -->
+    
+    
+</div>

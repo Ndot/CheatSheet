@@ -1,4 +1,4 @@
-<div class="wrapper-html-tmpl">
+<div class="wrapper-content-tmpl">
     <!-- Explanation and Attributes -->
     <article>
         <h2>{{= title }}</h2>
@@ -16,10 +16,13 @@
 {{= exampleCode }}
         </code>
         
+        
+    {{  if (resultCode != undefined) {  }}
+    
         <h5>Result</h5>
-        <div class="box result">
-{{= resultCode }}
-        </div>
+        <div class="box result">{{= resultCode }}</div>
+    
+   {{  }  }}
         
     </div>
 

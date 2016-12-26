@@ -123,7 +123,7 @@ module.exports = function (grunt) {
             options: {
                 livereload: true
             },
-            files: ['contents/*/**/*.yaml', 'assets/css/less/**/*.less'],
+            files: ['contents/**/*.yaml', 'assets/css/less/**/*.less', 'assets/js/**/*.js'],
             tasks: [
                 'concat:DEV',
                 'less:DEV'
@@ -166,7 +166,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['htmlmin', 'uglify', 'copy', 'less:DIST', 'connect:DIST']);
 
     // DEVELOPMENT
-    grunt.registerTask('dev', ['connect:DEV', 'watch']);
+    grunt.registerTask('d', ['connect:DEV', 'watch']);
     
     // JUST IMAGES
     grunt.registerTask('img', ['imagemin']);
