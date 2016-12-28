@@ -37,7 +37,7 @@ window.onload = function () {
         elem.style.transition = '';
         elem.style.transform = '';
         
-        if (scrollLock === true) {
+        if (scrollLock === true || (diffTouchX < 50 && diffTouchX > -50)) {
             diffTouchX = 0;
             diffTouchY = 0;
             scrollLock = false;
