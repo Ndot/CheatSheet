@@ -190,48 +190,52 @@ th {
 }
 /*-------------------------------------------------------*/
 /*------------------ MAIN NAVIGATION --------------------*/
+/* Loop to make the li show on the 'move' class */
 #main-navigation {
   position: fixed;
-  right: 0px;
+  right: 20px;
+  top: 10px;
   z-index: 1;
 }
-#main-navigation .header-nav:hover {
+@media (max-width: 740px) {
+  #main-navigation {
+    right: 10px;
+  }
+}
+#main-navigation .header-nav.move {
   width: 350px;
   height: 100px;
 }
-#main-navigation .header-nav:hover .header-links {
-  pointer-events: inherit;
-}
-#main-navigation .header-nav:hover li:nth-child(4) {
+#main-navigation .header-nav.move li:nth-child(4) {
   right: 80px;
 }
-#main-navigation .header-nav:hover li:nth-child(3) {
+#main-navigation .header-nav.move li:nth-child(3) {
   right: 160px;
 }
-#main-navigation .header-nav:hover li:nth-child(2) {
+#main-navigation .header-nav.move li:nth-child(2) {
   right: 240px;
 }
 @media (max-width: 740px) {
-  #main-navigation .header-nav:hover {
+  #main-navigation .header-nav li {
+    right: 0px !important;
+  }
+  #main-navigation .header-nav.move {
     width: 100px;
     height: 350px;
   }
-  #main-navigation .header-nav:hover li {
-    right: 10px !important;
-  }
-  #main-navigation .header-nav:hover li:nth-child(4) {
+  #main-navigation .header-nav.move li:nth-child(4) {
     top: 80px;
   }
-  #main-navigation .header-nav:hover li:nth-child(3) {
+  #main-navigation .header-nav.move li:nth-child(3) {
     top: 160px;
   }
-  #main-navigation .header-nav:hover li:nth-child(2) {
+  #main-navigation .header-nav.move li:nth-child(2) {
     top: 240px;
   }
 }
 #main-navigation .header-nav li {
-  right: 10px;
-  top: 10px;
+  right: 0px;
+  top: 0px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   position: absolute;
@@ -257,6 +261,9 @@ th {
     height: 50px;
   }
 }
+#main-navigation .header-nav li a {
+  pointer-events: none;
+}
 #main-navigation .header-nav li .header-links {
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -273,7 +280,6 @@ th {
   -webkit-transform: scale(0.64);
       -ms-transform: scale(0.64);
           transform: scale(0.64);
-  pointer-events: none;
 }
 @media (max-width: 740px) {
   #main-navigation .header-nav li .header-links {
@@ -481,8 +487,8 @@ th {
   position: absolute;
   width: 69px;
   height: 69px;
-  top: 13px;
-  right: 23px;
+  top: 8px;
+  right: 18px;
   box-sizing: border-box;
   border-radius: 50%;
   border: 3px solid transparent;
@@ -494,8 +500,7 @@ th {
   .loading:after {
     width: 54px;
     height: 54px;
-    top: 7px;
-    right: 23px;
+    right: 8px;
   }
 }
 @-webkit-keyframes rotate {

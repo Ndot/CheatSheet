@@ -1,48 +1,46 @@
 /*-------------------------------------------------------*/
 /*------------------ MAIN NAVIGATION --------------------*/
 
-@li_right : 10px;
+/* Loop to make the li show on the 'move' class */
+.loop(@counter, @n, @propertie) when (@counter > 1) {
+    li:nth-child(@{counter}) {
+        @{propertie}: (@n + 0px);
+    }
+    .loop((@counter - 1), (@n + 80), @propertie);
+}
 
 #main-navigation {
     position: fixed;
-    right: 0px;
+    right: 20px;
+    top: 10px;
     z-index: 1;
     
+    @media (max-width: 740px) {
+        right: 10px;
+    }
     .header-nav {
         
-        &:hover {
+        &.move {
             width: 350px;
             height: 100px;
-
-            .header-links {
-                pointer-events: inherit;
-            }
-            
-            .loop(@counter, @n, @propertie) when (@counter > 1) {
-                li:nth-child(@{counter}) {
-                    @{propertie}: (@n + 0px);
-                }
-                .loop((@counter - 1), (@n + 80), @propertie);
-            }
-            
             .loop(4, 80, right);
-            
-            @media (max-width: 740px) {
-
+        }
+        
+        @media (max-width: 740px) {
+            li {
+                right: 0px !important;
+            }
+            &.move{
                 width: 100px;
                 height: 350px;
-
-                li {
-                    right: @li_right !important;
-                }
                 
                 .loop(4, 80, top);
             }
         }
         
         li {
-            right: @li_right;
-            top: 10px;
+            right: 0px;
+            top: 0px;
             transition: all 0.3s;
             position: absolute;
             width: 65px;
@@ -66,6 +64,10 @@
                 height: 50px;
             }
             
+            a {
+                pointer-events: none;
+            }
+            
             .header-links {
                 transition: 0.5s;
                 filter: grayscale(0.9);
@@ -79,7 +81,6 @@
                 top: 4px;
                 right: 4px;
                 transform: scale(0.64);
-                pointer-events: none;
 
                  @media (max-width: 740px) {
                     width: 40px;

@@ -6,7 +6,8 @@ window.onload = function () {
         leftPosElem,
         diffTouchX = 0,
         diffTouchY = 0,
-        valueApply;
+        valueApply,
+        scrollLock = false;
 
     elem.addEventListener('touchstart', function (e) {
         elem.style.transition = 'none';
@@ -21,9 +22,12 @@ window.onload = function () {
         diffTouchY = e.changedTouches[0].clientY - firstTouchPosY,    
         valueApply = diffTouchX + leftPosElem;
         
+        if(scrollLock === true) { return; }
+        
         if (diffTouchY > 50 || diffTouchY < -50) {
             elem.style.transform = '';
-            return console.log('returned');
+            scrollLock = true;
+            return;
         }
         
         elem.style.transform = 'translate(' + valueApply + 'px)';
@@ -33,9 +37,10 @@ window.onload = function () {
         elem.style.transition = '';
         elem.style.transform = '';
         
-        if ((diffTouchX < 50 && diffTouchX > -50) || (diffTouchY > 50 || diffTouchY < -50)) {
+        if (scrollLock === true) {
             diffTouchX = 0;
             diffTouchY = 0;
+            scrollLock = false;
             return;
         }
         

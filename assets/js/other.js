@@ -187,7 +187,7 @@ Object.prototype.creatEl = function (tag, obj) {
 /*-------------------------------------------------------*/
 /*------------------ Translate Links --------------------*/
     
-    var translateLinks, stopEventPropagation;
+    var translateLinks, stopEventPropagation, stopEventDefault;
     
     
     translateLinks = function (e) {
@@ -199,6 +199,53 @@ Object.prototype.creatEl = function (tag, obj) {
     stopEventPropagation = function (e) {
         e.stopPropagation();
     };
+
+/*-------------------------------------------------------*/
+/*------------------ Main Mavigation --------------------*/
+    
+    var hoverToFalse, hoverToTrue, ulMainNav;
+    
+    hoverToFalse = function (e) {
+        var i,
+            x = e.clientX,
+            y = e.clientY,
+            rect = this.getBoundingClientRect();
+        
+        if (x > rect.right || x < rect.left || y < rect.top || y > rect.bottom) {
+            // Remove 'show-links' class to make the links hide
+            ulMainNav.classList.remove('move');
+            
+            // Set pointerEvents on links to none
+            // To make them unclickable
+            var links = this.querySelectorAll('a');
+            for(i = 0; i < links.length; i += 1) {
+                links[i].style.pointerEvents = 'none';
+            }
+        }
+    };
+    
+    hoverToTrue = function (e) {
+        var links = this.querySelectorAll('a'),
+            i = 0;
+        
+        // The setTimeout is need to avoid the browser
+        // to act on the first click on the link.
+        // If no setTimeout is applyed the browser will
+        // set pointerEvents = 'auto' and immediately
+        // click the visible link on the menu.
+        setTimeout(function () {
+            for (i; i < links.length; i += 1) {
+                links[i].style.pointerEvents = 'auto';
+            }
+        }, 0);
+        
+        // Add 'show-links' class to make the links visible
+        ulMainNav.classList.add('move');
+    };
+    
+    
+/*-------------------------------------------------------*/
+/*------------ Add All the Event Listeners --------------*/
     
     // Adding Event Listeners
     function winEvents() {
@@ -209,8 +256,15 @@ Object.prototype.creatEl = function (tag, obj) {
         
         // Adding Events for the CHANGE THEME BUTTONS
         for (i = 0; i < cssBtn.length; i += 1) {
-            document.getElementById(cssBtn[i].id).addEventListener('click', changeCss);
+            cssBtn[i].addEventListener('click', changeCss);
         }
+        
+        
+        // Adding Events for the MAIN NAVIGATION
+        ulMainNav = document.querySelector('.header-nav');
+        ulMainNav.addEventListener('mouseout', hoverToFalse);
+        ulMainNav.addEventListener('mouseover', hoverToTrue);
+        
         
         // Adding Events for the OPEN AND CLOSE SIDE LINKS BUTTON
         btnOpenLinks.addEventListener('click', translateLinks);
