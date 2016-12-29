@@ -16,17 +16,19 @@
         height: 100vh;
         width: @links_width;
         position: relative;
-        transition: transform 0.2s linear;
+//        transition: transform 1s cubic-bezier(0,1.11,0,1.78);
+        transition: transform 0.3s cubic-bezier(0,1.1,.6,1.4);
+//        transition: transform 0.2s cubic-bezier(0,.8,1,1);
         transform: translate(0px);
         
         @media (max-width: 740px) {
             position: fixed;
             transform: translate(-@links_width);
-            margin-right: 100px;
         }
     }
     .translate-links {
         transform: translate(0px);
+        box-shadow: 4px 4px 5px hsl(0, 0%, 70%);
     }
     
     .content-wrapper {

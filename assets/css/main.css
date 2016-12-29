@@ -157,10 +157,10 @@ th {
   height: 100vh;
   width: 250px;
   position: relative;
-  -webkit-transition: -webkit-transform 0.2s linear;
-  transition: -webkit-transform 0.2s linear;
-  transition: transform 0.2s linear;
-  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4);
+  transition: -webkit-transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4);
+  transition: transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4);
+  transition: transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4), -webkit-transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4);
   -webkit-transform: translate(0px);
       -ms-transform: translate(0px);
           transform: translate(0px);
@@ -171,13 +171,13 @@ th {
     -webkit-transform: translate(-250px);
         -ms-transform: translate(-250px);
             transform: translate(-250px);
-    margin-right: 100px;
   }
 }
 .spa .translate-links {
   -webkit-transform: translate(0px);
       -ms-transform: translate(0px);
           transform: translate(0px);
+  box-shadow: 4px 4px 5px #b3b3b3;
 }
 .spa .content-wrapper {
   position: relative;
@@ -273,6 +273,14 @@ th {
 }
 #main-navigation .header-nav li a {
   pointer-events: none;
+  /* 
+                * This is here make the area of the links
+                * bigger to allow clicking the links on 
+                * touch devices easier.
+                */
+  display: block;
+  width: 50px;
+  height: 50px;
 }
 #main-navigation .header-nav li .header-links {
   -webkit-transition: 0.5s;
@@ -309,7 +317,7 @@ th {
 /*---------------------- SPA LINKS ----------------------*/
 [data-class-active="active-links-css"] .opened-links {
   color: whitesmoke !important;
-  background: #24466680;
+  background: rgba(36, 70, 102, 0.5);
 }
 .links-wrapper {
   font-family: "BreeSerif";
@@ -812,7 +820,7 @@ th {
 .wrapper-regex-js .table {
   border-collapse: collapse;
   margin: 10px 0px;
-  min-width: 350px;
+  min-width: 270px;
   width: 100%;
 }
 .wrapper-regex-js tr {

@@ -118,9 +118,15 @@ Subject.prototype.notify = function (context) {
                 id_link.parentElement.style.display = 'block';
                 this.hashCheck = hash[0];
                 this.start(hash);
+                id_link.style.transition = 'none';
+                id_link.style.opacity = '0.1';
             } else if (hash[0] === 'home') {
                 id_link.parentElement.style.display = 'none';
             }
+            setTimeout(function () {
+                id_link.style.transition = 'all 0.4s linear';
+                id_link.style.opacity = '1';
+            }, 0);
         }
     };
 
@@ -217,6 +223,8 @@ Subject.prototype.notify = function (context) {
                 if (elemPosition < 0 || elemPosition > parentHeight) {
                     this.goThere(elem);
                 }
+            } else {
+                this.goThere(id_link.querySelector('li'));
             }
         },
         "update": function (hash) {

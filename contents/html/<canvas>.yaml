@@ -8,8 +8,7 @@ exampleCode: |
                 Your browser does not support the canvas tag.<br />
             &lt;/canvas&gt;
         
-resultCode: |
-    
+resultCode:
     
 bs:
     firefox: !!str 12.0

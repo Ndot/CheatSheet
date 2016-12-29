@@ -7,46 +7,60 @@ window.onload = function () {
         diffTouchX = 0,
         diffTouchY = 0,
         valueApply,
-        scrollLock = false;
+        scrollLock = null;
 
     elem.addEventListener('touchstart', function (e) {
         elem.style.transition = 'none';
         firstTouchPosX = e.changedTouches[0].clientX;
         firstTouchPosY = e.changedTouches[0].clientY;
         leftPosElem = elem.getBoundingClientRect().left;
+        // Reset variable values
+        diffTouchX = 0;
+        diffTouchY = 0;
+        scrollLock = null;
     });
         
         
     elem.addEventListener('touchmove', function (e) {
-        diffTouchX = e.changedTouches[0].clientX - firstTouchPosX,
-        diffTouchY = e.changedTouches[0].clientY - firstTouchPosY,    
-        valueApply = diffTouchX + leftPosElem;
         
-        if(scrollLock === true) { return; }
+        if(scrollLock === 'vertical') { return; }
         
-        if (diffTouchY > 50 || diffTouchY < -50) {
-            elem.style.transform = '';
-            scrollLock = true;
+        if (scrollLock === 'horizontal') {
+            // Set values
+            diffTouchX = e.changedTouches[0].clientX - firstTouchPosX;
+            valueApply = diffTouchX + leftPosElem;
+            // Prevent scrolling and applying the element position
+            e.preventDefault();
+            elem.style.transform = 'translate(' + valueApply + 'px)';
             return;
         }
         
-        elem.style.transform = 'translate(' + valueApply + 'px)';
+        // Set the difference beetwin X and Y fisrt touch
+        // and the NOW touch to determin the scroll orientation
+        diffTouchX = e.changedTouches[0].clientX - firstTouchPosX;
+        diffTouchY = e.changedTouches[0].clientY - firstTouchPosY;    
+        
+        if (diffTouchX > 5 || diffTouchX < -5) {
+            scrollLock = 'horizontal';
+            return;
+        }
+        
+        if (diffTouchY > 5 || diffTouchY < -5) {
+            elem.style.transform = '';
+            scrollLock = 'vertical';
+            return;
+        }
     });
     
     elem.addEventListener('touchend', function (e) {
         elem.style.transition = '';
         elem.style.transform = '';
         
-        if (scrollLock === true || (diffTouchX < 50 && diffTouchX > -50)) {
-            diffTouchX = 0;
-            diffTouchY = 0;
-            scrollLock = false;
+        if (scrollLock === 'vertical' || (diffTouchX < 60 && diffTouchX > -60)) {
             return;
         }
         
         elem.classList.toggle('translate-links');
         elem.querySelector('#btn-open-links').classList.toggle('rotate');
-        diffTouchX = 0;
-        diffTouchY = 0;
     });
 };

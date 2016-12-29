@@ -6,15 +6,15 @@ content: <p>The HTML &lt;link&gt; Element specifies relationships between the cu
 attributes: crossorigin, disable, href, hreflang, media, methods, rel, sizes, target, title, type
 exampleCode: |
             &lt;!-- This stylesheet is PERSISTENT --&gt;<br />
-            &lt;link href="index.css" rel="stylesheet"&gt;<br />
+            &lt;link href="index.css" rel="stylesheet"&gt;<br /><br />
             &lt;!-- This stylesheet is PREFERRED --&gt;<br />
-            &lt;link href="default.css" rel="stylesheet" title="Default Style"&gt;<br />
+            &lt;link href="default.css" rel="stylesheet" title="Default Style"&gt;<br /><br />
             &lt;!-- This stylesheets are ALTERNATIVE --&gt;<br />
             &lt;link href="fancy.css" rel="alternate stylesheet" title="Fancy"&gt;<br />
             &lt;link href="basic.css" rel="alternate stylesheet" title="Basic"&gt;<br />
         
-resultCode: |
-         
+resultCode: 
+
 bs:
     firefox: !!str Yes
     chrome:  !!str Yes
