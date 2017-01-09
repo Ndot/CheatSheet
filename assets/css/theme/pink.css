@@ -1,9 +1,6 @@
 .color2 {
   color: #595959;
 }
-.color4 {
-  color: #d9d9d9;
-}
 .color5 {
   color: #C3046C;
 }
@@ -25,27 +22,16 @@
   background: #f0ced4;
 }
 .links-wrapper .links-container .links:hover {
-  background: pink;
+  background: deeppink;
 }
 .links:hover {
-  background: pink;
+  background: deeppink;
 }
 /*-------------------------------------------------------*/
 /*----------------- SPA LOADED CONTENT ------------------*/
-.wrapper-content-reference h2 {
-  background: #404040;
-  color: #cccccc;
-  box-shadow: 2px 2px  5px #111111;
-}
 .wrapper-content-tmpl .box {
   background: #f0ced4;
   box-shadow: 4px 4px 3px #1c1c1c;
 }
 /*-------------------------------------------------------*/
 /*------------------ JAVASCRIPT REGEX -------------------*/
-.wrapper-regex-js tr:nth-child(odd) {
-  background: #262626;
-}
-.wrapper-regex-js tr:nth-child(even) {
-  background: #333333;
-}

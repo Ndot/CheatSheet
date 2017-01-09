@@ -10,6 +10,7 @@ window.onload = function () {
         scrollLock = null;
 
     elem.addEventListener('touchstart', function (e) {
+        e.stopPropagation();
         elem.style.transition = 'none';
         firstTouchPosX = e.changedTouches[0].clientX;
         firstTouchPosY = e.changedTouches[0].clientY;
@@ -22,6 +23,7 @@ window.onload = function () {
         
         
     elem.addEventListener('touchmove', function (e) {
+        e.stopPropagation();
         
         if(scrollLock === 'vertical') { return; }
         
@@ -53,6 +55,7 @@ window.onload = function () {
     });
     
     elem.addEventListener('touchend', function (e) {
+        e.stopPropagation();
         elem.style.transition = '';
         elem.style.transform = '';
         

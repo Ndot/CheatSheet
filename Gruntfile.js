@@ -66,7 +66,7 @@ module.exports = function (grunt) {
         },
         uglify: {
             DIST: {
-                src: 'assets/js/*.js',
+                src: ['assets/js/helper.js','assets/js/stuff.js', 'assets/js/*.js'],
                 dest: 'docs/assets/js/app.js'
             }
         },

@@ -1,7 +1,5 @@
 /*-------------------------------------------------------*/
 /*----------------------- GENERIC -----------------------*/
-/*-------------------------------------------------------*/
-/*----------------------- GENERIC -----------------------*/
 @import url("vendor/solarized-light.css");
 @font-face {
   font-family: "BreeSerif";
@@ -138,8 +136,6 @@ th {
 }
 /*-------------------------------------------------------*/
 /*---------------------- STRUCTURE ----------------------*/
-/*-------------------------------------------------------*/
-/*---------------------- STRUCTURE ----------------------*/
 .navigation-header {
   position: fixed;
   top: 0px;
@@ -157,10 +153,10 @@ th {
   height: 100vh;
   width: 250px;
   position: relative;
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4);
-  transition: -webkit-transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4);
-  transition: transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4);
-  transition: transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4), -webkit-transform 0.3s cubic-bezier(0, 1.1, 0.6, 1.4);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0, 1, 1, 1);
+  transition: -webkit-transform 0.2s cubic-bezier(0, 1, 1, 1);
+  transition: transform 0.2s cubic-bezier(0, 1, 1, 1);
+  transition: transform 0.2s cubic-bezier(0, 1, 1, 1), -webkit-transform 0.2s cubic-bezier(0, 1, 1, 1);
   -webkit-transform: translate(0px);
       -ms-transform: translate(0px);
           transform: translate(0px);
@@ -177,7 +173,6 @@ th {
   -webkit-transform: translate(0px);
       -ms-transform: translate(0px);
           transform: translate(0px);
-  box-shadow: 4px 4px 5px #b3b3b3;
 }
 .spa .content-wrapper {
   position: relative;
@@ -325,7 +320,7 @@ th {
 }
 @media (max-width: 740px) {
   .links-wrapper {
-    box-shadow: none;
+    box-shadow: none !important;
   }
 }
 .links-wrapper .links-container {
@@ -542,8 +537,6 @@ th {
   }
 }
 /*-------------------------------------------------------*/
-/*----------------------- CONTENT -----------------------*/
-/*-------------------------------------------------------*/
 /*------------------------ HOME -------------------------*/
 .wrapper-main-title {
   background-color: #000;
@@ -671,7 +664,7 @@ th {
   }
 }
 /*-------------------------------------------------------*/
-/*-------------------- HTML TEMPLATE --------------------*/
+/*------------------- CONTENT TEMPLATE ------------------*/
 .wrapper-content-tmpl section h5,
 .wrapper-content-tmpl section p {
   display: inline;
@@ -776,8 +769,6 @@ th {
   margin: 0px;
 }
 /*-------------------------------------------------------*/
-/*-------------------- CONTENT - HTML -------------------*/
-/*-------------------------------------------------------*/
 /*------------------- HTML REFERENCE --------------------*/
 .wrapper-html-reference h2 {
   position: relative;
@@ -809,10 +800,6 @@ th {
   color: white;
 }
 /*-------------------------------------------------------*/
-/*-------------------- CONTENT - CSS --------------------*/
-/*-------------------------------------------------------*/
-/*-------------------- CONTENT - JS ---------------------*/
-/*-------------------------------------------------------*/
 /*---------------------- REGEX JS -----------------------*/
 .wrapper-regex-js .table-container {
   overflow-x: auto;
@@ -835,7 +822,7 @@ th {
   background: #fff;
 }
 .wrapper-regex-js tr:nth-child(1) {
-  background: #e5d043;
+  background: #e5d043 !important;
   color: aliceblue;
   text-align: center;
 }

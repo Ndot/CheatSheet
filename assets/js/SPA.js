@@ -61,7 +61,7 @@ Subject.prototype.notify = function (context) {
 /*-------------------------------------------------------*/
 /*------------------------- SPA -------------------------*/
 
-(function spa($, hljs) {
+(function ($$, hljs) {
     'use strict';
     /*global $, hljs*/
 
@@ -92,7 +92,7 @@ Subject.prototype.notify = function (context) {
                     activeElement.classList.add('more-links');
                     activeElement.removeAttribute('href');
                     activeElement.dataset.hidden = 'true';
-                    activeElement.addEventListener('click', $.linkOpenClose);
+                    activeElement.addEventListener('click', $$.openClose);
                     links.render(activeElement.parentElement, val);
                     return;
                 }
@@ -105,7 +105,7 @@ Subject.prototype.notify = function (context) {
             });
         },
         "isThisHere": function (value) {
-            var dataToCheck = $.giveMeMyFilesOldFool(value);
+            var dataToCheck = $$.giveMeMyFilesOldFool(value);
             return dataToCheck;
         },
         "start": function (hash) {
@@ -148,7 +148,7 @@ Subject.prototype.notify = function (context) {
             id_loading.classList.remove('loading');
         },
         "cacheThis": function (key, value) {
-            $.takeThatDataCrazyMan(key, value);
+            $$.takeThatDataCrazyMan(key, value);
         },
         // In case 'data' doesnt exist this is the callback
         "callback": function (data) {
@@ -156,7 +156,7 @@ Subject.prototype.notify = function (context) {
             this.render(data);
         },
         "isThisHere": function (value) {
-            var dataToCheck = $.giveMeMyFilesOldFool(value);
+            var dataToCheck = $$.giveMeMyFilesOldFool(value);
             return dataToCheck;
         },
         "update": function (hash) {
@@ -164,7 +164,7 @@ Subject.prototype.notify = function (context) {
             this.data = this.isThisHere(this.hashString);
             if (this.data === undefined) {
                 id_loading.classList.add('loading');
-                $.getRequest('contents/' + this.hashString + '.html', this.callback.bind(this));
+                $$.getRequest('contents/' + this.hashString + '.html', this.callback.bind(this));
             } else {
                 this.render(this.data);
             }
@@ -176,8 +176,8 @@ Subject.prototype.notify = function (context) {
 
     activeClass = {
         "update": function (hash) {
-            $.activeClass(nav, hash[0]);
-            $.activeClass(id_link, hash[hash.length - 1]);
+            $$.activeClass(nav, hash[0]);
+            $$.activeClass(id_link, hash[hash.length - 1]);
         }
     };
 
@@ -187,7 +187,7 @@ Subject.prototype.notify = function (context) {
     openLinksAbove = {
         "openLinks": function (elem) {
             if (elem.dataset.hidden === 'true') {
-                $.linkOpenClose(elem);
+                $$.openClose(elem);
             }
         },
         "recursiveUp": function (a) {
@@ -262,8 +262,4 @@ Subject.prototype.notify = function (context) {
     // Initial URL check
     init();
 
-}($, hljs));
-
-//window.addEventListener('load', function () {
-//    spa($, hljs);
-//});
+}($$, hljs));
