@@ -1,0 +1,31 @@
+---
+title: HTML Nav Element
+content: <p>The HTML &lt;nav&gt; Element represents a section of a page that links to other pages or to parts within the page.</p><p class="little-note">This element is intended only for major blocks of navigation links.</p><p class="little-note">A document can have several &lt;nav&gt; elements, for example, one for site navigation and one for intra-page navigation.</p>
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;nav&gt;
+    &#x0009&lt;a href="#html"&gt;HTML&lt;/a&gt;
+    &#x0009&lt;a href="#css"&gt;CSS&lt;/a&gt;
+    &#x0009&lt;a href="#javascript"&gt;JavaScript&lt;/a&gt;
+    &lt;/nav&gt;</pre>
+resultCode: |
+    <nav>
+        <a href="#html">HTML</a>
+        <a href="#css">CSS</a>
+        <a href="#javascript">JavaScript</a>
+    </nav>
+bs:
+    firefox: !!str 4.2
+    chrome:  !!str 5
+    ie: !!str 9.0
+    opera: !!str 11.10
+    safari: !!str 4.1
+    fsdisable:
+    chdisable:
+    iedisable:
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

@@ -1,0 +1,28 @@
+---
+title: HTML Meter Element
+content: <p>The &lt;meter&gt; Element defines a scalar measurement within a known range, or a fractional value.</p><p class="little-note">The &lt;meter&gt; tag should not be used to indicate progress &#40;as in a progress bar&#41;. For progress bars, use the &lt;progress&gt; tag.</p>
+attributes: form, high, low, max, min, optimum, value
+exampleCode: |
+    &lt;p&gt;My value is 10 &lt;meter min="0" max="100" low="20" high="75" optimum="100" value="10"&gt;&lt;/meter&gt;&lt;/p&gt;<br />
+    &lt;p&gt;My value is 40 &lt;meter min="0" max="100" low="20" high="75" optimum="100" value="40"&gt;&lt;/meter&gt;&lt;/p&gt;<br />
+    &lt;p&gt;My value is 60 &lt;meter min="0" max="100" low="20" high="75" optimum="100" value="60"&gt;&lt;/meter&gt;&lt;/p&gt;<br />
+    &lt;p&gt;My value is 90 &lt;meter min="0" max="100" low="20" high="75" optimum="100" value="90"&gt;&lt;/meter&gt;&lt;/p&gt;<br />
+resultCode: |
+    <p>My value is 10 <meter min="0" max="100" low="20" high="75" optimum="100" value="10"></meter></p>
+    <p>My value is 40 <meter min="0" max="100" low="20" high="75" optimum="100" value="40"></meter></p>
+    <p>My value is 60 <meter min="0" max="100" low="20" high="75" optimum="100" value="60"></meter></p>
+    <p>My value is 90 <meter min="0" max="100" low="20" high="75" optimum="100" value="90"></meter></p>
+bs:
+    firefox: !!str 16.0
+    chrome:  !!str 6.0
+    ie: !!str
+    opera: !!str 11
+    safari: !!str 5.2
+    fsdisable:
+    chdisable:
+    iedisable: disable
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

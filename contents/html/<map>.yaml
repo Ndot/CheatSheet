@@ -1,0 +1,29 @@
+---
+title: HTML Map element
+content: <p>The HTML &lt;map&gt; element is used with &lt;area&gt; elements to define an image map, this is a clickable link area.</p>
+
+attributes: name
+exampleCode: |
+            <pre>&lt;img src="assets/media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary"&gt;
+            &lt;map name="primary"&gt;
+            &#x0009;&lt;area shape="circle" coords="100,100,35" href="#html/home" title="Let's go Home"/&gt;
+            &lt;/map&gt;
+            <br />
+            &lt;p&gt;The blue circle on the Icon will take you to the HTML Home on this page&lt;/p&gt;</pre>
+
+resultCode: |
+            <img src="assets/media/sample_area_tag.png" alt="Image Sample" height="200px" usemap="#primary">
+            <map name="primary">
+                <area  shape="circle" coords="100,100,35" href="#html/home" title="Let's go Home"/>
+            </map>
+            <p>The blue circle on the Icon will take you to the HTML Home on this page</p>
+
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

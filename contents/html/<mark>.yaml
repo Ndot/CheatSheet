@@ -1,0 +1,23 @@
+---
+title: HTML Mark Element
+content: <p>The HTML &lt;mark&gt; Element represents highlighted text, i.e., a run of text marked for reference purpose, due to its relevance in a particular context.</p><p class="little-note">Do not confuse the &lt;mark&gt; element with the &lt;strong&gt; element. The &lt;strong&gt; element is used to denote spans of text of importance in context of the text, when the &lt;mark&gt; element is used to denote spans of text of relevance to a different context.</p>
+attributes: Global Attributes
+exampleCode: |
+    &lt;p&gt;The &lt;mark&gt; element is used to &lt;mark&gt;highlight&lt;/mark&gt; text.&lt;/p&gt;
+
+resultCode: |
+    <p>The &lt;mark&gt; element is used to <mark>highlight</mark> text.</p>
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str Yes
+    ie: !!str 9.0
+    opera: !!str 11
+    safari: !!str Yes
+    fsdisable:
+    chdisable:
+    iedisable:
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

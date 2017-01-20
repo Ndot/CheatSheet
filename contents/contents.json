@@ -58,7 +58,13 @@
             "<label>",
             "<legend>",
             "<li>",
-            "<link>"
+            "<link>",
+            "<main>",
+            "<map>",
+            "<mark>",
+            "<meta>",
+            "<meter>",
+            "<nav>"
         ]
     },
     "css": {

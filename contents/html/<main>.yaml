@@ -1,0 +1,56 @@
+---
+title: HTML Main Element
+content: <p>The HTML &lt;main&gt; element represents the main content of  the &lt;body&gt; of a document or application. The main content area consists of content that is directly related to, or expands upon the central topic of a document or the central functionality of an application.</p><p class="little-note">Documents conforming to the requirements for &lt;main&gt; in the W3C HTML specification must not include more than one &lt;main&gt; element in a document.</p>
+attributes: Global Attributes
+exampleCode: |
+    <pre>
+    &lt;main&gt;
+    &#x0009&lt;h1&gt;Main Page Title&lt;/h1&gt;
+    &#x0009&lt;p&gt;This page is about page titles...&lt;/p&gt;
+    &#x0009&lt;article&gt;
+    &#x0009&#x0009&lt;h2&gt;Some titles&lt;/h2&gt;
+    &#x0009&#x0009&lt;p&gt;Some titles are this...and...that...&lt;/p&gt;
+    &#x0009&#x0009&lt;p&gt;... &lt;/p&gt;
+    &#x0009&#x0009&lt;p&gt;... &lt;/p&gt;
+    &#x0009&lt;/article&gt;
+    &#x0009&lt;article&gt;
+    &#x0009&#x0009&lt;h2&gt;Other title stuff&lt;/h2&gt;
+    &#x0009&#x0009&lt;p&gt;Here is some more info about title...&lt;/p&gt;
+    &#x0009&#x0009&lt;p&gt;... &lt;/p&gt;
+    &#x0009&#x0009&lt;p&gt;... &lt;/p&gt;
+    &#x0009&lt;/article&gt;
+    &lt;/main&gt;</pre>
+
+resultCode: |
+    <main>
+        <h1>Main Page Title</h1>
+        <p>This page is about page titles...</p>
+
+        <article>
+            <h2>Some titles</h2>
+            <p>Some titles are this...and...that...</p>
+            <p>... </p>
+            <p>... </p>
+        </article>
+
+        <article>
+            <h2>Other title stuff</h2>
+            <p>Here is some more info about title...</p>
+            <p>... </p>
+            <p>... </p>
+        </article>
+    </main>
+bs:
+    firefox: !!str 21.0
+    chrome:  !!str 26
+    ie: !!str 12
+    opera: !!str 16
+    safari: !!str 7
+    fsdisable:
+    chdisable:
+    iedisable:
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

@@ -1,0 +1,26 @@
+---
+title: HTML Meta Element
+content: <p>The HTML &lt;meta&gt; Element represents any metadata information that cannot be represented by one of the other HTML meta-related elements like &lt;base&gt;, &lt;link&gt;, &lt;script&gt;, &lt;style&gt; or &lt;title>.</p><p class="little-note">Note that the global name has a specific semantic in the &lt;meta&gt; element and that the itemprop must not be set when one of the name, http-equiv or charset is already used.</p><p class="little-note">The start tag must be present and the end tag must NOT be present.</p>
+attributes: charset, content, http-equiv, name
+exampleCode: |
+    <pre>
+    &lt;meta charset="utf-8"&gt;
+
+    &lt;!-- Please always use this --&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;</pre>
+resultCode:
+
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+    fsdisable:
+    chdisable:
+    iedisable:
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...
