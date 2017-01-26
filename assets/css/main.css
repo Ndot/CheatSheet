@@ -70,7 +70,7 @@ th {
   background: #ffffff;
 }
 .theme-color2 {
-  background: #e6e6e6;
+  background: #ededed;
 }
 .little-note {
   font-style: italic;
@@ -336,7 +336,10 @@ th {
 @media (max-width: 740px) {
   .links-wrapper .links-container {
     overflow-y: scroll;
-    padding-top: 80px;
+    top: 70px;
+    position: relative;
+    height: -webkit-calc(100vh - 120px);
+    height: calc(100vh - 120px);
   }
 }
 .links-wrapper .links-container > ul {
