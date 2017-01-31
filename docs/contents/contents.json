@@ -64,7 +64,13 @@
             "<mark>",
             "<meta>",
             "<meter>",
-            "<nav>"
+            "<nav>",
+            "<noscript>",
+            "<object>",
+            "<ol>",
+            "<optgroup>",
+            "<option>",
+            "<output>"
         ]
     },
     "css": {

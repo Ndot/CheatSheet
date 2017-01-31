@@ -1,0 +1,25 @@
+---
+title: HTML Noscript Element
+content: <p>The &lt;noscript&gt; tag defines an alternate content for users that have disabled scripts in their browser or have a browser that doesn't support script.</p>
+attributes: Global Attributes
+exampleCode: |
+    &lt;div&gt;You will be able to see this content.&lt;/div&gt;<br/>
+    &lt;noscript&gt;If SCRIPTING is off you will also be able to see this content.&lt;/noscript&gt;
+resultCode: |
+    <div>You will be able to see this content.</div>
+    <noscript>If SCRIPTING is off you will also be able to see this content.</noscript>
+
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+    fsdisable:
+    chdisable:
+    iedisable:
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

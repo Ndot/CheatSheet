@@ -1,0 +1,31 @@
+---
+title: HTML Ordered List Element
+content: <p>The HTML &lt;ol&gt; Element represents an ordered list of items, typically rendered as a numbered list.</p>
+attributes: reversed, start, type
+exampleCode: |
+    <pre>
+    &lt;ol start="7"&gt;
+        &lt;li&gt;first item&lt;/li&gt;
+        &lt;li&gt;second item&lt;/li&gt;
+        &lt;li&gt;third item&lt;/li&gt;
+    &lt;/ol&gt;</pre>
+resultCode: |
+    <ol start="7">
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+    </ol></pre>
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+    fsdisable:
+    chdisable:
+    iedisable:
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

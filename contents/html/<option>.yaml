@@ -1,0 +1,33 @@
+---
+title: HTML Option Element
+content: <p>The HTML &lt;option&gt; element is used to create a control representing an item within a &lt;select&gt;, an &lt;optgroup&gt; or a &lt;datalist&gt; HTML5 element.</p>
+attributes: disabled, label, selected, value
+exampleCode: |
+    <pre>
+    &lt;select&gt;
+        &lt;option label="item" value="item01"&gt;First&lt;/option&gt;
+        &lt;option label="item" value="item02"&gt;Second&lt;/option&gt;
+        &lt;option label="item" value="item03" selected&gt;Tird&lt;/option&gt;
+        &lt;option label="item" value="item04" disabled&gt;Im the last one&lt;/option&gt;
+    &lt;/select&gt;</pre>
+resultCode: |
+    <select>
+        <option label="item" value="item01">First</option>
+        <option label="item" value="item02">Second</option>
+        <option label="item" value="item03" selected>Tird</option>
+        <option label="item" value="item04" disabled>Im the last one</option>
+    </select>
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+    fsdisable:
+    chdisable:
+    iedisable:
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

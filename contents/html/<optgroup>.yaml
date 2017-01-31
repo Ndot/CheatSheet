@@ -1,0 +1,49 @@
+---
+title: HTML Optgroup Element
+content: <p>The HTML &lt;optgroup&gt; element creates a grouping of options within a &lt;select&gt; element.</p>
+attributes: disabled, label
+exampleCode: |
+    <pre>
+    &lt;select&gt;
+        &lt;optgroup label="Group 1"&gt;
+            &lt;option&gt;Option 1.1&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="Group 2"&gt;
+            &lt;option&gt;Option 2.1&lt;/option&gt;
+            &lt;option&gt;Option 2.2&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="Group 3" disabled&gt;
+            &lt;option&gt;Option 3.1&lt;/option&gt;
+            &lt;option&gt;Option 3.2&lt;/option&gt;
+            &lt;option&gt;Option 3.3&lt;/option&gt;
+        &lt;/optgroup&gt;
+    &lt;/select&gt;</pre>
+resultCode: |
+    <select>
+        <optgroup label="Group 1">
+            <option>Option 1.1</option>
+        </optgroup>
+        <optgroup label="Group 2">
+            <option>Option 2.1</option>
+            <option>Option 2.2</option>
+        </optgroup>
+        <optgroup label="Group 3" disabled>
+            <option>Option 3.1</option>
+            <option>Option 3.2</option>
+            <option>Option 3.3</option>
+        </optgroup>
+    </select>
+bs:
+    firefox: !!str Yes
+    chrome:  !!str Yes
+    ie: !!str Yes
+    opera: !!str Yes
+    safari: !!str Yes
+    fsdisable:
+    chdisable:
+    iedisable:
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

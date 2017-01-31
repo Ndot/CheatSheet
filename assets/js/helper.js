@@ -39,7 +39,7 @@ var $$ = (function () {
     /**
     * Simple XML Http Request.
     *
-    * @method getRequest
+    * @method getRequestfunc
     * @param {string} url - The URL as a string.
     * @param {getRequestCallback} callback - The callback that handles the response.
     * @param {boolean} [asynchronous=true] - TRUE for Asynchronous and FALSE for Synchronous.

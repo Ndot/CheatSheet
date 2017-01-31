@@ -1,0 +1,29 @@
+---
+title: HTML Output Element
+content: <p>The HTML &lt;output&gt; Element represents the result of a calculation or user action.</p>
+attributes: for, form, name
+exampleCode: |
+    <pre>
+    &lt;form oninput="result.value = number.value"&gt;
+        &lt;input id="number" type="range" min="20" max="80" value="25"&gt;
+        &lt;output name="result"&gt;25&lt;/output&gt;
+    &lt;/form&gt;</pre>
+resultCode: |
+    <form oninput="result.value = number.value">
+        <input id="number" type="range" min="20" max="80" value="25">
+        <output name="result">25</output>
+    </form>
+bs:
+    firefox: !!str 4.0
+    chrome:  !!str 10
+    ie: !!str
+    opera: !!str 11
+    safari: !!str 7
+    fsdisable:
+    chdisable:
+    iedisable: disable
+    opdisable:
+    sfdisable:
+mdnLink: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output
+mdnLinkinnerHTML: MDN - Mozilla Developer Documentation
+...

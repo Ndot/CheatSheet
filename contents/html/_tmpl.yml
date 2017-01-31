@@ -3,9 +3,9 @@ title: HTML  Element
 content: <p></p>
 attributes: Global Attributes
 exampleCode: |
-    
+
 resultCode: |
-    
+
 bs:
     firefox: !!str 
     chrome:  !!str 
