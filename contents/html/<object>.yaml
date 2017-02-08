@@ -3,9 +3,9 @@ title: HTML Object Element
 content: <p>The HTML &lt;object&gt; Element represents an embedded resource within an HTML document, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.</p>
 attributes: data, height, name, type, usemap, width
 exampleCode: |
-    &lt;object data="/404.html" type="text/html" width="100%"&gt;&lt;/object&gt;
+    &lt;object data="404.html" type="text/html" width="100%"&gt;&lt;/object&gt;
 resultCode: |
-    <object data="/404.html" type="text/html" width="100%"></object>
+    <object data="404.html" type="text/html" width="100%"></object>
 
 bs:
     firefox: !!str Yes
