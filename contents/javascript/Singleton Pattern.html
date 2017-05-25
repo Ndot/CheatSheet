@@ -19,38 +19,37 @@
         <code class="box code js">
             <pre>var mySingleton = (function () {
 
-// Instance stores a reference to the Singleton
-var instance;
+    // Instance stores a reference to the Singleton
+    var instance;
 
-function singletonInit() {
+    function singletonInit() {
 
-    // Singleton
-    
-    // Private variables
-    var privateVariable     = "Im private";
-    var privateRandomNumber = Math.random();
+        // Singleton
+
+        // Private variables
+        var privateVariable     = "Im private";
+        var privateRandomNumber = Math.random();
+
+        return {
+            // Public variable
+            publicProperty: "I am public",
+            // Public method that talks to privateRandomNumber
+            getRandomNumber: function () {
+                return privateRandomNumber;
+            }
+        };
+    }
 
     return {
-        // Public variable
-        publicProperty: "I am public",
-        // Public method that talks to privateRandomNumber
-        getRandomNumber: function() {
-            return privateRandomNumber;
+        // Get the Singleton instance if one exists or create one.
+        getInstance: function () {
+            if (!instance) {
+                instance = singletonInit();
+            }
+            return instance;
         }
     };
-};
-
-return {
-    // Get the Singleton instance if one exists or create one.
-    getInstance: function () {
-        if ( !instance ) {
-            instance = singletonInit();
-        }
-        return instance;
-    }
-};
-
-})();
+}());
 // Usage:
 
 var a = mySingleton.getInstance();

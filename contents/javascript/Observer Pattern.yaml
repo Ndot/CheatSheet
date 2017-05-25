@@ -8,12 +8,69 @@ preExample:
 ###############################################
 ################### CONTENT ###################
 content: |
+    <p>The Observer is a design pattern where an object (known as a Subject) maintains a list of objects depending on it (known as Observers), automatically notifying them of any changes to state.</p>
+    
+    <p>The Observers can register themselves to a Subject, whenever the state of the Subject changes this will notify all the Observers of that change (normaly by calling an update method in each Observer).</p>
+    
+    <p>When the Observers are no longer interested in those changes of state of a particular Subject they can unregister themselves, and will no longer recieve any notification of changes in state of that particular Subject.</p>
 
 exampleCode: |
+
+    function Subject() {
+        this.observersList = [];
+    }
+
+    Subject.prototype.addObserver = function (observer) {
+        this.observersList.push(observer);
+    };
+
+    Subject.prototype.removeObserver = function (observer) {
+        if (this.observersList.indexOf(observer) === -1) { return; }
+        this.observersList.splice(this.observersList.indexOf(observer), 1);
+    };
+
+    Subject.prototype.notify = function () {
+        for (var i = 0; i < this.observersList.length; i += 1) {
+            this.observersList[i].update();
+        }
+    };
+
+
+    // Create Observers
+    // This objects require a method update to be use by the Subject
+    
+    var obs_01 = {
+        name: 'foo',
+        update: function () { console.log('Hello from Observer: ' + this.name); }
+    };
+    var obs_02 = {
+        name: 'bar',
+        update: function () { console.log('Hello from Observer: ' + this.name); }
+    };
+
+    // Create Subject
+    
+    var subject = new Subject();
+
+    // Add Observers to it
+    
+    subject.addObserver(obs_01);
+    subject.addObserver(obs_02);
+
+    // In our code when the state changes we just need
+    // to call the notify method on the subject
+    
+    subject.notify();
+    // Hello from Observer: foo
+    // Hello from Observer: bar
 
 ###############################################
 ################## CONCLUSION #################
 conclusion: 
-    advantages: []
-    disadvantages: []
+    advantages: 
+        - By making us thing about the relationships between different parts of our application, it help us identify what layers containing direct relationships which could instead be replaced with sets of subjects and observers. This could be used to break down an application into smaller, more loosely coupled blocks to improve code management and potentials for re-use.
+        - Allows us to have objects being able to notify other objects without making assumptions regarding those objects. 
+    disadvantages:
+        - It can sometimes become difficult to obtain guarantees that particular parts of our applications are functioning as we may expect.
+        - Subscribers are quite ignorant to the existence of each other. Due to the dynamic relationship between subscribers and publishers, the update dependency can be difficult to track.
 ...

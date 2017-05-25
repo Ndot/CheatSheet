@@ -4,6 +4,7 @@ title: The Constructor Pattern
 ################# PRE CONTENT #################
 preContent: There are four ways in which keys and values can then be assigned to an object.
 preExample: |
+    // -------------
     // 1. Dot syntax
 
     // Set properties
@@ -12,7 +13,9 @@ preExample: |
     // Get properties
     var value = newObject.someKey;
 
-    // 2. Square bracket syntax
+
+    // ------------------------
+    // 2. Square bracket syntax 
 
     // Set properties
     newObject["someKey"] = "Hello World";
@@ -20,6 +23,8 @@ preExample: |
     // Get properties
     var value = newObject["someKey"];
 
+
+    // ------------------------
     // 3. Object.defineProperty
 
     // Set properties
@@ -54,6 +59,8 @@ preExample: |
     console.log(person);
     // Outputs: Object {car: "Delorean", dateOfBirth: "1981", hasBeard: false}
 
+
+    // --------------------------
     // 4. Object.defineProperties
 
     // Set properties
@@ -68,8 +75,6 @@ preExample: |
         }
     });
 
-    // Getting properties for 3. and 4. can be done using any of the
-    // options in 1. and 2.
 
 ###############################################
 ################### CONTENT ###################

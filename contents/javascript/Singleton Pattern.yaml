@@ -12,39 +12,38 @@ content: |
 
 exampleCode: |
     var mySingleton = (function () {
- 
-    // Instance stores a reference to the Singleton
-    var instance;
 
-    function singletonInit() {
+        // Instance stores a reference to the Singleton
+        var instance;
 
-        // Singleton
-        
-        // Private variables
-        var privateVariable     = "Im private";
-        var privateRandomNumber = Math.random();
+        function singletonInit() {
+
+            // Singleton
+
+            // Private variables
+            var privateVariable     = "Im private";
+            var privateRandomNumber = Math.random();
+
+            return {
+                // Public variable
+                publicProperty: "I am public",
+                // Public method that talks to privateRandomNumber
+                getRandomNumber: function () {
+                    return privateRandomNumber;
+                }
+            };
+        }
 
         return {
-            // Public variable
-            publicProperty: "I am public",
-            // Public method that talks to privateRandomNumber
-            getRandomNumber: function() {
-                return privateRandomNumber;
+            // Get the Singleton instance if one exists or create one.
+            getInstance: function () {
+                if (!instance) {
+                    instance = singletonInit();
+                }
+                return instance;
             }
         };
-    };
-
-    return {
-        // Get the Singleton instance if one exists or create one.
-        getInstance: function () {
-            if ( !instance ) {
-                instance = singletonInit();
-            }
-            return instance;
-        }
-    };
-
-    })();
+    }());
     // Usage:
  
     var a = mySingleton.getInstance();

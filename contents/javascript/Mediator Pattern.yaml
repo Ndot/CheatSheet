@@ -1,0 +1,71 @@
+---
+title: The Mediator Pattern
+###############################################
+################# PRE CONTENT #################
+preContent: 
+preExample:
+
+###############################################
+################### CONTENT ###################
+content: |
+    <p>The Mediator Pattern is often confused with the Observer Pattern, they both channel multiple events throught a single object. However, the semantics and intent of these patterns are very different.</p>
+    
+    <p>The Mediator promotes loose coupling by ensuring that instead of components referring to each other explicitly, their interaction is handled through this central point. This can help us decouple systems and improve the potential for component reusability.</p>
+    
+    <p>The dictionary refers to a mediator: "as a neutral party that assists in negotiations and conflict resolution". You can think about it as a typical airport control system. A tower (Mediator) handles what planes can take off and land because all communications (notifications being listened out for or broadcast) are done from the planes to the control tower, rather than from plane-to-plane.</p>
+    
+    <p class="little-note">The big difference from the Observer Pattern to the Mediator Pattern is where the logic and work flow is coded.</p>
+    <p class="little-note">The Observer facilitates a "fire and forget" approach. The Subject does not care about what the Observer do it just notifies them and that's all.</p>
+    <p class="little-note">On the Mediator Pattern the mediator mediates between diferent objects. This means that the mediator is the one in charge of telling the other objects what to do and when to do it. Even though the other object know how to do their tasks it is the mediator that decides when and what tasks should be fired.</p>
+
+exampleCode: |
+    var userSave = {
+        user: [],
+        save: function (name) {
+            // Some code that saves the user to a database...
+            this.user.push(name);
+        }
+    }
+
+    var userNotify = {
+        success: function (name) {
+            console.log('Hello ' + name + ' your info is saved.')
+        },
+        fail: function (name) {
+            console.log('The user ' + name + ' already exists.')
+        }
+    }
+
+    var userGetInfo = {
+        requestInfo: function (name) {
+            // Some code that returns the user info or false.
+            return info;
+        }
+    }
+
+    // Even though each object that deals with the user
+    // knows how to perform their tasks all the logic
+    // of our code is in the mediator.
+    
+    var mediator = {
+    
+        addNewUser: function (name) {
+            var check = userGetInfo.requestInfo(name);
+
+            if (check === false) {
+                userNotify.fail(name);
+            } else {
+                userSave.save(name);
+                userNotify.success(name);
+            }
+        }
+    }
+
+###############################################
+################## CONCLUSION #################
+conclusion: 
+    advantages: 
+        - "The largest benefit of the Mediator pattern is that it reduces the communication channels needed between objects or components in a system from many to many to just many to one. Adding new publishers and subscribers is relatively easy due to the level of decoupling present."
+    disadvantages: 
+        - "Perhaps the biggest downside of using the pattern is that it can introduce a single point of failure. Placing a Mediator between modules can also cause a performance hit as they are always communicating indirectly. Because of the nature of loose coupling, it's difficult to establish how a system might react by only looking at the broadcasts."
+...

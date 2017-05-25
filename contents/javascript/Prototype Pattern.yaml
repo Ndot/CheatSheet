@@ -1,0 +1,44 @@
+---
+title: The Prototype Pattern
+###############################################
+################# PRE CONTENT #################
+preContent: 
+preExample:
+
+###############################################
+################### CONTENT ###################
+content: |
+    <p>The GoF refer to the prototype pattern as one which creates objects based on a template of an existing object through cloning.</p>
+    
+    <p>The Prototype Pattern works as the usaged of created objects which act as prototypes for other objects. We're simply creating copies of existing functional objects.</p>
+
+exampleCode: |
+    var vehicle = {
+        getModel: function () {
+            console.log('The model of this vehicle is: ' + this.model );
+        },
+        startVehicle: function () {
+            console.log('Vromm...Vromm');
+        }
+    };
+
+    var car = Object.create(vehicle, {
+        model: {
+            value: "Ford",
+            enumerable: true
+        }
+    });
+    
+    car.getModel();
+    // The model of this vehicle is: Ford 
+    
+    car.startVehicle();
+    // Vromm...Vromm
+
+###############################################
+################## CONCLUSION #################
+conclusion: 
+    advantages: 
+        - "One of the benefits of using the prototype pattern is that we're working with the prototypal strengths JavaScript has to offer natively rather than attempting to imitate features of other languages. Not only is the pattern an easy way to implement inheritance, but it can also come with a performance boost as well: when defining a function in an object, they're all created by reference (so all child objects point to the same function) instead of creating their own individual copies."
+    disadvantages: []
+...

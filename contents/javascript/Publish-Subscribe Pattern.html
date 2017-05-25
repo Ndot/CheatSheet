@@ -1,0 +1,115 @@
+<div class="wrapper-content-tmpl">
+    <!-- TITLE -->
+    <h2>The Publish-Subscribe Pattern</h2>
+
+    
+    <!-- PRE CONTENT -->
+    
+
+        
+    
+    
+    
+    <!-- CONTENT -->
+    <p>The Publish-Subscrib Pattern is a type of Observer Pattern. Typically this pattern is implemented by adding a topic to the Subject. This allows us to have only one Subject that calls the Observers based on the topics they subscribed to, insted of having multiple Subjects which for which topic / scope.
+</p>
+
+    <div>
+        <h5>Pattern Example</h5>
+        <code class="box code js">
+            <pre>
+var Events = {
+
+    // Storage for our topics and callbacks
+    cache: {},
+
+    publish: function (topic, args) {
+        if (this.cache[topic]) {
+            var thisTopic = this.cache[topic],
+                i = thisTopic.length - 1;
+
+            for (i; i >= 0; i -= 1) {
+                thisTopic[i](args);
+            }
+        }
+    },
+
+    subscribe: function (topic, callback) {
+        if (!this.cache[topic]) { this.cache[topic] = []; }
+
+        this.cache[topic].push(callback);
+
+        return [topic, callback];
+    },
+
+    unsubscribe: function (handle) {
+        var topic = handle[0], i;
+
+        if (this.cache[topic]) {
+            i = this.cache[topic].length - 1;
+
+            for (i; i >= 0; i -= 1) {
+                if (this.cache[topic][i] === handle[1]) {
+                    this.cache[topic].splice(this.cache[topic][i], 1);
+                }
+            }
+        }
+    }
+};
+
+
+var obj = {
+    callback: function (a) {
+        console.log(this.name + ' was notified that: ' + a);
+    }
+};
+var foo = Object.create(obj, { name: { value: 'Foo' } });
+var bar = Object.create(obj, { name: { value: 'Bar' } });
+
+
+// Subscribe diferent topics to diferent callbacks.
+var fooSpace = Events.subscribe('/news/space', foo.callback.bind(foo));
+
+var fooSmartphones = Events.subscribe('/news/smartphones', foo.callback.bind(foo));
+var barSmartphones = Events.subscribe('/news/smartphones', bar.callback.bind(bar));
+
+// When publish is called only the ones subscribed to
+// that particular topic will be notified.
+
+Events.publish('/news/space', 'Pluto is not a planet...');
+// Foo was notified that: Pluto is not a planet...
+
+Events.publish('/news/smartphones', 'The new awesome phone is out...');
+// Bar was notified that: The new awesome phone is out...
+// Foo was notified that: The new awesome phone is out...
+</pre>
+        </code>
+    </div>
+    
+    
+    <!-- CONCLUSION - Advantages -->
+    
+        <div class="advantages conclusion">
+        <h5>Advantages</h5>
+        
+        
+            <p class="little-note">See Observer Pattern</p>
+        
+
+        </div>
+    
+
+        
+    <!-- CONCLUSION - Disadvantages -->
+    
+        <div class="disadvantages conclusion">
+        <h5>Disadvantages</h5>
+        
+        
+            <p class="little-note">See Observer Pattern</p>
+        
+            
+        </div>
+    
+    
+</div>

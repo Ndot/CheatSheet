@@ -13,7 +13,8 @@
         <div>
             <h5>Example</h5>
             <code class="box result js">
-                <pre>// 1. Dot syntax
+                <pre>// -------------
+// 1. Dot syntax
 
 // Set properties
 newObject.someKey = "Hello World";
@@ -21,7 +22,9 @@ newObject.someKey = "Hello World";
 // Get properties
 var value = newObject.someKey;
 
-// 2. Square bracket syntax
+
+// ------------------------
+// 2. Square bracket syntax 
 
 // Set properties
 newObject["someKey"] = "Hello World";
@@ -29,6 +32,8 @@ newObject["someKey"] = "Hello World";
 // Get properties
 var value = newObject["someKey"];
 
+
+// ------------------------
 // 3. Object.defineProperty
 
 // Set properties
@@ -63,6 +68,8 @@ defineProp( person, "hasBeard", false );
 console.log(person);
 // Outputs: Object {car: "Delorean", dateOfBirth: "1981", hasBeard: false}
 
+
+// --------------------------
 // 4. Object.defineProperties
 
 // Set properties
@@ -76,9 +83,6 @@ Object.defineProperties( newObject, {
         writable: false
     }
 });
-
-// Getting properties for 3. and 4. can be done using any of the
-// options in 1. and 2.
 </pre>
             </code>
         </div>
