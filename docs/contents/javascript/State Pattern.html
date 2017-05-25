@@ -1,0 +1,69 @@
+<div class="wrapper-content-tmpl"><h2>The State Pattern</h2><p></p><p>The State Pattern gives us an opportunity to design an interface where one specific method can have diferent results. What I mean by this is that whenever you perform an action what determines what that action will be is the state.</p><p>You can thing about the State Pattern as an universal remote (which I believe is what universal remotes use). When you push the <span class="quotes">PowerOn</span> button it will power on the device the as the active state. If the state is TV that will turn on/off the TV, if the state is DVD it will power on/off the DVD, and so on. This allow us to replace condition if else by state.</p><p></p><div><h5>Pattern Example</h5><code class="box code js"><pre>
+
+function Remote() {
+    this.state = null;
+}
+
+// Method to allow us to change state.
+Remote.prototype.setState = function (state) { this.state = state; };
+
+// Here we implement our functionalities.
+Remote.prototype.power = function () {
+
+    // Check if the method for that particular state exists.
+    // We could set methods on them that did nothing so we
+    // avoid having errors thrown, but this would mean that
+    // ever new functionality we add we also would need to add
+    // to the state objects.
+    if (this[this.state].power) {
+        this[this.state].power();
+    }
+};
+
+Remote.prototype.nextTrack = function () {
+    if (this[this.state].nextTrack) {
+        this[this.state].nextTrack();
+    }
+};
+
+Remote.prototype.previousTrack = function () {
+    if (this[this.state].previousTrack) {
+        this[this.state].previousTrack();
+    }
+};
+
+// And now we create the functionalities methods
+// for each particular state we have.
+
+Remote.prototype.tv = {
+    // We could set another state in this object to call ON or OFF methods.
+    // But in this case we just send a power signal and the interface
+    // that receives the signal has it's own state that decideds if ON turn OFF and vice-versa.
+    power: function () { console.log('TV is turning ON or OFF...'); }
+};
+
+Remote.prototype.dvd = {
+    power: function () { console.log('DVD is turning ON or OFF.'); },
+    nextTrack: function () { console.log('DVD is changing to the next track.'); },
+    previousTrack: function () { console.log('DVD is changing to the previous track.'); }
+};
+
+
+var remote = new Remote();
+
+remote.setState('tv');
+
+remote.power();
+// TV is turning ON or OFF...
+remote.nextTrack(); // This will do nothing, and it won't throw an error either.
+
+
+remote.setState('dvd');
+
+remote.nextTrack();
+// DVD is changing to the next track.
+remote.previousTrack();
+// DVD is changing to the previous track.
+remote.power();
+// DVD is turning ON or OFF.
+</pre></code></div></div>

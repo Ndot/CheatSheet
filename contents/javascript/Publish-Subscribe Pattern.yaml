@@ -22,7 +22,7 @@ exampleCode: |
                 var thisTopic = this.cache[topic],
                     i = thisTopic.length - 1;
 
-                for (i; i >= 0; i -= 1) {
+                for (i; i &gt;= 0; i -= 1) {
                     thisTopic[i](args);
                 }
             }
@@ -42,7 +42,7 @@ exampleCode: |
             if (this.cache[topic]) {
                 i = this.cache[topic].length - 1;
 
-                for (i; i >= 0; i -= 1) {
+                for (i; i &lt;= 0; i -= 1) {
                     if (this.cache[topic][i] === handle[1]) {
                         this.cache[topic].splice(this.cache[topic][i], 1);
                     }

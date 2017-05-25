@@ -1,37 +1,36 @@
 <div class="wrapper-content-tmpl"><h2>The Singleton Pattern</h2><p>The Singleton pattern is thus known because it restricts instantiation of a class to a single object. Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object. Kinda like the "One ring to rule them all..." sort of analogy..."My Precious"...</p><div><h5>Pattern Example</h5><code class="box code js"><pre>var mySingleton = (function () {
 
-// Instance stores a reference to the Singleton
-var instance;
+    // Instance stores a reference to the Singleton
+    var instance;
 
-function singletonInit() {
+    function singletonInit() {
 
-    // Singleton
-    
-    // Private variables
-    var privateVariable     = "Im private";
-    var privateRandomNumber = Math.random();
+        // Singleton
+
+        // Private variables
+        var privateVariable     = "Im private";
+        var privateRandomNumber = Math.random();
+
+        return {
+            // Public variable
+            publicProperty: "I am public",
+            // Public method that talks to privateRandomNumber
+            getRandomNumber: function () {
+                return privateRandomNumber;
+            }
+        };
+    }
 
     return {
-        // Public variable
-        publicProperty: "I am public",
-        // Public method that talks to privateRandomNumber
-        getRandomNumber: function() {
-            return privateRandomNumber;
+        // Get the Singleton instance if one exists or create one.
+        getInstance: function () {
+            if (!instance) {
+                instance = singletonInit();
+            }
+            return instance;
         }
     };
-};
-
-return {
-    // Get the Singleton instance if one exists or create one.
-    getInstance: function () {
-        if ( !instance ) {
-            instance = singletonInit();
-        }
-        return instance;
-    }
-};
-
-})();
+}());
 // Usage:
 
 var a = mySingleton.getInstance();

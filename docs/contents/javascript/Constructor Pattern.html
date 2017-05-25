@@ -1,4 +1,5 @@
-<div class="wrapper-content-tmpl"><h2>The Constructor Pattern</h2><p>There are four ways in which keys and values can then be assigned to an object.</p><div><h5>Example</h5><code class="box result js"><pre>// 1. Dot syntax
+<div class="wrapper-content-tmpl"><h2>The Constructor Pattern</h2><p>There are four ways in which keys and values can then be assigned to an object.</p><div><h5>Example</h5><code class="box result js"><pre>// -------------
+// 1. Dot syntax
 
 // Set properties
 newObject.someKey = "Hello World";
@@ -6,7 +7,9 @@ newObject.someKey = "Hello World";
 // Get properties
 var value = newObject.someKey;
 
-// 2. Square bracket syntax
+
+// ------------------------
+// 2. Square bracket syntax 
 
 // Set properties
 newObject["someKey"] = "Hello World";
@@ -14,6 +17,8 @@ newObject["someKey"] = "Hello World";
 // Get properties
 var value = newObject["someKey"];
 
+
+// ------------------------
 // 3. Object.defineProperty
 
 // Set properties
@@ -48,6 +53,8 @@ defineProp( person, "hasBeard", false );
 console.log(person);
 // Outputs: Object {car: "Delorean", dateOfBirth: "1981", hasBeard: false}
 
+
+// --------------------------
 // 4. Object.defineProperties
 
 // Set properties
@@ -61,9 +68,6 @@ Object.defineProperties( newObject, {
         writable: false
     }
 });
-
-// Getting properties for 3. and 4. can be done using any of the
-// options in 1. and 2.
 </pre></code></div><p>Object constructors are used to create specific types of objects - both preparing the object for use and accepting arguments which a constructor can use to set the values of member properties and methods when the object is first created.</p><div><h5>Pattern Example</h5><code class="box code js"><pre>function Car( model, year, miles ) {
     this.model = model;
     this.year = year;

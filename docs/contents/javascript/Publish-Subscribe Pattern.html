@@ -1,23 +1,4 @@
-<div class="wrapper-content-tmpl">
-    <!-- TITLE -->
-    <h2>The Publish-Subscribe Pattern</h2>
-
-    
-    <!-- PRE CONTENT -->
-    
-
-        
-    
-    
-    
-    <!-- CONTENT -->
-    <p>The Publish-Subscrib Pattern is a type of Observer Pattern. Typically this pattern is implemented by adding a topic to the Subject. This allows us to have only one Subject that calls the Observers based on the topics they subscribed to, insted of having multiple Subjects which for which topic / scope.
-</p>
-
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>
+<div class="wrapper-content-tmpl"><h2>The Publish-Subscribe Pattern</h2><p>The Publish-Subscrib Pattern is a type of Observer Pattern. Typically this pattern is implemented by adding a topic to the Subject. This allows us to have only one Subject that calls the Observers based on the topics they subscribed to, insted of having multiple Subjects which for which topic / scope.</p><div><h5>Pattern Example</h5><code class="box code js"><pre>
 var Events = {
 
     // Storage for our topics and callbacks
@@ -82,34 +63,4 @@ Events.publish('/news/space', 'Pluto is not a planet...');
 Events.publish('/news/smartphones', 'The new awesome phone is out...');
 // Bar was notified that: The new awesome phone is out...
 // Foo was notified that: The new awesome phone is out...
-</pre>
-        </code>
-    </div>
-    
-    
-    <!-- CONCLUSION - Advantages -->
-    
-        <div class="advantages conclusion">
-        <h5>Advantages</h5>
-        
-        
-            <p class="little-note">See Observer Pattern</p>
-        
-
-        </div>
-    
-
-        
-    <!-- CONCLUSION - Disadvantages -->
-    
-        <div class="disadvantages conclusion">
-        <h5>Disadvantages</h5>
-        
-        
-            <p class="little-note">See Observer Pattern</p>
-        
-            
-        </div>
-    
-    
-</div>
+</pre></code></div><div class="advantages conclusion"><h5>Advantages</h5><p class="little-note">See Observer Pattern</p></div><div class="disadvantages conclusion"><h5>Disadvantages</h5><p class="little-note">See Observer Pattern</p></div></div>

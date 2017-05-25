@@ -36,7 +36,7 @@ Subject.prototype.removeObserver = function (observer) {
 };
 
 Subject.prototype.notify = function () {
-    for (var i = 0; i < this.observersList.length; i += 1) {
+    for (var i = 0; i &lt; this.observersList.length; i += 1) {
         this.observersList[i].update();
     }
 };

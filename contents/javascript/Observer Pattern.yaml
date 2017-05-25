@@ -30,7 +30,7 @@ exampleCode: |
     };
 
     Subject.prototype.notify = function () {
-        for (var i = 0; i < this.observersList.length; i += 1) {
+        for (var i = 0; i &lt; this.observersList.length; i += 1) {
             this.observersList[i].update();
         }
     };
@@ -70,7 +70,7 @@ conclusion:
     advantages: 
         - By making us thing about the relationships between different parts of our application, it help us identify what layers containing direct relationships which could instead be replaced with sets of subjects and observers. This could be used to break down an application into smaller, more loosely coupled blocks to improve code management and potentials for re-use.
         - Allows us to have objects being able to notify other objects without making assumptions regarding those objects. 
-    disadvantages:
+    disadvantages: 
         - It can sometimes become difficult to obtain guarantees that particular parts of our applications are functioning as we may expect.
         - Subscribers are quite ignorant to the existence of each other. Due to the dynamic relationship between subscribers and publishers, the update dependency can be difficult to track.
 ...
