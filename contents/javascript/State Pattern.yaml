@@ -10,7 +10,7 @@ preExample:
 content: |
     <p>The State Pattern gives us an opportunity to design an interface where one specific method can have diferent results. What I mean by this is that whenever you perform an action what determines what that action will be is the state.</p>
     
-    <p>You can thing about the State Pattern as an universal remote (which I believe is what universal remotes use). When you push the <span class="quotes">PowerOn</span> button it will power on the device the as the active state. If the state is TV that will turn on/off the TV, if the state is DVD it will power on/off the DVD, and so on. This allow us to replace condition if else by state.</p>
+    <p>You can thing about the State Pattern as an universal remote (which I believe is what universal remotes use). When you push the <span class="quotes">PowerOn</span> button it will power on the device that as the active state. If the state is TV that will turn on/off the TV, if the state is DVD it will turn on/off the DVD, and so on. This allow us to replace conditions if else by state.</p>
 
 exampleCode: |
 

@@ -13,36 +13,36 @@ content: |
 exampleCode: |
     var myRevealingModule = (function () {
             
-            // PRIVATE
-            var privateCounter = 0;
+        // PRIVATE
+        var privateCounter = 0;
 
-            function privateIncremenFunction() {
-                privateCounter += 1;
-            }
+        function privateIncremenFunction() {
+            privateCounter += 1;
+        }
 
-            // PUBLIC
-            function publicFunction() {
-                publicIncrement();
-            }
+        // PUBLIC
+        function publicFunction() {
+            publicIncrement();
+        }
 
-            function publicIncrement() {
-                privateIncremenFunction();
-            }
+        function publicIncrement() {
+            privateIncremenFunction();
+        }
 
-            function publicGetCount(){
-              return privateCounter;
-            }
+        function publicGetCount(){
+          return privateCounter;
+        }
 
-            // Reveal public pointers to
-            // private functions and properties
+        // Reveal public pointers to
+        // private functions and properties
 
-           return {
-                start: publicFunction,
-                increment: publicIncrement,
-                count: publicGetCount
-            };
+       return {
+            start: publicFunction,
+            increment: publicIncrement,
+            count: publicGetCount
+        };
 
-        })();
+    })();
 
     myRevealingModule.start();
     myRevealingModule.increment();

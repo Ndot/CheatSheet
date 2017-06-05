@@ -1,0 +1,41 @@
+<div class="wrapper-content-tmpl"><h2>The Facade Pattern</h2><p></p><p>Like the name sugests the Facade Pattern is way of presenting a more simplified interface of a more complex code. This pattern provides a convenient higher-level interface to a larger body of code. Think of it as simplifying the API being presented to other developers, something which almost always improves usability.</p><p>Facades are a structural pattern which can often be seen in JavaScript libraries like jQuery where, although an implementation may support methods with a wide range of behaviors, only a "facade" or limited abstraction of these methods is presented to the public for use. For exemple in the jQuery library, most of us are aware that both getElementById("identifier") and $("#identifier") can be used to query an element on a page by its ID.</p><p></p><div><h5>Pattern Example</h5><code class="box code js"><pre>
+var module = (function () {
+
+    var _private = {
+    
+        i: 5,
+        mode: 'run',
+        get: function () {
+            console.log("current value: " + this.i);
+        },
+        set: function (val) {
+            this.i = val;
+        },
+        run: function () {
+            console.log("running");
+        },
+        jump: function () {
+            console.log("jumping");
+        }
+    };
+
+    return {
+
+        facade: function (args = {}) {
+            if (args.val) { _private.set(args.val); }
+            _private.get();
+
+            if (args.state) { _private.mode = args.state; }
+            _private[_private.mode]();
+        }
+    };
+}());
+
+module.facade();
+// current value: 5
+// running
+
+module.facade({ val: 34, state: 'jump' });
+// current value: 34
+// jumping
+</pre></code></div><div class="disadvantages conclusion"><h5>Disadvantages</h5><p class="little-note">Facades generally have few disadvantages, but one concern worth noting is performance. Namely, one must determine whether there is an implicit cost to the abstraction a Facade offers to our implementation and if so, whether this cost is justifiable.</p></div></div>

@@ -1,0 +1,122 @@
+<div class="wrapper-content-tmpl"><h2>The Mixin Pattern</h2><p></p><p>Let's first review Sub-Classing.</p><p>Sub-classing is a term that refers to inheriting properties for a new object from a base or superclass object. In traditional object-oriented programming, a class "B" is able to extend another class "A". Here we consider "A" a superclass and "B" a subclass of "A". As such, all instances of "B" inherit the methods from "A". "B" is however still able to define its own methods, including those that override methods originally defined by "A".</p><p class="little-note">Should "B" need to invoke a method in "A" that has been overridden, we refer to this as method chaining.</p><p></p><p class="little-note">Should "B" need to invoke the constructor "A" (the superclass), we call this constructor chaining.</p><p></p><div><h5>Example</h5><code class="box result js"><pre>
+// Define a superclass constructor for "Person"
+var Person = function( firstName, lastName ){
+
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.gender = "male";
+
+};
+// Method on the "Person" class.
+Person.prototype.sayName = function () { console.log(`My name is ${this.firstName}.`); };
+
+
+// Define a subclass constructor for "Superhero"
+var Superhero = function( firstName, lastName, powers ){
+
+    // Invoke the superclass constructor on the new object
+    // then use .call() to invoke the constructor as a method of
+    // the object to be initialized.
+
+    // Now "Superhero" will also have firstName, lastName and gender.
+
+    Person.call( this, firstName, lastName );
+
+    // Finally, store their powers, a new array of traits not found in a normal "Person"
+    this.powers = powers;
+};
+
+
+// Changing the prototype of "Superhero" is what allow us
+// to inherit the properties and methods of the "Person" class.
+Superhero.prototype = Object.create( Person.prototype );
+
+// Now we can add methods and properties to the "Superhero" class.
+Superhero.prototype.getPowers = function () { console.log(`My power are ${this.powers.join(', ')}.`); };
+
+
+var superman = new Superhero( "Clark", "Kent", ["flight","heat-vision"] );
+var john = new Person('John', 'Smith');
+
+john.sayName(); // My name is John.
+
+superman.sayName(); // My name is Clark.
+superman.getPowers(); // My power are flight, heat-vision.
+</pre></code></div><p></p><h2>Mixins</h2><p>Prototypes can inherit from other object prototypes but, even more importantly, can define properties for any number of object instances. We can leverage this fact to promote function re-use.</p><p>Mixins allow objects to borrow (or inherit) functionality from them with a minimal amount of complexity. As the pattern works well with JavaScripts object prototypes, it gives us a fairly flexible way to share functionality from not just one Mixin, but effectively many through multiple inheritance.</p><p></p><div><h5>Pattern Example</h5><code class="box code js"><pre>
+// Define a simple Car constructor
+var Car = function ( settings ) {
+
+    this.model = settings.model || "no model provided";
+    this.color = settings.color || "no colour provided";
+
+};
+
+// Mixin
+var Mixin = function () {};
+
+
+Mixin.prototype = {
+
+    driveForward: function () {
+        console.log( "drive forward" );
+    },
+
+    driveBackward: function () {
+        console.log( "drive backward" );
+    },
+
+    driveSideways: function () {
+        console.log( "drive sideways" );
+    }
+
+};
+
+
+// Extend an existing object with a method from another
+function augment( receivingClass, givingClass ) {
+
+    // only provide certain methods
+    if ( arguments[2] ) {
+        for ( var i = 2, len = arguments.length; i &lt; len; i++ ) {
+            receivingClass.prototype[arguments[i]] = givingClass.prototype[arguments[i]];
+        }
+    }
+    // provide all methods
+    else {
+        for ( var methodName in givingClass.prototype ) {
+
+            // check to make sure the receiving class doesn't have a method
+            // of the same name as the one currently being processed.
+            if ( !Object.hasOwnProperty.call(receivingClass.prototype, methodName) ) {
+                receivingClass.prototype[methodName] = givingClass.prototype[methodName];
+            }
+        }
+    }
+}
+
+
+// Augment the Car constructor to include "driveForward" and "driveBackward"
+augment( Car, Mixin, "driveForward", "driveBackward" );
+
+// Create a new Car
+var myCar = new Car({
+    model: "Ford Escort",
+    color: "blue"
+});
+
+// Test to make sure we now have access to the methods
+myCar.driveForward();  // drive forward
+myCar.driveBackward(); // drive backward
+
+// We can also augment Car to include all functions from our mixin
+// by not explicitly listing a selection of them
+augment( Car, Mixin );
+
+var mySportsCar = new Car({
+    model: "Porsche",
+    color: "red"
+});
+
+mySportsCar.driveForward();  // drive forward
+mySportsCar.driveSideways(); // drive sideways
+</pre></code></div><div class="advantages conclusion"><h5>Advantages</h5><p class="little-note">Mixins assist in decreasing functional repetition and increasing function re-use in a system. Where an application is likely to require shared behaviour across object instances, we can easily avoid any duplication by maintaining this shared functionality in a Mixin and thus focusing on implementing only the functionality in our system which is truly distinct.</p></div><div class="disadvantages conclusion"><h5>Disadvantages</h5><p class="little-note">The downsides to Mixins are a little more debatable. Some developers feel that injecting functionality into an object prototype is a bad idea as it leads to both prototype pollution and a level of uncertainty regarding the origin of our functions. In large systems this may well be the case.</p></div></div>

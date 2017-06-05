@@ -1,35 +1,35 @@
 <div class="wrapper-content-tmpl"><h2>The Revealing Module Pattern</h2><p>The Revealing Module Pattern is an updated to the Module Pattern where we would simply define all of our functions and variables in the private scope and return an anonymous object with pointers to the private functionality we wished to reveal as public.</p><div><h5>Pattern Example</h5><code class="box code js"><pre>var myRevealingModule = (function () {
         
-        // PRIVATE
-        var privateCounter = 0;
+    // PRIVATE
+    var privateCounter = 0;
 
-        function privateIncremenFunction() {
-            privateCounter += 1;
-        }
+    function privateIncremenFunction() {
+        privateCounter += 1;
+    }
 
-        // PUBLIC
-        function publicFunction() {
-            publicIncrement();
-        }
+    // PUBLIC
+    function publicFunction() {
+        publicIncrement();
+    }
 
-        function publicIncrement() {
-            privateIncremenFunction();
-        }
+    function publicIncrement() {
+        privateIncremenFunction();
+    }
 
-        function publicGetCount(){
-          return privateCounter;
-        }
+    function publicGetCount(){
+      return privateCounter;
+    }
 
-        // Reveal public pointers to
-        // private functions and properties
+    // Reveal public pointers to
+    // private functions and properties
 
-       return {
-            start: publicFunction,
-            increment: publicIncrement,
-            count: publicGetCount
-        };
+   return {
+        start: publicFunction,
+        increment: publicIncrement,
+        count: publicGetCount
+    };
 
-    })();
+})();
 
 myRevealingModule.start();
 myRevealingModule.increment();
