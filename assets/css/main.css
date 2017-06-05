@@ -407,7 +407,7 @@ th {
   width: 30px;
   height: 30px;
   border: none;
-  border-radius: 15%;
+  border-radius: 50%;
   cursor: pointer;
   margin: 0px 0px 0px 10px;
 }
