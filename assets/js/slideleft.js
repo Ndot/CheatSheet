@@ -65,5 +65,8 @@ window.onload = function () {
         
         elem.classList.toggle('translate-links');
         elem.querySelector('#btn-open-links').classList.toggle('rotate');
+
+        elem.parentElement.parentElement.querySelector('.content-wrapper > #spa-content').classList.toggle('apply-3d');
+        elem.parentElement.parentElement.querySelector('.content-wrapper > #black-pane').classList.toggle('black-pane');
     });
 };

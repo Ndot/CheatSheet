@@ -56,6 +56,9 @@
         e.stopPropagation();
         this.classList.toggle('rotate');
         this.parentElement.classList.toggle('translate-links');
+
+        this.parentElement.parentElement.querySelector('.content-wrapper > #spa-content').classList.toggle('apply-3d');
+        this.parentElement.parentElement.querySelector('.content-wrapper > #black-pane').classList.toggle('black-pane');
     };
     
     stopEventPropagation = function (e) {
@@ -115,6 +118,7 @@
         // Define variables needed
         var cssBtn = document.querySelectorAll('[id*="-css"]'),
             btnOpenLinks = document.getElementById('btn-open-links'),
+            blackPane = document.getElementById('black-pane'),
             i;
         
         // Adding Events for the CHANGE THEME BUTTONS
@@ -138,6 +142,8 @@
         btnOpenLinks.addEventListener('touchstart', stopEventPropagation);
         btnOpenLinks.addEventListener('touchmove', stopEventPropagation);
         btnOpenLinks.addEventListener('touchend', stopEventPropagation);
+
+        blackPane.addEventListener('click', translateLinks.bind(btnOpenLinks));
     }
     
     window.addEventListener('load', winEvents);
