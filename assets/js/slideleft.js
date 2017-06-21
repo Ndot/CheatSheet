@@ -1,17 +1,21 @@
 window.onload = function () {
 
     var elem = document.querySelector('.links-wrapper'),
+        elem3d = elem.parentElement.parentElement.querySelector('.content-wrapper > #spa-content'),
+        elemBlackPane = elem.parentElement.parentElement.querySelector('.content-wrapper > #black-pane'),
         firstTouchPosX,
         firstTouchPosY,
         leftPosElem,
         diffTouchX = 0,
         diffTouchY = 0,
         valueApply,
+        valueApply3d,
         scrollLock = null;
 
     elem.addEventListener('touchstart', function (e) {
         e.stopPropagation();
         elem.style.transition = 'none';
+        elem3d.style.transition = 'none';
         firstTouchPosX = e.changedTouches[0].clientX;
         firstTouchPosY = e.changedTouches[0].clientY;
         leftPosElem = elem.getBoundingClientRect().left;
@@ -31,9 +35,16 @@ window.onload = function () {
             // Set values
             diffTouchX = e.changedTouches[0].clientX - firstTouchPosX;
             valueApply = diffTouchX + leftPosElem;
+            // WARNING: This is tightly coupled to the CSS propertie "transform: rotateY(-60deg)"
+            // in the spa_content.less file...if one change the other needs to change also...
+            // Why??? Because...bahhh...
+            valueApply3d = elem3d.classList.contains('apply-3d') ? (-(diffTouchX / 4) - 60) : -(diffTouchX / 4);
+
             // Prevent scrolling and applying the element position
             e.preventDefault();
             elem.style.transform = 'translate(' + valueApply + 'px)';
+            elem3d.style.transform = 'rotateY(' + valueApply3d + 'deg)';
+
             return;
         }
         
@@ -58,6 +69,8 @@ window.onload = function () {
         e.stopPropagation();
         elem.style.transition = '';
         elem.style.transform = '';
+        elem3d.style.transition = '';
+        elem3d.style.transform = '';
         
         if (scrollLock === 'vertical' || (diffTouchX < 60 && diffTouchX > -60)) {
             return;
@@ -66,7 +79,7 @@ window.onload = function () {
         elem.classList.toggle('translate-links');
         elem.querySelector('#btn-open-links').classList.toggle('rotate');
 
-        elem.parentElement.parentElement.querySelector('.content-wrapper > #spa-content').classList.toggle('apply-3d');
-        elem.parentElement.parentElement.querySelector('.content-wrapper > #black-pane').classList.toggle('black-pane');
+        elem3d.classList.toggle('apply-3d');
+        elemBlackPane.classList.toggle('black-pane');
     });
 };

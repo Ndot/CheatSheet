@@ -484,8 +484,8 @@ th {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 .content-container.apply-3d {
-  -webkit-transform: rotateY(-40deg);
-          transform: rotateY(-40deg);
+  -webkit-transform: rotateY(-60deg);
+          transform: rotateY(-60deg);
 }
 .content-container > div {
   padding: 50px;

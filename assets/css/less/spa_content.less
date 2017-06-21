@@ -8,7 +8,10 @@
     transition: transform 0.3s;
 
     &.apply-3d {
-        transform: rotateY(-40deg);
+        // WARNING: This is tightly coupled to the JavaScript variable "valueApply3d"
+        // in the slideleft.js file...if one change the other needs to change also...
+        // Why??? Because...bahhh...
+        transform: rotateY(-60deg);
     }
     
     > div {
