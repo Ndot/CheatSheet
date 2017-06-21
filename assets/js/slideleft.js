@@ -10,7 +10,8 @@ window.onload = function () {
         diffTouchY = 0,
         valueApply,
         valueApply3d,
-        scrollLock = null;
+        scrollLock = null,
+        areTheLinksClosing;
 
     elem.addEventListener('touchstart', function (e) {
         e.stopPropagation();
@@ -23,8 +24,13 @@ window.onload = function () {
         diffTouchX = 0;
         diffTouchY = 0;
         scrollLock = null;
-    });
         
+        // Reset areTheLinksClosing
+        areTheLinksClosing = false;
+        // Always add the class so the background is semiblack transparent
+        elemBlackPane.classList.add('black-pane');
+    });
+
         
     elem.addEventListener('touchmove', function (e) {
         e.stopPropagation();
@@ -39,6 +45,7 @@ window.onload = function () {
             // in the spa_content.less file...if one change the other needs to change also...
             // Why??? Because...bahhh...
             valueApply3d = elem3d.classList.contains('apply-3d') ? (-(diffTouchX / 4) - 60) : -(diffTouchX / 4);
+            areTheLinksClosing = elem3d.classList.contains('apply-3d') ? true : false;
 
             // Prevent scrolling and applying the element position
             e.preventDefault();
@@ -80,6 +87,6 @@ window.onload = function () {
         elem.querySelector('#btn-open-links').classList.toggle('rotate');
 
         elem3d.classList.toggle('apply-3d');
-        elemBlackPane.classList.toggle('black-pane');
+        if(areTheLinksClosing) { elemBlackPane.classList.remove('black-pane'); }
     });
 };
