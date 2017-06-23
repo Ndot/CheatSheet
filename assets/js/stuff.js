@@ -58,7 +58,7 @@
         this.parentElement.classList.toggle('translate-links');
 
         this.parentElement.parentElement.querySelector('.content-wrapper > #spa-content').classList.toggle('apply-3d');
-        this.parentElement.parentElement.querySelector('.content-wrapper > #black-pane').classList.toggle('black-pane');
+        this.parentElement.parentElement.querySelector('.content-wrapper > #black-pane').classList.toggle('active');
     };
     
     stopEventPropagation = function (e) {

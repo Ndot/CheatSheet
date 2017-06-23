@@ -28,7 +28,7 @@ window.onload = function () {
         // Reset areTheLinksClosing
         areTheLinksClosing = false;
         // Always add the class so the background is semiblack transparent
-        elemBlackPane.classList.add('black-pane');
+        elemBlackPane.classList.add('active');
     });
 
         
@@ -80,6 +80,7 @@ window.onload = function () {
         elem3d.style.transform = '';
         
         if (scrollLock === 'vertical' || (diffTouchX < 60 && diffTouchX > -60)) {
+            if(!areTheLinksClosing) { elemBlackPane.classList.remove('active'); }
             return;
         }
         
@@ -87,6 +88,6 @@ window.onload = function () {
         elem.querySelector('#btn-open-links').classList.toggle('rotate');
 
         elem3d.classList.toggle('apply-3d');
-        if(areTheLinksClosing) { elemBlackPane.classList.remove('black-pane'); }
+        if(areTheLinksClosing) { elemBlackPane.classList.remove('active'); }
     });
 };
