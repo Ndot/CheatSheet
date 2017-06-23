@@ -45,7 +45,6 @@ window.onload = function () {
             // in the spa_content.less file...if one change the other needs to change also...
             // Why??? Because...bahhh...
             valueApply3d = elem3d.classList.contains('apply-3d') ? (-(diffTouchX / 4) - 60) : -(diffTouchX / 4);
-            areTheLinksClosing = elem3d.classList.contains('apply-3d') ? true : false;
 
             // Prevent scrolling and applying the element position
             e.preventDefault();
@@ -61,6 +60,7 @@ window.onload = function () {
         diffTouchY = e.changedTouches[0].clientY - firstTouchPosY;    
         
         if (diffTouchX > 5 || diffTouchX < -5) {
+            areTheLinksClosing = elem3d.classList.contains('apply-3d') ? true : false;
             scrollLock = 'horizontal';
             return;
         }
@@ -68,6 +68,10 @@ window.onload = function () {
         if (diffTouchY > 5 || diffTouchY < -5) {
             elem.style.transform = '';
             scrollLock = 'vertical';
+            // HACK: The links are actualy closing but
+            // since i'm checking if(!areTheLinksClosing)
+            // on touchend this need to be true.
+            areTheLinksClosing = true;
             return;
         }
     });
