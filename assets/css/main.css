@@ -553,10 +553,14 @@ th {
   width: 100%;
   height: 0;
   z-index: 1;
-  -webkit-transition: background, height 0.4s, 0.4s;
-  transition: background, height 0.4s, 0.4s;
+  -webkit-transition: background 0.6s, height 0s;
+  transition: background 0.6s, height 0s;
+  -webkit-transition-delay: 0s, 0.6s;
+          transition-delay: 0s, 0.6s;
 }
 .black-pane.active {
+  -webkit-transition: background 0.6s, height 0s;
+  transition: background 0.6s, height 0s;
   background: rgba(0, 0, 0, 0.6);
   height: 100%;
 }
