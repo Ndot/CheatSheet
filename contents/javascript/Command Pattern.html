@@ -11,12 +11,73 @@
     
     
     <!-- CONTENT -->
-    <p></p>
+    <p><p>The general idea behind the Command pattern is that it provides us a means to separate the responsibilities of issuing commands from anything executing commands, delegating this responsibility to different objects instead.</p>
+
+<p>An abstract class defines an interface, but doesn't necessarily provide implementations for all of its member functions. It acts as a base class from which others are derived. A derived class which implements the missing functionality is called a concrete class.</p>
+</p>
 
     <div>
         <h5>Pattern Example</h5>
         <code class="box code js">
-            <pre></pre>
+            <pre>
+// Concrete Class
+function CarManager() {}
+
+CarManager.prototype = {
+
+    // request information
+    requestInfo: function (model, id) {
+        return "The information for " + model + " with ID " + id + " is foobar";
+    },
+
+    // purchase the car
+    buyVehicle: function (model, id) {
+        return "You have successfully purchased Item " + id + ", a " + model;
+    },
+
+    // arrange a viewing
+    arrangeViewing: function (model, id) {
+        return "You have successfully booked a viewing of " + model + " ( " + id + " ) ";
+    }
+};
+
+
+
+// Abstract Class
+function Command(ConcreteObject) {
+
+    // The pointer to our Concrete Class.
+    this.concreteObject = new ConcreteObject();
+    
+    // Keeping track of command excution.
+    this.commmands = [];
+}
+
+Command.prototype.execute = function (name) {
+
+    // Let's get all the other arguments besides the name.
+    var args = Array.prototype.slice.call(arguments, 1);
+
+    // Save the executions.
+    this.commmands.push({ command: name, args: args });
+
+    // Check if this.name exists...if it does call the method with
+    // the rest of the arguments in the args array.
+    return this.concreteObject[name] && this.concreteObject[name].apply(this.concreteObject, [...args]);
+};
+
+
+
+// Our carManager
+var carManager = new Command(CarManager);
+
+// Then we would interect with carManager by calling the
+// execute method and passing any named methods that can 
+// be performed on the carManager object.
+carManager.execute("arrangeViewing", "Ferrari", "14523");
+carManager.execute("requestInfo", "Ford Escort", "34232");
+carManager.execute("buyVehicle", "Ford Escort", "34232");
+</pre>
         </code>
     </div>
     
