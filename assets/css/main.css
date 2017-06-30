@@ -93,7 +93,7 @@ h6 {
   color: #0d0d0d;
 }
 .theme-color1 {
-  background: #ffffff;
+  background: #fafafa;
 }
 .theme-color2 {
   background: #f2f2f2;
@@ -735,6 +735,7 @@ h6 {
   margin-top: 50px;
 }
 .wrapper-content-tmpl .box {
+  background: #fff;
   box-shadow: 4px 4px 3px #dedede;
   border-right: 7px solid transparent;
   padding: 20px 15px;

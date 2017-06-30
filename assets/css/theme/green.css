@@ -9,7 +9,7 @@
   color: #0eeb30;
 }
 .theme-color1 {
-  background: #333333;
+  background: #262626;
 }
 .theme-color2 {
   background: #141414;
@@ -40,6 +40,9 @@
   background: #404040;
   color: #cccccc;
   box-shadow: 2px 2px  5px #111111;
+}
+.wrapper-html-reference > ul {
+  background: #4d4d4d;
 }
 .wrapper-content-tmpl .box {
   background: #333333;

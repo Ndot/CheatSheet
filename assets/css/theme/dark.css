@@ -39,6 +39,9 @@
   color: #cccccc;
   box-shadow: 2px 2px  5px #111111;
 }
+.wrapper-html-reference > ul {
+  background: #1a1a1a;
+}
 .wrapper-content-tmpl .box {
   background: #333333;
   box-shadow: 4px 4px 3px #1c1c1c;

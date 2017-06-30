@@ -29,6 +29,12 @@
 }
 /*-------------------------------------------------------*/
 /*----------------- SPA LOADED CONTENT ------------------*/
+.wrapper-html-reference h2 {
+  background: rgba(230, 230, 230, 0.5);
+}
+.wrapper-html-reference > ul {
+  background: rgba(230, 230, 230, 0.5);
+}
 .wrapper-content-tmpl .box {
   background: #f0ced4;
   box-shadow: 4px 4px 3px #1c1c1c;
