@@ -3,6 +3,8 @@
 
 @import url("./vendor/solarized-light.css");
 @font-face { font-family: "BreeSerif"; src: url("../fonts/BreeSerif-Regular.ttf"); }
+@font-face { font-family: "Firamono"; src: url("../fonts/FiraMono-Regular.ttf"); }
+@font-face { font-family: "Roboto"; src: url("../fonts/Roboto-Light.ttf"); }
 
 body {
     margin: 0;
@@ -20,6 +22,17 @@ td, tr, th {
     border: 1px solid hsl(0, 0%, 35%);
 }
 
+pre { font-family: 'Firamono'; }
+
+.code {
+    font-family: 'Firamono';
+    font-size: 11px;
+    line-height: 1.8em;
+    letter-spacing: -0.05em;
+}
+
+h1,h2,h3,h4,h5,h6 { font-family: "BreeSerif"; }
+
 .links {
     .color3;
     cursor: pointer;
@@ -28,6 +41,7 @@ td, tr, th {
     transition: 0.3s;
     display: block;
     position: relative;
+    font-family: "BreeSerif";
 
     &:hover {
         background: hsl(0, 3%, 60%);
@@ -64,6 +78,7 @@ td, tr, th {
 .little-note {
     font-style: italic;
     font-size: 0.8em;
+    line-height: 1.3em;
 }
 .little-note:before {content: " → ";}
 
