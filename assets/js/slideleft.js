@@ -1,4 +1,5 @@
 window.onload = function () {
+    'use strict';
 
     var elem = document.querySelector('.links-wrapper'),
         elem3d = elem.parentElement.parentElement.querySelector('.content-wrapper > #spa-content'),
@@ -11,6 +12,7 @@ window.onload = function () {
         valueApply,
         valueApply3d,
         scrollLock = null,
+        areTheLinksClosed,
         areTheLinksClosing;
 
     elem.addEventListener('touchstart', function (e) {
@@ -25,8 +27,8 @@ window.onload = function () {
         diffTouchY = 0;
         scrollLock = null;
         
-        // Reset areTheLinksClosing
-        areTheLinksClosing = false;
+        // Check the links state areTheLinksClosed
+        areTheLinksClosed = elem.classList.contains('translate-links') ? false : true;
         // Always add the class so the background is semiblack transparent
         elemBlackPane.classList.add('active');
     });
@@ -35,7 +37,7 @@ window.onload = function () {
     elem.addEventListener('touchmove', function (e) {
         e.stopPropagation();
         
-        if(scrollLock === 'vertical') { return; }
+        if (scrollLock === 'vertical') { return; }
         
         if (scrollLock === 'horizontal') {
             // Set values
@@ -57,10 +59,10 @@ window.onload = function () {
         // Set the difference beetwin X and Y fisrt touch
         // and the NOW touch to determin the scroll orientation
         diffTouchX = e.changedTouches[0].clientX - firstTouchPosX;
-        diffTouchY = e.changedTouches[0].clientY - firstTouchPosY;    
+        diffTouchY = e.changedTouches[0].clientY - firstTouchPosY;
         
         if (diffTouchX > 5 || diffTouchX < -5) {
-            areTheLinksClosing = elem3d.classList.contains('apply-3d') ? true : false;
+            areTheLinksClosing = elem.classList.contains('translate-links') ? true : false;
             scrollLock = 'horizontal';
             return;
         }
@@ -68,10 +70,6 @@ window.onload = function () {
         if (diffTouchY > 5 || diffTouchY < -5) {
             elem.style.transform = '';
             scrollLock = 'vertical';
-            // HACK: The links are actualy closing but
-            // since i'm checking if(!areTheLinksClosing)
-            // on touchend this need to be true.
-            areTheLinksClosing = true;
             return;
         }
     });
@@ -84,7 +82,7 @@ window.onload = function () {
         elem3d.style.transform = '';
         
         if (scrollLock === 'vertical' || (diffTouchX < 60 && diffTouchX > -60)) {
-            if(!areTheLinksClosing) { elemBlackPane.classList.remove('active'); }
+            if (areTheLinksClosed) { elemBlackPane.classList.remove('active'); }
             return;
         }
         
@@ -92,6 +90,6 @@ window.onload = function () {
         elem.querySelector('#btn-open-links').classList.toggle('rotate');
 
         elem3d.classList.toggle('apply-3d');
-        if(areTheLinksClosing) { elemBlackPane.classList.remove('active'); }
+        if (areTheLinksClosing) { elemBlackPane.classList.remove('active'); }
     });
 };
