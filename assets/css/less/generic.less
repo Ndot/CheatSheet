@@ -78,13 +78,20 @@ h1,h2,h3,h4,h5,h6 { font-family: "BreeSerif"; }
 
 .little-note {
     font-style: italic;
-    font-size: 0.8em;
-    line-height: 1.3em;
+    font-size: 0.95em;
+    line-height: 1.5em;
+    letter-spacing: 0;
 }
 .little-note:before {content: " → ";}
 
 .disable {
     filter: grayscale(1);
+}
+
+.text-highlight {
+    background: hsla(0, 0%, 50%, 0.2);
+    padding: 1px 6px;
+    border-radius: 10%;
 }
 
 .inline-link {

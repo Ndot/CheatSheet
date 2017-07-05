@@ -299,6 +299,7 @@
         "extension": ".json",
         "chapters": [
             "Regex",
+            "Class Syntax",
             "Constructor Pattern",
             "Object Literal Pattern",
             "Module Pattern",

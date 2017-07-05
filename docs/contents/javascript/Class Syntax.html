@@ -1,0 +1,85 @@
+<div class="wrapper-content-tmpl"><h2>Class Syntax</h2><p>ECMAScript 2015 introduced a new set of keywords implementing classes. Although these constructs look like those familiar to developers of class-based languages, they are not the same. JavaScript remains prototype-based. The new keywords include <span class="text-highlight">class</span>, <span class="text-highlight">constructor</span>, <span class="text-highlight">static</span>, <span class="text-highlight">extends</span>, and <span class="text-highlight">super</span>.</p><p class="warning conclusion little-note">The class syntax is <b class="text-highlight">NOT</b> introducing a new object-oriented inheritance model to JavaScript. JavaScript is still a prototype-based inheritance language.</p><p></p><div><h5>Example</h5><code class="box code result js"><pre>
+// SuperClass Animal.
+function Animal (age) {
+    this.name = 'brhhh';
+    this.age = age;
+}
+
+Animal.prototype.talk = 'Ghrrrr.....';
+Animal.prototype.saySomething = function () { console.log(`${this.talk}${this.name}`) };
+
+
+// Subclass Human.
+function Human (name, age) {
+    // Call the constructor for the Animal SuperClass.
+    Animal.call(this, age);
+    // Property shadowing name.
+    this.name = name;
+}
+
+// Inherit from Animal.
+Human.prototype = Object.create( Animal.prototype );
+// Static method to teach humans to talk.
+Human.learnToTalk = function (obj) { obj.talk = 'Hello my name is '; };
+
+
+
+var jonh = new Human('jonh', 23);
+
+jonh.saySomething();
+// Ghrrrr.....jonh
+
+Human.learnToTalk(jonh);
+
+jonh.saySomething();
+// Hello my name is jonh
+</pre></code></div><p></p><div><h5>Pattern Example</h5><code class="box code js"><pre>
+// SuperClass Animal.
+class Animal {
+
+    constructor (age) {
+        this.name = 'brhhh';
+        this.age = age;
+        this.talk = 'Ghrrrr.....'
+    }
+
+    saySomething () {
+        console.log(`${this.talk}${this.name}`)
+    }
+}
+
+
+
+// Subclass Human.
+class Human extends Animal {
+
+    constructor (name, age) {
+        // Call the constructor for the Animal SuperClass.
+        super(age);
+        // Property shadowing name.
+        this.name = name;
+    }
+
+    /**
+     * Let's teach the Human to talk...
+     * 
+     * @static
+     * @param {object} obj - An instance with a talk method.
+     */
+    static learnToTalk (obj) {
+        obj.talk = 'Hello my name is ';
+    }
+}
+
+
+
+var jonh = new Human('jonh', 23);
+
+jonh.saySomething();
+// Ghrrrr.....jonh
+
+Human.learnToTalk(jonh);
+
+jonh.saySomething();
+// Hello my name is jonh
+</pre></code></div></div>

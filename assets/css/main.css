@@ -100,8 +100,9 @@ h6 {
 }
 .little-note {
   font-style: italic;
-  font-size: 0.8em;
-  line-height: 1.3em;
+  font-size: 0.95em;
+  line-height: 1.5em;
+  letter-spacing: 0;
 }
 .little-note:before {
   content: " → ";
@@ -109,6 +110,11 @@ h6 {
 .disable {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
+}
+.text-highlight {
+  background: rgba(128, 128, 128, 0.2);
+  padding: 1px 6px;
+  border-radius: 10%;
 }
 .inline-link {
   color: #7373d3;
@@ -811,7 +817,6 @@ h6 {
 }
 .wrapper-content-tmpl .conclusion.advantages {
   color: seagreen;
-  border-color: darkgreen;
   background: #d0ecd0;
 }
 .wrapper-content-tmpl .conclusion.advantages h5 {
@@ -820,12 +825,15 @@ h6 {
 }
 .wrapper-content-tmpl .conclusion.disadvantages {
   color: brown;
-  border-color: darkred;
   background: #f0dada;
 }
 .wrapper-content-tmpl .conclusion.disadvantages h5 {
   color: darkred;
   margin: 0px;
+}
+.wrapper-content-tmpl .conclusion.warning {
+  color: #ab870b;
+  background: #ffedb1;
 }
 /*-------------------------------------------------------*/
 /*------------------- HTML REFERENCE --------------------*/
