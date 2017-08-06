@@ -11,13 +11,16 @@
     
     
     <!-- CONTENT -->
-    <p>The Singleton pattern is thus known because it restricts instantiation of a class to a single object. Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object. Kinda like the "One ring to rule them all..." sort of analogy..."My Precious"...
-</p>
+    
+        <div>The Singleton pattern is thus known because it restricts instantiation of a class to a single object. Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object. Kinda like the "One ring to rule them all..." sort of analogy..."My Precious"...
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>var mySingleton = (function () {
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>var mySingleton = (function () {
 
     // Instance stores a reference to the Singleton
     var instance;
@@ -56,13 +59,18 @@ var a = mySingleton.getInstance();
 var b = mySingleton.getInstance();
 console.log( a === b ); // true
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
     
-        <div class="advantages conclusion">
+        <div class="highlight-box-good">
         <h5>Advantages</h5>
         
         
@@ -75,7 +83,7 @@ console.log( a === b ); // true
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         

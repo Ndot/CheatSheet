@@ -54,3 +54,13 @@
 .wrapper-regex-js tr:nth-child(even) {
   background: #333333;
 }
+/* TEST */
+.content-container.apply-3d {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+.spa .content-wrapper {
+  -webkit-perspective: none;
+          perspective: none;
+}

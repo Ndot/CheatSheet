@@ -1,0 +1,154 @@
+---
+title: The Flyweight Pattern
+
+# ---------------------------------------------
+# --------------------------------- PRE CONTENT
+preContent:
+preExample:
+
+# ---------------------------------------------
+# ------------------------------------- CONTENT
+content: |
+    
+exampleCode:
+
+# ---------------------------------------------
+# ---------------------------------------- BODY
+body:
+    -
+        textTilte:
+        text: | 
+            <p>The Flyweight Pattern is used to reduce the amount of data created by sharing as much as possible between objects. This aims to minimize memory usaged in an application.</p>
+            <p>The way this works is by creating an object with as much identical data as possible and placing it in an external object. Other object can than share this data without having to create it, avoiding having identical data across multiple objects.</p>
+            
+            <p>There are two concepts we need to understand to make the Flyweight Pattern work, these are intrinsic and extrinsic data.</p>
+            
+            <span class="little-note">Intrinsic - This is information is what we want our object to share.</span><br />
+            <span class="little-note">Extrinsic - This is information that can be removed and it might not be the same to all objects.</span>
+            
+    -
+        text: |
+            <p>For this example we want to manage lights in our house. For that we need some sort light class that's able to create light and place them in the correct rooms.</p>
+            <p>First thing to do is to create a simple Light Class that creates lights.</p>
+            
+        code: |
+            // Light Class
+            function Light(shape, power) {
+                this.shape = shape;
+                this.power = power;
+            }
+
+            Light.prototype = { color: 'white', }
+            
+    -
+        text: |
+            <p>Now we want to make sure we don't create more lights that we need to. For this we can create a Light Factory Singleton.</p>
+            
+        code: |
+        
+            // Light Factory Singleton
+            var LightFactory = (function () {
+                var lights = {},
+                    light,
+                    lightCount = 0;
+
+                return {
+                    getLight: function (shape, power) {
+
+                        // Find if this particular light was already created.
+                        light = lights[shape + power];
+                        if (light) {
+                            return light;
+                            
+                        } else {
+                            var newLight = new Light(shape, power);
+                            // Increase our count.
+                            lightCount++;
+                            // This is our unique indentifier for the light.
+                            lights[shape + power] = newLight;
+
+                            return newLight;
+                        }
+                    },
+                    getLightsCount: function () { return lightCount; }
+                };
+            }());
+        
+    -
+        text: |
+            <p>The last thing we need is some sort of manager interface that abstract us from the Light Class and Light Factory but allows us to create our lights and place them in the right place.</p>
+            
+        code: |
+            var LightManager = (function () {
+                var lightsAdded = 0, rooms = {};
+
+                return {
+                    addLight: function (shape, power, room) {
+                        var light = LightFactory.getLight(shape, power);
+
+                        if (rooms[room]) {
+                            rooms[room].lights.push(light);
+                        } else {
+                            rooms[room] = { lights: [light] };
+                        }
+                        lightsAdded++;
+                    },
+                    showMeTheLights: function () {
+                        for (var room in rooms) {
+                            if (rooms.hasOwnProperty(room)) {
+                                console.log(`The ${room} has ${rooms[room].lights.length} lights.`);
+                            }
+                        }
+                    },
+                    getLightsAdded: function () {
+                        return lightsAdded;
+                    },
+                    getSpecificLight: function (room, lightNumber) {
+                        var light = rooms[room].lights[lightNumber];
+                        console.log(`That is a ${light.power}W ${light.shape} shape light in ${light.color} color.`);
+                    }
+                }
+            }());
+    -
+        text: |
+            <p>When we create a light in our LightManager the way we get light is abstracted from the LightManager. It doesn't know if is a new light our an exintent one, it just know it gets a light object to work with. On top of that we keep a reference to our rooms and we just push our light into the <span class="highlight-text">rooms[room].lights</span> array.</p>
+            
+        codeTitle: Test LightManager
+        code: |
+            // Let's add some lights...
+            LightManager.addLight('round', 5, 'livingRoom');
+            LightManager.addLight('round', 5, 'livingRoom');
+            LightManager.addLight('square', 7, 'livingRoom');
+            LightManager.addLight('square', 5, 'bedRoom');
+            LightManager.addLight('round', 5, 'bedRoom');
+            LightManager.addLight('round', 5, 'bedRoom');
+            LightManager.addLight('egg', 15, 'kitchen');
+            LightManager.addLight('round', 5, 'kitchen');
+            LightManager.addLight('square', 7, 'kitchen');
+            LightManager.addLight('square', 5, 'kitchen');
+
+            console.log(LightManager.getLightsAdded()); // 10
+            console.log(LightFactory.getLightsCount()); // 4
+
+            // List of lights we have.
+            LightManager.showMeTheLights()
+            // The livingRoom has 3 lights.
+            // The bedRoom has 3 lights.
+            // The kitchen has 4 lights.
+
+            // And we can get to specific lights
+            LightManager.getSpecificLight('livingRoom', 2);
+            // That is a 7W square shape light in white color.
+            LightManager.getSpecificLight('kitchen', 0);
+            // That is a 15W egg shape light in white color.
+            
+
+# ---------------------------------------------
+# ---------------------------------- CONCLUSION
+conclusion: 
+    advantages: 
+        - Sharing as much as possible between objects aims to minimize memory usaged in an application.
+    disadvantages: 
+        - Note that the objects shared by definition must be immutable.
+        - For small number of object created it may introduce an unnecessarily level of complexity for very small gains in memory.
+...

@@ -300,22 +300,30 @@
         "chapters": [
             "Regex",
             "Class Syntax",
+
+            "Creational Patterns", { "chapters": [] },
             "Constructor Pattern",
             "Object Literal Pattern",
             "Module Pattern",
             "Revealing Module Pattern",
+            "AMD Pattern",
             "Singleton Pattern",
-            "Observer Pattern",
-            "Publish-Subscribe Pattern",
-            "State Pattern",
-            "Mediator Pattern",
             "Prototype Pattern",
-            "Command Pattern",
-            "Facade Pattern",
             "Factory Pattern",
+
+            "Structural Patterns", { "chapters": [] },
+            "Facade Pattern",
             "Mixin Pattern",
             "Decorator Pattern",
-            "Flyweight Pattern"
+            "Flyweight Pattern",
+
+            "Behavioral Patterns", { "chapters": [] },
+            "Observer Pattern",
+            "Publish-Subscribe Pattern",
+            "Command Pattern",
+            "Mediator Pattern",
+            "State Pattern"
+
         ]
     }
 }

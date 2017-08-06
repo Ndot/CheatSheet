@@ -45,6 +45,9 @@ h4,
 h5,
 h6 {
   font-family: "BreeSerif";
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 .links {
   color: #808080;
@@ -56,10 +59,21 @@ h6 {
   display: block;
   position: relative;
   font-family: "BreeSerif";
+  font-size: 14px;
 }
 .links:hover {
   background: #9c9696;
   color: aliceblue;
+}
+.category-title {
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  margin-top: 30px;
+  font-family: monospace;
+  text-align: right;
+  padding-right: 40px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 }
 .more-links:after {
   position: absolute;
@@ -90,7 +104,7 @@ h6 {
   color: #595959;
 }
 .color5 {
-  color: #0d0d0d;
+  color: #454545;
 }
 .theme-color1 {
   background: #fafafa;
@@ -111,10 +125,40 @@ h6 {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
-.text-highlight {
+.highlight-text {
   background: rgba(128, 128, 128, 0.2);
   padding: 1px 6px;
   border-radius: 10%;
+}
+.highlight-box {
+  margin: 10px 0px;
+  padding: 15px 25px;
+  border-radius: 5px;
+}
+.highlight-box {
+  background: #dadada;
+  color: #383838;
+}
+.highlight-box-good {
+  margin: 10px 0px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: seagreen;
+  background: #d0ecd0;
+}
+.highlight-box-bad {
+  margin: 10px 0px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: brown;
+  background: #f0dada;
+}
+.highlight-box-warning {
+  margin: 10px 0px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: #ab870b;
+  background: #ffedb1;
 }
 .inline-link {
   color: #7373d3;
@@ -299,7 +343,7 @@ h6 {
 #main-navigation .header-nav li a {
   pointer-events: none;
   /* 
-                * This is here make the area of the links
+                * This is here to make the area of the links
                 * bigger to allow clicking the links on 
                 * touch devices easier.
                 */
@@ -382,7 +426,7 @@ h6 {
   color: #808080;
   cursor: pointer;
   text-decoration: none;
-  padding: 10px 40px 10px 10px;
+  padding: 7px 40px 7px 10px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   display: block;
@@ -445,6 +489,7 @@ h6 {
   border-radius: 50%;
   cursor: pointer;
   margin: 0px 0px 0px 10px;
+  box-shadow: 1px 3px 5px -4px #000;
 }
 .links-wrapper footer button.css-button-light {
   background: white;
@@ -523,10 +568,10 @@ h6 {
 .content-container > div {
   padding: 50px;
   font-family: 'Roboto';
-  letter-spacing: -0.2px;
   line-height: 2em;
-  font-size: 14px;
+  font-size: 13px;
   max-width: 1100px;
+  max-width: 860px;
 }
 @media (max-width: 740px) {
   .content-container > div {
@@ -604,52 +649,44 @@ h6 {
 /*------------------------ HOME -------------------------*/
 .wrapper-main-title {
   background-color: #000;
-  height: 100%;
+  box-sizing: border-box;
+  max-width: none !important;
+  padding: 0 !important;
+}
+.wrapper-main-title .title-container {
+  background-image: url('../img/img_code_monitor_dark.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 40vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  box-sizing: border-box;
-  max-width: none !important;
-}
-.wrapper-main-title:after {
-  content: "";
-  background-image: url('../img/img_code_monitor_dark.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 20% 0%;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
-}
-.wrapper-main-title .title-container {
-  text-align: center;
-  z-index: 1;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   letter-spacing: 0.1em;
   word-spacing: 0.2em;
-  font-size: 3em;
+  font-size: 2.5em;
   font-family: "BreeSerif";
   line-height: 1.5em;
 }
 @media (max-width: 740px) {
   .wrapper-main-title .title-container {
     font-size: 1.4em;
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
   }
 }
 .wrapper-main-title .title-container .title:first-child {
+  text-shadow: 2px 3px 2px #444;
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -658,6 +695,7 @@ h6 {
   opacity: 0;
 }
 .wrapper-main-title .title-container .title:last-child {
+  text-shadow: 2px 3px 2px #444;
   -webkit-transform: translateY(100%);
       -ms-transform: translateY(100%);
           transform: translateY(100%);
@@ -668,6 +706,12 @@ h6 {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
+  margin-left: 40px;
+}
+@media (max-width: 740px) {
+  .wrapper-main-title .title-container .title:last-child {
+    margin-left: initial;
+  }
 }
 @-webkit-keyframes to-initial {
   to {
@@ -682,6 +726,46 @@ h6 {
             transform: translateY(0);
     opacity: 1;
   }
+}
+.wrapper-main-title .about-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #3a4956;
+  position: relative;
+  height: 60vh;
+  overflow: auto;
+}
+.wrapper-main-title .about-container {
+  color: white;
+  max-width: 400px;
+  padding: 15px;
+}
+.wrapper-main-title .about-container .links {
+  text-align: center;
+  font-size: 2em;
+  border: 3px solid;
+  line-height: 1.5em;
+  margin-top: 40px;
+  -webkit-filter: grayscale(0.7);
+          filter: grayscale(0.7);
+}
+.wrapper-main-title .about-container .links:hover {
+  background: transparent;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+.wrapper-main-title .about-container .links.js {
+  color: #e5d043;
+}
+.wrapper-main-title .about-container .links.html {
+  color: #e44b25;
 }
 /*-------------------------------------------------------*/
 /*------------- HTML CSS JAVASCRIPT - HOME --------------*/
@@ -737,15 +821,12 @@ h6 {
   font-family: monospace;
   font-style: italic;
 }
-.wrapper-content-tmpl h5 {
-  margin-top: 50px;
-}
 .wrapper-content-tmpl .box {
   background: #fff;
   box-shadow: 4px 4px 3px #dedede;
   border-right: 7px solid transparent;
   padding: 20px 15px;
-  margin: 30px 0px;
+  margin: 20px 0px;
 }
 .wrapper-content-tmpl .box.code {
   border-left: 7px solid #5eba7d;
@@ -810,31 +891,6 @@ h6 {
   display: block;
   margin: 30px 0px;
 }
-.wrapper-content-tmpl .conclusion {
-  margin: 10px 0px;
-  padding: 15px 25px;
-  border-radius: 5px;
-}
-.wrapper-content-tmpl .conclusion.advantages {
-  color: seagreen;
-  background: #d0ecd0;
-}
-.wrapper-content-tmpl .conclusion.advantages h5 {
-  color: darkgreen;
-  margin: 0px;
-}
-.wrapper-content-tmpl .conclusion.disadvantages {
-  color: brown;
-  background: #f0dada;
-}
-.wrapper-content-tmpl .conclusion.disadvantages h5 {
-  color: darkred;
-  margin: 0px;
-}
-.wrapper-content-tmpl .conclusion.warning {
-  color: #ab870b;
-  background: #ffedb1;
-}
 /*-------------------------------------------------------*/
 /*------------------- HTML REFERENCE --------------------*/
 .wrapper-html-reference h2 {
@@ -897,6 +953,8 @@ h6 {
   background: #e5d043 !important;
   color: aliceblue;
   text-align: center;
+  font-family: BreeSerif;
+  font-size: 0.9em;
 }
 .wrapper-regex-js td:nth-child(1) {
   text-align: center;

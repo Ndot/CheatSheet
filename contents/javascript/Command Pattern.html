@@ -11,15 +11,18 @@
     
     
     <!-- CONTENT -->
-    <p><p>The general idea behind the Command pattern is that it provides us a means to separate the responsibilities of issuing commands from anything executing commands, delegating this responsibility to different objects instead.</p>
+    
+        <div><p>The general idea behind the Command pattern is that it provides us a means to separate the responsibilities of issuing commands from anything executing commands, delegating this responsibility to different objects instead.</p>
 
 <p>An abstract class defines an interface, but doesn't necessarily provide implementations for all of its member functions. It acts as a base class from which others are derived. A derived class which implements the missing functionality is called a concrete class.</p>
-</p>
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>
 // Concrete Class
 function CarManager() {}
 
@@ -78,8 +81,13 @@ carManager.execute("arrangeViewing", "Ferrari", "14523");
 carManager.execute("requestInfo", "Ford Escort", "34232");
 carManager.execute("buyVehicle", "Ford Escort", "34232");
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->

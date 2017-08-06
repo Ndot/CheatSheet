@@ -1,9 +1,9 @@
 /**
-* Mini LIBRARY
-* 
-* @name $$
-* @return {Object}
-*/
+ * Mini LIBRARY
+ *
+ * @name $$
+ * @return {Object}
+ */
 var $$ = (function () {
     'use strict';
     
@@ -12,24 +12,24 @@ var $$ = (function () {
         openClose;
 
     /**
-    * Store any type of data into an Object.
-    *
-    * @method takeThatDataCrazyMan
-    * @param {string} key - The reference to the data we are saving.
-    * @param {*} value - The data to be saved.
-    */
+     * Store any type of data into an Object.
+     *
+     * @method takeThatDataCrazyMan
+     * @param {string} key - The reference to the data we are saving.
+     * @param {*} value - The data to be saved.
+     */
     function store(key, value) {
         _storage[key] = value;
     }
 
     /**
-    * If it exists returns the data stored in the
-    * Object by the "takeThatDataCrazyMan" function.
-    *
-    * @method giveMeMyFilesOldFool
-    * @param {string} key - The reference to the data we are retriving.
-    * @return {*}
-    */
+     * If it exists returns the data stored in the
+     * Object by the "takeThatDataCrazyMan" function.
+     *
+     * @method giveMeMyFilesOldFool
+     * @param {string} key - The reference to the data we are retriving.
+     * @return {*}
+     */
     function send(key) {
         if (_storage[key]) {
             return _storage[key];
@@ -37,13 +37,13 @@ var $$ = (function () {
     }
 
     /**
-    * Simple XML Http Request.
-    *
-    * @method getRequestfunc
-    * @param {string} url - The URL as a string.
-    * @param {getRequestCallback} callback - The callback that handles the response.
-    * @param {boolean} [asynchronous=true] - TRUE for Asynchronous and FALSE for Synchronous.
-    */
+     * Simple XML Http Request.
+     *
+     * @method getRequestfunc
+     * @param {string} url - The URL as a string.
+     * @param {getRequestCallback} callback - The callback that handles the response.
+     * @param {boolean} [asynchronous=true] - TRUE for Asynchronous and FALSE for Synchronous.
+     */
     function getRequest(url, callback, asynchronous) {
         var xhr = new XMLHttpRequest(),
             asynchronous = (asynchronous === undefined) ? true : asynchronous;
@@ -59,25 +59,16 @@ var $$ = (function () {
     }
 
     /**
-    * This is the callback from the getRequest() method.
-    * This callback takes the xhr.responseText as a parameter,
-    * and gets called when the XMLHttpRequest onload method succeeds.
-    * 
-    * @callback getRequestCallback
-    * @param {string} responseMessage - The xhr responseText.
-    */
-
-    /**
-    * First parameter is the parent Element of the elements to apply the class,
-    * this element needs to have a 'data-class-active' attribute with a value of the
-    * class to apply. The refValue is going to be checked against the 'data-id' of
-    * the elements, when they match that element gets the class retrived from the
-    * 'data-class-active' attribute of the parent.
-    *
-    * @method activeClass
-    * @param {Element} elem - The parent element of the elements to apply the class.
-    * @param {string} refValue - Reference value to match.
-    */
+     * First parameter is the parent Element of the elements to apply the class,
+     * this element needs to have a 'data-class-active' attribute with a value of the
+     * class to apply. The refValue is going to be checked against the 'data-id' of
+     * the elements, when they match that element gets the class retrived from the
+     * 'data-class-active' attribute of the parent.
+     *
+     * @method activeClass
+     * @param {Element} elem - The parent element of the elements to apply the class.
+     * @param {string} refValue - Reference value to match.
+     */
     function activeClass(elem, refValue) {
         var elementList = elem.querySelectorAll('[data-id]'),
             classToAdd = elem.attributes['data-class-active'].value,
@@ -96,13 +87,13 @@ var $$ = (function () {
     }
 
     /**
-    * Account for Browser Prefixes
-    * This function checks which transition event name to use.
-    *
-    * @method _whichTransitionEvent
-    * @private
-    * @return {string} - String with the correct transitionend event type. 
-    */
+     * Account for Browser Prefixes
+     * This function checks which transition event name to use.
+     *
+     * @method _whichTransitionEvent
+     * @private
+     * @return {string} - String with the correct transitionend event type.
+     */
     function _whichTransitionEvent() {
         var t,
             el = document.createElement('fakeelement'),
@@ -123,16 +114,16 @@ var $$ = (function () {
     _transitionEventEnd = _whichTransitionEvent();
     
     /**
-    * Slide Up or Down the next Element Sibling.<br/><br/>
-    * This function takes an Event or an Element. The Element to which the
-    * Event referes need to have an attribute of 'data-hidden' with a value
-    * of true of false.
-    * When the next Element Sibling is open the element gets a class of
-    * 'opened-links'. The transition duration of the Slide is controled in CSS.
-    *
-    * @function openClose
-    * @param {Element|Event} e - The Element or an Event targeting an Element.
-    */
+     * Slide Up or Down the next Element Sibling.<br/><br/>
+     * This function takes an Event or an Element. The Element to which the
+     * Event referes need to have an attribute of 'data-hidden' with a value
+     * of true of false.
+     * When the next Element Sibling is open the element gets a class of
+     * 'opened-links'. The transition duration of the Slide is controled in CSS.
+     *
+     * @function openClose
+     * @param {Element|Event} e - The Element or an Event targeting an Element.
+     */
     openClose = function (e) {
         var link = (e.target) ? this : e,
             tall,
@@ -180,13 +171,13 @@ var $$ = (function () {
 }());
 
 /**
-* Creates a new tag, appends it to the Object and
-* returns the new element.
-*
-* @param {string} tag
-* @param {object} obj
-* @return {Element}
-*/
+ * Creates a new tag, appends it to the Object and
+ * returns the new element.
+ *
+ * @param {string} tag
+ * @param {object} obj
+ * @return {Element}
+ */
 Object.prototype.creatEl = function (tag, obj) {
     'use strict';
     var el, val;

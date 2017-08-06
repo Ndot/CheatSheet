@@ -1,67 +1,22 @@
-/*-------------------------------------------------------*/
-/*----- SUBJECT - Properties and Methods (HELPERS) ------*/
-
-var SubObj = function () {
-    'use strict';
-    this.observerList = [];
-};
-
-SubObj.prototype.add = function (obj) {
-    'use strict';
-    var i, Olength = this.observerList.length;
-    for (i = 0; i < Olength; i += 1) {
-        if (this.observerList[i] === obj) { return; }
-    }
-    return this.observerList.push(obj);
-};
-
-SubObj.prototype.removeObserver = function (index) {
-    'use strict';
-    if (index !== undefined) {
-        return this.observerList.splice(index, 1);
-    }
-};
-
-SubObj.prototype.findMe = function (obj) {
-    'use strict';
-    var i, Olength = this.observerList.length;
-    for (i = 0; i < Olength; i += 1) {
-        if (this.observerList[i] === obj) {
-            return i;
-        }
-    }
-};
-
-/*-------------------------------------------------------*/
-/*----------------------- SUBJECT -----------------------*/
-
-var Subject = function () {
-    'use strict';
-    this.subObj = new SubObj();
-};
-
-Subject.prototype.addObserver = function (observer) {
-    'use strict';
-    this.subObj.add(observer);
-};
-
-Subject.prototype.removeObserver = function (observer) {
-    'use strict';
-    this.subObj.removeObserver(this.subObj.findMe(observer));
-};
-
-Subject.prototype.notify = function (context) {
-    'use strict';
-    var i, Olength = this.subObj.observerList.length;
-    for (i = 0; i < Olength; i += 1) {
-        this.subObj.observerList[i].update(context);
-    }
-};
-
-/*-------------------------------------------------------*/
-/*------------------------- SPA -------------------------*/
-
-(function ($$, hljs) {
+/**
+ * This is a simple SPA (Single Page Application) implementation.
+ * First we have an event listener on the hash part of the URL, this is
+ * what determines where we are on the page.
+ * Which Object Literals determines a funcitonality that happens when
+ * the hash changes.
+ * For these Object Literals to work we just need to add them to our Subject by
+ * calling "hashSubject.addObserver(ObjectLiteral)".
+ *
+ * NOTE: "hashSubject" calls the "update" method on the Object Literals, this
+ * means it's mandatory for those literals to have an "update" method on them
+ * that works as the entry point for the object.
+ *
+ * @author Ndot
+ * @param   {object}   $$   - Object reference to the helper.js.
+ * @param   {object}   hljs - Object reference to the vendor/highlight.pack.js.
+ * @returns {function}      - Calling this function initializes the SPA module.
+ */
+var SPA = function ($$, hljs) {
     'use strict';
     /*global $, hljs*/
 
@@ -75,11 +30,15 @@ Subject.prototype.notify = function (context) {
         content = {},
         activeClass = {},
         openLinksAbove = {},
-        intoView = {};
+        intoView = {},
+        titleManager = {};
 
-/*-------------------------------------------------------*/
-/*------------------------ Links ------------------------*/
-
+    /**
+     * Responsible for grabing the side nav links array for
+     * the correct scope and render the links in the
+     * side nav panel. Or hide the side nav panel in case
+     * of the home page.
+     */
     links = {
         "data": "",
         "hashCheck": "",
@@ -87,13 +46,20 @@ Subject.prototype.notify = function (context) {
             var innerText, activeElement, ulElememt = elem.creatEl('ul');
             elem.dataset.classActive = "active-links-" + objArr.name;
             
-            objArr.chapters.forEach(function (val) {
+            objArr.chapters.forEach( (function (val) {
                 if (typeof val === 'object') {
-                    activeElement.classList.add('more-links');
+                    if (val.chapters[0]) {
+                        activeElement.classList.add('more-links');
+                        activeElement.dataset.hidden = 'true';
+                        activeElement.addEventListener('click', $$.openClose);
+                    }
+                    if (!val.chapters[0]) {
+                        activeElement.classList.add('category-title');
+                        activeElement.classList.add('color3');
+                        activeElement.classList.remove('links');
+                    }
                     activeElement.removeAttribute('href');
-                    activeElement.dataset.hidden = 'true';
-                    activeElement.addEventListener('click', $$.openClose);
-                    links.render(activeElement.parentElement, val);
+                    this.render(activeElement.parentElement, val);
                     return;
                 }
                 // This is nice (Regex Baby)
@@ -102,7 +68,7 @@ Subject.prototype.notify = function (context) {
                 activeElement = ulElememt.creatEl('li')
                     .creatEl('a', {'href': '#' + objArr.name + '/' + val, 'data-id': val, 'class': 'links'});
                 activeElement.innerHTML = innerText;
-            });
+            }).bind(this));
         },
         "isThisHere": function (value) {
             var dataToCheck = $$.giveMeMyFilesOldFool(value);
@@ -130,9 +96,14 @@ Subject.prototype.notify = function (context) {
         }
     };
 
-/*-------------------------------------------------------*/
-/*----------------------- Content -----------------------*/
-
+    /**
+     * Checks if data is available, if not requests
+     * that content via xhr and saves it. This avoids
+     * multiple requests to previous seen content.
+     *
+     * When data is available that data is rendered in
+     * the content panel.
+     */
     content = {
         "data": "",
         "hashString": "",
@@ -171,19 +142,24 @@ Subject.prototype.notify = function (context) {
         }
     };
 
-/*-------------------------------------------------------*/
-/*-------------------- Active Class ---------------------*/
-
+    /**
+     * Calls the activeClass helper function to update
+     * the active class on main nav and on side nav.
+     */
     activeClass = {
         "update": function (hash) {
+            // Main navigation
             $$.activeClass(nav, hash[0]);
+            // Side navigation
             $$.activeClass(id_link, hash[hash.length - 1]);
         }
     };
 
-/*-------------------------------------------------------*/
-/*------------------ Open Links Above -------------------*/
-    
+    /**
+     * In case the active class links is a sub-links in the
+     * side nav column open the parent element to expose
+     * the active link.
+     */
     openLinksAbove = {
         "openLinks": function (elem) {
             if (elem.dataset.hidden === 'true') {
@@ -207,9 +183,10 @@ Subject.prototype.notify = function (context) {
         }
     };
     
-/*-------------------------------------------------------*/
-/*------------------- Scroll to View --------------------*/
-
+    /**
+     * Scrolls the side nav element to show the links with
+     * the active class.
+     */
     intoView = {
         "goThere": function (elem) {
             elem.scrollIntoView({block: "start", behavior: "smooth"});
@@ -233,18 +210,47 @@ Subject.prototype.notify = function (context) {
         }
     };
 
-/*-------------------------------------------------------*/
-/*---------------- Add the new OBSERVERS ----------------*/
+    /**
+     * Change title to match the current page and content.
+     */
+    titleManager = {
+        changeTitle: function (pageTitle) {
+            document.title = pageTitle + ' | CheatSheet - by Ndot';
+        },
+        changeTitleToHome: function () {
+            document.title = 'CheatSheet - by Ndot';
+        },
+        update: function (hash) {
+            // Clean last index of 'home' from the array.
+            if (hash.indexOf('home') !== -1) { hash.splice(hash.lastIndexOf('home'), 1); }
+
+            // Upper Case the first letter.
+            hash[0] = hash[0][0].toUpperCase() + hash[0].slice(1);
+
+            (hash[0] === 'Home' ? this.changeTitleToHome() : this.changeTitle(hash.join(' ')));
+        }
+    }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------- Add the new OBSERVERS */
 
     hashSubject.addObserver(links);
     hashSubject.addObserver(content);
     hashSubject.addObserver(activeClass);
     hashSubject.addObserver(openLinksAbove);
     hashSubject.addObserver(intoView);
+    hashSubject.addObserver(titleManager);
 
-/*-------------------------------------------------------*/
-/*------------------------ init -------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
 
+    /**
+     * Grab the location.hash and turn it into an array with
+     * one element for which scope, making the necessary modifications
+     * in case we are on the Home Page.
+     *
+     * Notify all the Observer with the created array.
+     */
     function init() {
         var hashArray = decodeURIComponent(location.hash).substr(1).split('/');
         
@@ -256,10 +262,15 @@ Subject.prototype.notify = function (context) {
         hashSubject.notify(hashArray);
     }
 
-    // Listener
-    window.addEventListener('hashchange', init);
 
-    // Initial URL check
-    init();
+    function start() {
+        // Listener
+        window.addEventListener('hashchange', init);
 
-}($$, hljs));
+        // Initial URL check
+        init();
+    }
+
+    return start;
+
+}($$, hljs);

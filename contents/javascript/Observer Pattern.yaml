@@ -64,6 +64,8 @@ exampleCode: |
     // Hello from Observer: foo
     // Hello from Observer: bar
 
+
+body: []
 ###############################################
 ################## CONCLUSION #################
 conclusion: 

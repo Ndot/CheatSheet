@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 30 20"
+   height="510"
+   width="510">
+  <g
+     style="display:inline"
+     id="layer2">
+    <circle
+       id="icon_home-circle"
+       r="12.095238"
+       cy="263.74371"
+       cx="14.783069"
+       fill="#7c7cc9"
+       style="opacity:1;fill-opacity:1;fill-rule:nonzero;stroke:#47cea5;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.60997069"
+       transform="translate(0,-253.29102)" />
+  </g>
+  <g
+     style="display:inline"
+     id="layer3">
+    <path
+       id="icon_home-house"
+       transform="matrix(0.26878306,0,0,0.26878306,0,-4.3303936)"
+       d="m 55,30 -25,20 0,30 c 0,0 10.486025,-1.251581 19,-1.769531 L 49,60 61,60 61,78.230469 C 69.513975,78.748409 80,80 80,80 L 80,50 55,30 Z"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#47cea5;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.60997069" />
+  </g>
+
+</svg>

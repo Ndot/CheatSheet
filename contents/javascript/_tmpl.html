@@ -20,19 +20,49 @@
     
     
     <!-- CONTENT -->
-    <p>{{= content }}</p>
+    {{  if (content != undefined) {  }}
+        <div>{{= content }}</div>
+    {{ } }}
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>{{= exampleCode }}</pre>
-        </code>
-    </div>
+    {{  if (exampleCode != undefined) {  }}
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>{{= exampleCode }}</pre>
+            </code>
+        </div>
+    {{ } }}
+
+
+    <!-- BODY -->
+    {{  if (body.length != 0) {  }}
+        {{  body.forEach(function (val, index) {   }}
+
+            {{  if (val.textTitle != undefined) {  }}
+                <h4>{{= val.textTitle }}</h4>
+            {{ } }}
+
+            {{  if (val.text != undefined) {  }}
+                <div>{{= val.text }}</div>
+            {{ } }}
+
+            <div>
+                {{  if (val.codeTitle != undefined) {  }}
+                    <h5>{{= val.codeTitle }}</h5>
+                {{ } }}
+                {{  if (val.code != undefined) {  }}
+                    <code class="box code js">
+                        <pre>{{= val.code }}</pre>
+                    </code>
+                {{ } }}
+            </div>
+        {{  });  }}
+    {{ } }}
     
     
     <!-- CONCLUSION - Advantages -->
     {{  if (conclusion.advantages.length != 0) {  }}
-        <div class="advantages conclusion">
+        <div class="highlight-box-good">
         <h5>Advantages</h5>
         
         {{  conclusion.advantages.forEach(function (val) {   }}
@@ -45,7 +75,7 @@
         
     <!-- CONCLUSION - Disadvantages -->
     {{  if (conclusion.disadvantages.length != 0) {  }}
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         {{  conclusion.disadvantages.forEach(function (val) {   }}

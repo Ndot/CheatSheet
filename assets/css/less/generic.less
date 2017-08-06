@@ -31,7 +31,12 @@ pre { font-family: 'Firamono'; }
     letter-spacing: -0.05em;
 }
 
-h1,h2,h3,h4,h5,h6 { font-family: "BreeSerif"; }
+h1,h2,h3,h4,h5,h6 {
+    font-family: "BreeSerif";
+    letter-spacing: 0;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
 .links {
     .color3;
@@ -42,11 +47,24 @@ h1,h2,h3,h4,h5,h6 { font-family: "BreeSerif"; }
     display: block;
     position: relative;
     font-family: "BreeSerif";
+    font-size: 14px;
 
     &:hover {
         background: hsl(0, 3%, 60%);
         color: aliceblue;
     }
+}
+
+.category-title {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+
+    margin-top: 30px;
+    font-family: monospace;
+    text-align: right;
+    padding-right: 40px;
+    border-bottom: 1px solid hsla(0, 0%, 50%, 0.3);
 }
 
 .more-links:after {
@@ -69,7 +87,8 @@ h1,h2,h3,h4,h5,h6 { font-family: "BreeSerif"; }
 .color2 { color: hsl(0, 0%, 85%); }
 .color3 { color: hsl(0, 0%, 50%); }
 .color4 { color: hsl(0, 0%, 35%); }
-.color5 { color: hsl(0, 0%, 5%); }
+//.color5 { color: hsl(0, 0%, 5%); }
+.color5 { color: #454545; }
 
 //.theme-color1 { background: hsl(0, 0%, 100%); }
 .theme-color1 { background: hsl(0, 0%, 98%); }
@@ -88,10 +107,40 @@ h1,h2,h3,h4,h5,h6 { font-family: "BreeSerif"; }
     filter: grayscale(1);
 }
 
-.text-highlight {
+.highlight-text {
     background: hsla(0, 0%, 50%, 0.2);
     padding: 1px 6px;
     border-radius: 10%;
+}
+
+
+.highlight-box {
+    margin: 10px 0px;
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+
+.highlight-box {
+    background: #dadada;
+    color: #383838;
+
+    &-good {
+        .highlight-box;
+        color: seagreen;
+        background: #d0ecd0;
+    }
+
+    &-bad {
+        .highlight-box;
+        color: brown;
+        background: #f0dada;
+    }
+
+    &-warning {
+        .highlight-box;
+        color: #ab870b;;
+        background: #ffedb1;
+    }
 }
 
 .inline-link {

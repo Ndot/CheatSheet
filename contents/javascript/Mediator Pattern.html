@@ -11,7 +11,8 @@
     
     
     <!-- CONTENT -->
-    <p><p>The Mediator Pattern is often confused with the Observer Pattern, they both channel multiple events throught a single object. However, the semantics and intent of these patterns are very different.</p>
+    
+        <div><p>The Mediator Pattern is often confused with the Observer Pattern, they both channel multiple events throught a single object. However, the semantics and intent of these patterns are very different.</p>
 
 <p>The Mediator promotes loose coupling by ensuring that instead of components referring to each other explicitly, their interaction is handled through this central point. This can help us decouple systems and improve the potential for component reusability.</p>
 
@@ -20,12 +21,14 @@
 <p class="little-note">The big difference from the Observer Pattern to the Mediator Pattern is where the logic and work flow is coded.</p>
 <p class="little-note">The Observer facilitates a "fire and forget" approach. The Subject does not care about what the Observer do it just notifies them and that's all.</p>
 <p class="little-note">On the Mediator Pattern the mediator mediates between diferent objects. This means that the mediator is the one in charge of telling the other objects what to do and when to do it. Even though the other object know how to do their tasks it is the mediator that decides when and what tasks should be fired.</p>
-</p>
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>var userSave = {
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>var userSave = {
     user: [],
     save: function (name) {
         // Some code that saves the user to a database...
@@ -67,13 +70,18 @@ var mediator = {
     }
 }
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
     
-        <div class="advantages conclusion">
+        <div class="highlight-box-good">
         <h5>Advantages</h5>
         
         
@@ -86,7 +94,7 @@ var mediator = {
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         

@@ -11,15 +11,18 @@
     
     
     <!-- CONTENT -->
-    <p>The Module pattern was originally defined as a way to provide both private and public encapsulation for classes in conventional software engineering.<br /><br />
+    
+        <div>The Module pattern was originally defined as a way to provide both private and public encapsulation for classes in conventional software engineering.<br /><br />
 
 In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we're able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope. What this results in is a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts on the page.
-</p>
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>var myModule = (function () {
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>var myModule = (function () {
     
     // PRIVATE
     var counter = 0;
@@ -46,8 +49,13 @@ In JavaScript, the Module pattern is used to further emulate the concept of clas
     
 }());
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
@@ -56,7 +64,7 @@ In JavaScript, the Module pattern is used to further emulate the concept of clas
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         

@@ -1,0 +1,155 @@
+---
+title: The Decorator Pattern
+###############################################
+################# PRE CONTENT #################
+preContent: 
+preExample:
+
+###############################################
+################### CONTENT ###################
+content: |
+    <p>Decoratores are similar to Mixins they can be a viable alternative to object sub classing. They offer the ability to add behaviours to classes dynamically.</p>
+    
+    <p>The Decorator works well to add capabilities to classes when these capabilities are not fundamental to the class it self. Instead of sub classing we decorate the base class by wrapping a decorator to it, this way we can extend functionalities without modifying the base class.</p>
+    
+    <p>The Decorator is not focused on how objects are created but instead on the problem of extending their functionality.</p>
+
+exampleCode:
+################### BODY ###################
+
+body:
+    -
+        textTitle: Simple Decorator
+        text: |
+            Since it's very easy to add new attributes to objects in JavaScript...
+        code: |
+            function Person(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            
+            Person.prototype.getAge = function () { return this.age; };
+            Person.prototype.sayHello = function () { console.log('Hello'); };
+            Person.prototype.sayGoodBye = function () { console.log('GoodBye'); };
+            
+            var john = new Person('Jonh', 23);
+            
+            // Let's decorate the john object...
+            john.sayHello = function () {
+                console.log(`Hi my name is ${this.name} and I'm ${this.age}`);
+            };
+            
+            john.sayHello();
+            // Hi my name is Jonh and I'm 23
+            
+    -
+        textTitle: Multiple Decoratores
+        code: |
+            // Decorator 1
+            function bePolite(obj) {
+                obj.sayHello = function () {
+                    console.log(`Hello my name is ${obj.name}`);
+                };
+            }
+            
+            // Decorator 2
+            function beMorePolite(obj) {
+                obj.sayHello = function () {
+                    console.log(`Hello my name is ${obj.name}. Nice to meet you.`);
+                };
+            }
+            
+            var john = new Person('Jonh', 23);
+            
+            john.sayHello();
+            // Hello
+            
+            beMorePolite(john);
+            john.sayHello();
+            // Hello my name is John. Nice to meet you.
+            
+    -
+        textTitle: Abstract Decorator
+        text: | 
+            <p>The examples above are very simple and don't show the potencial of decorators. They are to coupled to the base methods and dont allow us to use the actual base method but only override it. Plus they implement a 1 to 1 decoration.</p>
+            
+            <p>Let's create a decorator function that allow us to decorate one specific method or all the methods and give us access to the instance inside the decorator function.</p>
+            
+        code: |
+            function decorate(decorator, target, methods = []) {
+                const basePrototype = target.__proto__;
+
+                for (let method in basePrototype) {
+                    // Make sure to decorate only mehtods.
+                    if (typeof basePrototype[method] !== 'function') { continue; }
+                    // If methods Array is empty decorate all methods else
+                    // decorate only the one's in the array.
+                    if (methods.indexOf(method) === -1 && methods[0] !== undefined) { continue; }
+
+                    target[method] = function (...a) {
+                        // Let's create a reference to the method we want to call.
+                        const originalMethod = () => basePrototype[method].apply(target, [...a]);
+
+                        // We pass to our decorator function the original method we
+                        // want to call and bind the target intance to the decorator function.
+                        return decorator.call(target, originalMethod);
+                    }
+                }
+            }
+    -
+        text: Let's create a decorator to test how long our methods take to run.
+        code: |
+
+            function methodPerformanceDecorator(originalMethod) {
+                let startTime = performance.now(),
+                    // Here we are calling the original method and getting it's return value.
+                    // Although we don't have to we can ignore the original method and do
+                    // something else completely different inside the decorator.
+                    originalMethodReturnVal = originalMethod(),
+                    totalTime = performance.now() - startTime;
+
+                console.log(`The total time is: ${totalTime} ms`);
+
+                return originalMethodReturnVal;
+            }
+
+    -
+        text: Now we will test our decorator.
+        code: |
+            // Create a Person called 'John'.
+            const john = new Person('John', 33);
+            
+            // Decorate john with our performance check decorator.
+            decorate(methodPerformanceDecorator, john);
+
+            john.getAge();
+            // Logs: The total time is: 0.10500000000001819 ms
+            // Returns: 33
+
+
+            // Check if Person Class has not changed.
+            const jane = new Person('Jane', 18);
+            const janeDecorated = Object.create(jane);
+
+            // Decorate janeDecorated instance.
+            decorate(methodPerformanceDecorator, janeDecorated, ['getAge', 'sayHello']);
+
+            jane.getAge();
+            // Returns: 18
+
+            janeDecorated.getAge();
+            // Logs: The total time is: 0.06499999999869033 ms
+            // Returns: 18
+            
+    -
+        text: Decorators are arriving to ECMAScript. You can read more on <a target="_blank" href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841" class="inline-link">this post by Addy Osmani</a>.
+
+###############################################
+################## CONCLUSION #################
+conclusion: 
+    advantages: 
+        - This pattern allow us to wrap or decorate objects with new behavior without touching the base class.
+        - Avoids the use of multiple subclasses to achieve the same effect.
+    disadvantages: 
+        - Depending on how you decorate your objects this can create a lots of very similar instances of an object.
+...

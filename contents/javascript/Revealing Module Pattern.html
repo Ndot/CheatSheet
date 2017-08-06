@@ -11,13 +11,16 @@
     
     
     <!-- CONTENT -->
-    <p>The Revealing Module Pattern is an updated to the Module Pattern where we would simply define all of our functions and variables in the private scope and return an anonymous object with pointers to the private functionality we wished to reveal as public.
-</p>
+    
+        <div>The Revealing Module Pattern is an updated to the Module Pattern where we would simply define all of our functions and variables in the private scope and return an anonymous object with pointers to the private functionality we wished to reveal as public.
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>var myRevealingModule = (function () {
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>var myRevealingModule = (function () {
         
     // PRIVATE
     var privateCounter = 0;
@@ -55,13 +58,18 @@ myRevealingModule.increment();
 console.log('My count is: ' + myRevealingModule.count());
 // My count is: 2
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
     
-        <div class="advantages conclusion">
+        <div class="highlight-box-good">
         <h5>Advantages</h5>
         
         
@@ -74,7 +82,7 @@ console.log('My count is: ' + myRevealingModule.count());
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         

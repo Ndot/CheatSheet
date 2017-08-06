@@ -69,6 +69,8 @@ exampleCode: |
     // Outputs: Car object of color "yellow", doors: 6 in a "brand new" state
     console.log( car );
 
+
+body: []
 ###############################################
 ################## CONCLUSION #################
 conclusion: 

@@ -90,12 +90,15 @@ Object.defineProperties( newObject, {
     
     
     <!-- CONTENT -->
-    <p>Object constructors are used to create specific types of objects - both preparing the object for use and accepting arguments which a constructor can use to set the values of member properties and methods when the object is first created.</p>
+    
+        <div>Object constructors are used to create specific types of objects - both preparing the object for use and accepting arguments which a constructor can use to set the values of member properties and methods when the object is first created.</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>function Car( model, year, miles ) {
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>function Car( model, year, miles ) {
     this.model = model;
     this.year = year;
     this.miles = miles;
@@ -115,8 +118,13 @@ var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
 console.log( civic.toString() );
 console.log( mondeo.toString() );
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->

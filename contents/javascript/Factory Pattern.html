@@ -11,13 +11,16 @@
     
     
     <!-- CONTENT -->
-    <p>The Factory pattern is another creational pattern concerned with the notion of creating objects. Where it differs from the other patterns in its category is that it doesn't explicitly require us use a constructor. Instead, a Factory can provide a generic interface for creating objects, where we can specify the type of factory object we wish to be created.
-</p>
+    
+        <div>The Factory pattern is another creational pattern concerned with the notion of creating objects. Where it differs from the other patterns in its category is that it doesn't explicitly require us use a constructor. Instead, a Factory can provide a generic interface for creating objects, where we can specify the type of factory object we wish to be created.
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>
 // A constructor for defining new cars
 function Car( options ) {
     this.doors = options.doors || 4;
@@ -75,8 +78,13 @@ console.log( car instanceof Car );             // Outputs: true
 // Outputs: Car object of color "yellow", doors: 6 in a "brand new" state
 console.log( car );
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
@@ -85,7 +93,7 @@ console.log( car );
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         

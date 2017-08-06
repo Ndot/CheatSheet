@@ -11,15 +11,18 @@
     
     
     <!-- CONTENT -->
-    <p><p>Like the name sugests the Facade Pattern is way of presenting a more simplified interface of a more complex code. This pattern provides a convenient higher-level interface to a larger body of code. Think of it as simplifying the API being presented to other developers, something which almost always improves usability.</p>
+    
+        <div><p>Like the name sugests the Facade Pattern is way of presenting a more simplified interface of a more complex code. This pattern provides a convenient higher-level interface to a larger body of code. Think of it as simplifying the API being presented to other developers, something which almost always improves usability.</p>
 
 <p>Facades are a structural pattern which can often be seen in JavaScript libraries like jQuery where, although an implementation may support methods with a wide range of behaviors, only a "facade" or limited abstraction of these methods is presented to the public for use. For exemple in the jQuery library, most of us are aware that both getElementById("identifier") and $("#identifier") can be used to query an element on a page by its ID.</p>
-</p>
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>
 var module = (function () {
 
     var _private = {
@@ -60,8 +63,13 @@ module.facade({ val: 34, state: 'jump' });
 // current value: 34
 // jumping
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
@@ -70,7 +78,7 @@ module.facade({ val: 34, state: 'jump' });
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         

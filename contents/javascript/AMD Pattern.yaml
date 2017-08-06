@@ -1,0 +1,115 @@
+---
+title: The AMD Pattern
+
+# ---------------------------------------------
+# --------------------------------- PRE CONTENT
+preContent:
+preExample:
+
+# ---------------------------------------------
+# ------------------------------------- CONTENT
+content: |
+    <p>The AMD (Asynchronous Module Definition) allow us to do two important things. Encapsulate a piece of code into a unit and export values from that module that are later refered by other units of code.</p>
+
+    <p>Let's see some examples using <a class="inline-link" target="_blank" href="http://requirejs.org">RequireJS</a>. These will be very simple, but enought to get you started.</p>
+exampleCode:
+
+# ---------------------------------------------
+# ---------------------------------------- BODY
+body:
+    -
+        text: | 
+            Assuming the following folder structure:<br>
+            <span class="little-note">The <span class="highlight-text">require.js</span> file is the RequireJS Module.</span>
+        codeTitle: 
+        code: |
+            // - index.html
+            // - scripts/
+            //     - modules/
+            //         - calc.js
+            //         - str.js
+            //         - init.js
+            //     - require.js
+            //     - app.js
+            
+    -
+        textTitle: Define modules
+        text: These do nothing special. But will help us understand the capabilities of AMD.
+        codeTitle: calc.js
+        code: |
+            define(function () {
+    
+                // Here will do some difficult calculations... 
+                var difficultCalculations = 46;
+
+                // and now we return what we want...
+                return {
+                    secretNumber: difficultCalculations
+                }
+            });
+            
+    -
+        codeTitle: str.js
+        code: |
+            define(function () {
+    
+                // After some complicated code that goes here...
+                return 'World!'
+            });
+
+    -
+        text: |
+            In the <span class="highlight-text">init.js</span> we require the other two modules, here we use the short version of require by passing it as the first argument in the function. We could have done it by passing an array to define has you see in the <span class="highlight-text">app.js</span>
+        codeTitle: init.js
+        code: |
+            define(function (require) {
+    
+                var calc = require('modules/calc');
+                var str = require('modules/str');
+
+                return function () {
+                    console.log(`The magic number is: ${calc.secretNumber} and Hello ${str}`);
+                }
+            });
+            
+    -
+        text: Now that we have our modules lets use them in our <span class="highlight-text">app.js</span> file. The module being loded by the array in the require call map to the parameters on the function being passed as the second argument. So <span class="highlight-text">./modules/init</span> is being passed as <span class="highlight-text">init</span> since <span class="highlight-text">init.js</span> returned a function we need to call it.
+        codeTitle: app.js
+        code: |
+            require(['./modules/init'], function (init) {
+
+                init();
+
+            });
+
+    -
+        text: |
+            The only thing left to do is add the script to our <span class="highlight-text">index.html</span> file. The <span class="highlight-text">data-main</span> is a parameter read by the RequireJS script to know what file it should read as the entry point.
+        
+        codeTitle: index.html
+        code: |
+            &lt;script data-main="scripts/app" src="scripts/require.js"&gt;&lt;/script&gt;
+
+    -
+        text: |
+            If all went well we should see in our console the following:
+        code: |
+            // The magic number is: 46 and Hello World!
+            
+    - 
+        text: |
+            There is a lot more you can do with RequireJS. It's  virtually possible to load almost anything as a module. For example you can load simple text like HTML for templates with <a href="https://github.com/requirejs/text" class="inline-link" target="_blank">RequireJS/text</a> plugin. There is also the possibility to concatenate all you modules to avoid http requests, a good solutions for this is <a target="_blank" class="inline-link" href="https://github.com/requirejs/r.js">r.js</a>. And of course there are a lot of <a class="inline-link" target="_blank" href="http://www.requirejs.org/docs/api.html#config">options</a> you can use to customize your project to your needs.
+# ---------------------------------------------
+# ---------------------------------- CONCLUSION
+conclusion: 
+    advantages:
+        - Provides a clear way for defining modules.
+        - There's a clean way to declare stand-alone modules and dependencies they may have.
+        - Module definitions are encapsulated, helping us to avoid pollution of the global namespace and avoid overuse of script tags.
+        - RequireJS can run inside a Web Worker.
+        - Easy to debug.
+        - Provides a "transport" approach for including multiple modules in a single file with for example r.js.
+        - It's possible to lazy load scripts if this is needed.
+        
+    disadvantages: []
+...

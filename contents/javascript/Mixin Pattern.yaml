@@ -57,6 +57,8 @@ preExample: |
     superman.sayName(); // My name is Clark.
     superman.getPowers(); // My power are flight, heat-vision.
 
+
+body: []
 ###############################################
 ################### CONTENT ###################
 content: |

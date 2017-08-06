@@ -3,50 +3,50 @@
 
 .wrapper-main-title {
     background-color: #000;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-sizing: border-box;
     max-width: none !important;
-    
-    &:after {
-        content: "";
+    // Get rid of the padding from the wrapper-x > div
+    padding: 0 !important;
+
+    .title-container {
         background-image: url('./../img/img_code_monitor_dark.jpg');
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: 20% 0%;
         background-size: cover;
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
-        filter: blur(2px);
-        -webkit-filter: blur(2px);
-    }
-    
-    .title-container {
-        text-align: center;
-        z-index: 1;
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         letter-spacing: 0.1em;
         word-spacing: 0.2em;
-        font-size: 3em;
+        font-size: 2.5em;
         font-family: "BreeSerif";
         line-height: 1.5em;
+
         @media (max-width: 740px) {
             font-size: 1.4em;
+            flex-flow: column;
         }
         
         .title:first-child {
+            text-shadow: 2px 3px 2px #444;
             transform: translateY(-100%);
             animation: to-initial 2s forwards;
             opacity: 0;
         }
         
         .title:last-child {
+            text-shadow: 2px 3px 2px #444;
             transform: translateY(100%);
             animation-name: to-initial;
             animation-duration: 2s;
             animation-fill-mode: forwards;
             opacity: 0;
+            margin-left: 40px;
+
+            @media (max-width: 740px) {
+                margin-left: initial;
+            }
         }
         
         @keyframes to-initial { 
@@ -54,6 +54,48 @@
                 transform: translateY(0);
                 opacity: 1;
             } 
+        }
+    }
+
+    .about-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+//        background-color: #346a6a;
+//        background-color: #d4c0a7;
+//        background-color: #dff2cd;
+//        background-color: #4a6354;
+//        background-color: #4a6363;
+        background-color: #3a4956;
+        position: relative;
+        height: 60vh;
+        overflow: auto;
+    }
+
+    .about-container {
+        color: white;
+        max-width: 400px;
+        padding: 15px;
+
+        .links {
+            text-align: center;
+            font-size: 2em;
+            border: 3px solid;
+            line-height: 1.5em;
+            margin-top: 40px;
+            filter: grayscale(0.7);
+
+            &:hover {
+                background: transparent;
+                filter: grayscale(0);
+            }
+
+            &.js {
+                color: #e5d043;
+            }
+            &.html {
+                color: #e44b25;
+            }
         }
     }
 }

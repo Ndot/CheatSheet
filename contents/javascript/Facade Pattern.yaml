@@ -2,7 +2,7 @@
 title: The Facade Pattern
 ###############################################
 ################# PRE CONTENT #################
-preContent: 
+preContent:
 preExample:
 
 ###############################################
@@ -54,6 +54,8 @@ exampleCode: |
     // current value: 34
     // jumping
 
+
+body: []
 ###############################################
 ################## CONCLUSION #################
 conclusion: 

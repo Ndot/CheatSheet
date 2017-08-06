@@ -11,17 +11,20 @@
     
     
     <!-- CONTENT -->
-    <p><p>The Observer is a design pattern where an object (known as a Subject) maintains a list of objects depending on it (known as Observers), automatically notifying them of any changes to state.</p>
+    
+        <div><p>The Observer is a design pattern where an object (known as a Subject) maintains a list of objects depending on it (known as Observers), automatically notifying them of any changes to state.</p>
 
 <p>The Observers can register themselves to a Subject, whenever the state of the Subject changes this will notify all the Observers of that change (normaly by calling an update method in each Observer).</p>
 
 <p>When the Observers are no longer interested in those changes of state of a particular Subject they can unregister themselves, and will no longer recieve any notification of changes in state of that particular Subject.</p>
-</p>
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>
 function Subject() {
     this.observersList = [];
 }
@@ -70,13 +73,18 @@ subject.notify();
 // Hello from Observer: foo
 // Hello from Observer: bar
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
     
-        <div class="advantages conclusion">
+        <div class="highlight-box-good">
         <h5>Advantages</h5>
         
         
@@ -91,7 +99,7 @@ subject.notify();
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         

@@ -49,6 +49,8 @@ exampleCode: |
     console.log('My count is: ' + myRevealingModule.count());
     // My count is: 2
 
+
+body: []
 ###############################################
 ################## CONCLUSION #################
 conclusion: 

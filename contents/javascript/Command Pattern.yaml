@@ -72,6 +72,8 @@ exampleCode: |
     carManager.execute("requestInfo", "Ford Escort", "34232");
     carManager.execute("buyVehicle", "Ford Escort", "34232");
 
+
+body: []
 ###############################################
 ################## CONCLUSION #################
 conclusion: 

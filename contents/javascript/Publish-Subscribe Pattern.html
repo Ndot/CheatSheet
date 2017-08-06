@@ -11,13 +11,16 @@
     
     
     <!-- CONTENT -->
-    <p>The Publish-Subscrib Pattern is a type of Observer Pattern. Typically this pattern is implemented by adding a topic to the Subject. This allows us to have only one Subject that calls the Observers based on the topics they subscribed to, insted of having multiple Subjects which for which topic / scope.
-</p>
+    
+        <div>The Publish-Subscrib Pattern is a type of Observer Pattern. Typically this pattern is implemented by adding a topic to the Subject. This allows us to have only one Subject that calls the Observers based on the topics they subscribed to, insted of having multiple Subjects which for which topic / scope.
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>
 var Events = {
 
     // Storage for our topics and callbacks
@@ -83,13 +86,18 @@ Events.publish('/news/smartphones', 'The new awesome phone is out...');
 // Bar was notified that: The new awesome phone is out...
 // Foo was notified that: The new awesome phone is out...
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
     
-        <div class="advantages conclusion">
+        <div class="highlight-box-good">
         <h5>Advantages</h5>
         
         
@@ -102,7 +110,7 @@ Events.publish('/news/smartphones', 'The new awesome phone is out...');
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         

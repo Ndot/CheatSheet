@@ -13,7 +13,7 @@
 /*-------------------------------------------------------*/
 /*---------------------- SPA LINKS ----------------------*/
 .links-wrapper {
-  box-shadow: 4px 0px 5px 0px #1c1c1c;
+  box-shadow: none;
 }
 .links-wrapper .links-container .links {
   color: deeppink;
@@ -24,6 +24,9 @@
 .links-wrapper .links-container .links:hover {
   background: deeppink;
 }
+.links {
+  color: deeppink;
+}
 .links:hover {
   background: deeppink;
 }
@@ -31,13 +34,14 @@
 /*----------------- SPA LOADED CONTENT ------------------*/
 .wrapper-html-reference h2 {
   background: rgba(230, 230, 230, 0.5);
+  box-shadow: none;
 }
 .wrapper-html-reference > ul {
   background: rgba(230, 230, 230, 0.5);
 }
 .wrapper-content-tmpl .box {
   background: #f0ced4;
-  box-shadow: 4px 4px 3px #1c1c1c;
+  box-shadow: none;
 }
 /*-------------------------------------------------------*/
 /*------------------ JAVASCRIPT REGEX -------------------*/

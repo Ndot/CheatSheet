@@ -30,6 +30,8 @@ exampleCode: |
     // Hello I am Bar
     // Good Bye from Baz
    
+   
+body: []
 ###############################################
 ################## CONCLUSION #################
 conclusion: 

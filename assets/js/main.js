@@ -6,29 +6,32 @@
     /*global $*/
 
     // Get JsonFile
-    function storeJSON(jsonFile) {
+    function storeJSONandCallSpa(jsonFile) {
         jsonFile = JSON.parse(jsonFile);
-        
+
         var i;
         for (i in jsonFile) {
             if (jsonFile.hasOwnProperty(i)) {
                 $.takeThatDataCrazyMan(i, jsonFile[i]);
             }
         }
+        // Now that we have our JSON with the links
+        // we can start the SPA module.
+        SPA();
     }
-    
-//     Start
-    $.getRequest('contents/contents.json', storeJSON, false);
-    
+
+    // Get rid of Synchronous XMLHttpRequest on the main thread.
+    $.getRequest('contents/contents.json', storeJSONandCallSpa, true);
+
 /*-------------------------------------------------------*/
 /*----------------------- Theme -------------------------*/
 
     var cssLinks = document.querySelectorAll('link[id]'),
         changeCss;
-    
+
     changeCss = function (theme) {
         var ref = (typeof theme === 'string') ? theme : this.dataset.theme, i;
-        
+
         for (i=0;  i < cssLinks.length; i += 1) {
             if (cssLinks[i].id === 'main') {continue;}
             if (cssLinks[i].id === ref) {
@@ -39,19 +42,19 @@
         }
         localStorage.csstheme = ref;
     };
-    
+
     // Set Theme
     if (localStorage.csstheme) {
         changeCss(localStorage.csstheme);
     }
 
-    
+
 /*-------------------------------------------------------*/
 /*------------------ Translate Links --------------------*/
-    
+
     var translateLinks, stopEventPropagation, stopEventDefault;
-    
-    
+
+
     translateLinks = function (e) {
         e.stopPropagation();
         this.classList.toggle('rotate');
@@ -60,26 +63,26 @@
         this.parentElement.parentElement.querySelector('.content-wrapper > #spa-content').classList.toggle('apply-3d');
         this.parentElement.parentElement.querySelector('.content-wrapper > #black-pane').classList.toggle('active');
     };
-    
+
     stopEventPropagation = function (e) {
         e.stopPropagation();
     };
 
 /*-------------------------------------------------------*/
 /*------------------ Main Mavigation --------------------*/
-    
+
     var hoverToFalse, hoverToTrue, ulMainNav;
-    
+
     hoverToFalse = function (e) {
         var i,
             x = e.clientX,
             y = e.clientY,
             rect = this.getBoundingClientRect();
-        
+
         if (x > rect.right || x < rect.left || y < rect.top || y > rect.bottom) {
             // Remove 'show-links' class to make the links hide
             ulMainNav.classList.remove('move');
-            
+
             // Set pointerEvents on links to none
             // To make them unclickable
             var links = this.querySelectorAll('a');
@@ -88,11 +91,11 @@
             }
         }
     };
-    
+
     hoverToTrue = function (e) {
         var links = this.querySelectorAll('a'),
             i = 0;
-        
+
         // The setTimeout is need to avoid the browser
         // to act on the first click on the link.
         // If no setTimeout is applyed the browser will
@@ -103,16 +106,16 @@
                 links[i].style.pointerEvents = 'auto';
             }
         }, 0);
-        
+
         // Add 'show-links' class to make the links visible
         ulMainNav.classList.add('move');
     };
-    
-    
+
+
 /*-------------------------------------------------------*/
 /*------------ Add All the Event Listeners --------------*/
-    
-    
+
+
     // Add Event Listeners
     function winEvents(title, name) {
         // Define variables needed
@@ -120,19 +123,19 @@
             btnOpenLinks = document.getElementById('btn-open-links'),
             blackPane = document.getElementById('black-pane'),
             i;
-        
+
         // Adding Events for the CHANGE THEME BUTTONS
         for (i = 0; i < cssBtn.length; i += 1) {
             cssBtn[i].addEventListener('click', changeCss);
         }
-        
-        
+
+
         // Adding Events for the MAIN NAVIGATION
         ulMainNav = document.querySelector('.header-nav');
         ulMainNav.addEventListener('mouseout', hoverToFalse);
         ulMainNav.addEventListener('mouseover', hoverToTrue);
-        
-        
+
+
         // Adding Events for the OPEN AND CLOSE SIDE LINKS BUTTON
         btnOpenLinks.addEventListener('click', translateLinks);
         // Adding Touch Events to "btnOpenLinks" to STOP PROPAGATION
@@ -145,7 +148,7 @@
 
         blackPane.addEventListener('click', translateLinks.bind(btnOpenLinks));
     }
-    
+
     window.addEventListener('load', winEvents);
 
 }($$));

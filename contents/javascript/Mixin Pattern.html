@@ -71,17 +71,20 @@ superman.getPowers(); // My power are flight, heat-vision.
     
     
     <!-- CONTENT -->
-    <p><h2>Mixins</h2>
+    
+        <div><h2>Mixins</h2>
 
 <p>Prototypes can inherit from other object prototypes but, even more importantly, can define properties for any number of object instances. We can leverage this fact to promote function re-use.</p>
 
 <p>Mixins allow objects to borrow (or inherit) functionality from them with a minimal amount of complexity. As the pattern works well with JavaScripts object prototypes, it gives us a fairly flexible way to share functionality from not just one Mixin, but effectively many through multiple inheritance.</p>
-</p>
+</div>
+    
 
-    <div>
-        <h5>Pattern Example</h5>
-        <code class="box code js">
-            <pre>
+    
+        <div>
+            <h5>Pattern Example</h5>
+            <code class="box code js">
+                <pre>
 // Define a simple Car constructor
 var Car = function ( settings ) {
 
@@ -159,13 +162,18 @@ var mySportsCar = new Car({
 mySportsCar.driveForward();  // drive forward
 mySportsCar.driveSideways(); // drive sideways
 </pre>
-        </code>
-    </div>
+            </code>
+        </div>
+    
+    
+    
+    <!-- BODY -->
+    
     
     
     <!-- CONCLUSION - Advantages -->
     
-        <div class="advantages conclusion">
+        <div class="highlight-box-good">
         <h5>Advantages</h5>
         
         
@@ -178,7 +186,7 @@ mySportsCar.driveSideways(); // drive sideways
         
     <!-- CONCLUSION - Disadvantages -->
     
-        <div class="disadvantages conclusion">
+        <div class="highlight-box-bad">
         <h5>Disadvantages</h5>
         
         
