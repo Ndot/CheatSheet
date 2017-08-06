@@ -19,20 +19,20 @@
     
 
     
-    
-    
+
+
     <!-- BODY -->
     
         
-    
+
             
-    
+
             
                 <div>Assuming the following folder structure:<br>
 <span class="little-note">The <span class="highlight-text">require.js</span> file is the RequireJS Module.</span>
 </div>
             
-    
+
             <div>
                 
                 
@@ -50,15 +50,15 @@
                 
             </div>
         
-    
+
             
                 <h4>Define modules</h4>
             
-    
+
             
                 <div>These do nothing special. But will help us understand the capabilities of AMD.</div>
             
-    
+
             <div>
                 
                     <h5>calc.js</h5>
@@ -80,11 +80,11 @@
                 
             </div>
         
-    
+
             
-    
+
             
-    
+
             <div>
                 
                     <h5>str.js</h5>
@@ -101,14 +101,14 @@
                 
             </div>
         
-    
+
             
-    
+
             
                 <div>In the <span class="highlight-text">init.js</span> we require the other two modules, here we use the short version of require by passing it as the first argument in the function. We could have done it by passing an array to define has you see in the <span class="highlight-text">app.js</span>
 </div>
             
-    
+
             <div>
                 
                     <h5>init.js</h5>
@@ -129,13 +129,13 @@
                 
             </div>
         
-    
+
             
-    
+
             
                 <div>Now that we have our modules lets use them in our <span class="highlight-text">app.js</span> file. The module being loded by the array in the require call map to the parameters on the function being passed as the second argument. So <span class="highlight-text">./modules/init</span> is being passed as <span class="highlight-text">init</span> since <span class="highlight-text">init.js</span> returned a function we need to call it.</div>
             
-    
+
             <div>
                 
                     <h5>app.js</h5>
@@ -152,14 +152,14 @@
                 
             </div>
         
-    
+
             
-    
+
             
                 <div>The only thing left to do is add the script to our <span class="highlight-text">index.html</span> file. The <span class="highlight-text">data-main</span> is a parameter read by the RequireJS script to know what file it should read as the entry point.
 </div>
             
-    
+
             <div>
                 
                     <h5>index.html</h5>
@@ -172,14 +172,14 @@
                 
             </div>
         
-    
+
             
-    
+
             
                 <div>If all went well we should see in our console the following:
 </div>
             
-    
+
             <div>
                 
                 
@@ -190,14 +190,14 @@
                 
             </div>
         
-    
+
             
-    
+
             
                 <div>There is a lot more you can do with RequireJS. It's  virtually possible to load almost anything as a module. For example you can load simple text like HTML for templates with <a href="https://github.com/requirejs/text" class="inline-link" target="_blank">RequireJS/text</a> plugin. There is also the possibility to concatenate all you modules to avoid http requests, a good solutions for this is <a target="_blank" class="inline-link" href="https://github.com/requirejs/r.js">r.js</a>. And of course there are a lot of <a class="inline-link" target="_blank" href="http://www.requirejs.org/docs/api.html#config">options</a> you can use to customize your project to your needs.
 </div>
             
-    
+
             <div>
                 
                 

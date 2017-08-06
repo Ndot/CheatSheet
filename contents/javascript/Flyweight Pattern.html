@@ -16,14 +16,14 @@
     
 
     
-    
-    
+
+
     <!-- BODY -->
     
         
-    
+
             
-    
+
             
                 <div><p>The Flyweight Pattern is used to reduce the amount of data created by sharing as much as possible between objects. This aims to minimize memory usaged in an application.</p>
 <p>The way this works is by creating an object with as much identical data as possible and placing it in an external object. Other object can than share this data without having to create it, avoiding having identical data across multiple objects.</p>
@@ -34,21 +34,21 @@
 <span class="little-note">Extrinsic - This is information that can be removed and it might not be the same to all objects.</span>
 </div>
             
-    
+
             <div>
                 
                 
             </div>
         
-    
+
             
-    
+
             
                 <div><p>For this example we want to manage lights in our house. For that we need some sort light class that's able to create light and place them in the correct rooms.</p>
 <p>First thing to do is to create a simple Light Class that creates lights.</p>
 </div>
             
-    
+
             <div>
                 
                 
@@ -65,14 +65,14 @@ Light.prototype = { color: 'white', }
                 
             </div>
         
-    
+
             
-    
+
             
                 <div><p>Now we want to make sure we don't create more lights that we need to. For this we can create a Light Factory Singleton.</p>
 </div>
             
-    
+
             <div>
                 
                 
@@ -110,14 +110,14 @@ var LightFactory = (function () {
                 
             </div>
         
-    
+
             
-    
+
             
                 <div><p>The last thing we need is some sort of manager interface that abstract us from the Light Class and Light Factory but allows us to create our lights and place them in the right place.</p>
 </div>
             
-    
+
             <div>
                 
                 
@@ -157,14 +157,14 @@ var LightFactory = (function () {
                 
             </div>
         
-    
+
             
-    
+
             
                 <div><p>When we create a light in our LightManager the way we get light is abstracted from the LightManager. It doesn't know if is a new light our an exintent one, it just know it gets a light object to work with. On top of that we keep a reference to our rooms and we just push our light into the <span class="highlight-text">rooms[room].lights</span> array.</p>
 </div>
             
-    
+
             <div>
                 
                     <h5>Test LightManager</h5>

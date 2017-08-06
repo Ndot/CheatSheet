@@ -66,14 +66,18 @@ h6 {
   color: aliceblue;
 }
 .category-title {
-  padding: 10px;
+  padding: 10px 40px 10px 20px;
   text-decoration: none;
   display: block;
   margin-top: 30px;
   font-family: monospace;
   text-align: right;
-  padding-right: 40px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+@media (max-width: 740px) {
+  .category-title {
+    text-align: left;
+  }
 }
 .more-links:after {
   position: absolute;
@@ -426,7 +430,7 @@ h6 {
   color: #808080;
   cursor: pointer;
   text-decoration: none;
-  padding: 7px 40px 7px 10px;
+  padding: 7px 40px 7px 20px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   display: block;
@@ -459,7 +463,6 @@ h6 {
 @media (max-width: 740px) {
   .links-wrapper .links-container .links {
     text-align: left;
-    padding: 10px 10px 10px 20px;
   }
 }
 .links-wrapper footer {
@@ -683,6 +686,7 @@ h6 {
     -webkit-flex-flow: column;
         -ms-flex-flow: column;
             flex-flow: column;
+    height: 30vh;
   }
 }
 .wrapper-main-title .title-container .title:first-child {
@@ -742,6 +746,11 @@ h6 {
   height: 60vh;
   overflow: auto;
 }
+@media (max-width: 740px) {
+  .wrapper-main-title .about-wrapper {
+    height: 70vh;
+  }
+}
 .wrapper-main-title .about-container {
   color: white;
   max-width: 400px;
@@ -766,6 +775,9 @@ h6 {
 }
 .wrapper-main-title .about-container .links.html {
   color: #e44b25;
+}
+.wrapper-main-title .about-container p:last-child {
+  margin-bottom: 60px;
 }
 /*-------------------------------------------------------*/
 /*------------- HTML CSS JAVASCRIPT - HOME --------------*/

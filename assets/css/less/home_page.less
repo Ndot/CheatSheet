@@ -26,15 +26,16 @@
         @media (max-width: 740px) {
             font-size: 1.4em;
             flex-flow: column;
+            height: 30vh;
         }
-        
+
         .title:first-child {
             text-shadow: 2px 3px 2px #444;
             transform: translateY(-100%);
             animation: to-initial 2s forwards;
             opacity: 0;
         }
-        
+
         .title:last-child {
             text-shadow: 2px 3px 2px #444;
             transform: translateY(100%);
@@ -48,12 +49,12 @@
                 margin-left: initial;
             }
         }
-        
-        @keyframes to-initial { 
-            to { 
+
+        @keyframes to-initial {
+            to {
                 transform: translateY(0);
                 opacity: 1;
-            } 
+            }
         }
     }
 
@@ -70,6 +71,11 @@
         position: relative;
         height: 60vh;
         overflow: auto;
+
+        @media (max-width: 740px) {
+            height: 70vh;
+
+        }
     }
 
     .about-container {
@@ -96,6 +102,10 @@
             &.html {
                 color: #e44b25;
             }
+        }
+
+        p:last-child {
+            margin-bottom: 60px;
         }
     }
 }
