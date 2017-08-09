@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /*----------------- Other Small Stuff -------------------*/
 
-(function ($) {
+(function ($, SPA) {
     'use strict';
     /*global $*/
 
@@ -57,6 +57,7 @@
 
     translateLinks = function (e) {
         e.stopPropagation();
+        console.log(this);
         this.classList.toggle('rotate');
         this.parentElement.classList.toggle('translate-links');
 
@@ -151,4 +152,4 @@
 
     window.addEventListener('load', winEvents);
 
-}($$));
+}($$, SPA));

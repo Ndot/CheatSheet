@@ -139,6 +139,21 @@ var SPA = function ($$, hljs) {
             } else {
                 this.render(this.data);
             }
+            /**
+             * // FIX ME: Close side nav when links are clicked.
+             * This is a quick fix to close the side nav when links
+             * are click. But this needs to be abstracted from this
+             * "content" object literal.
+             */
+            var linkBtn = id_spa.querySelector('#btn-open-links');
+
+            if (linkBtn.classList.contains('rotate')) {
+                linkBtn.classList.toggle('rotate');
+                linkBtn.parentElement.classList.toggle('translate-links');
+                linkBtn.parentElement.parentElement.querySelector('.content-wrapper > #spa-content').classList.toggle('apply-3d');
+                linkBtn.parentElement.parentElement.querySelector('.content-wrapper > #black-pane').classList.toggle('active');
+
+            }
         }
     };
 
