@@ -57,7 +57,6 @@
 
     translateLinks = function (e) {
         e.stopPropagation();
-        console.log(this);
         this.classList.toggle('rotate');
         this.parentElement.classList.toggle('translate-links');
 
