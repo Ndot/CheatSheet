@@ -15,5 +15,4 @@ The Javascript Syntax Highlighter is a project from Ivan Sagalaev, and you can f
 [Github Page](https://github.com/isagalaev/highlight.js) or at the [Official Site](https://highlightjs.org).  
 Most of the information presented on this page comes from:
 * [MDN - Mozilla Developer Network](https://developer.mozilla.org)
-* [W3Schools](http://www.w3schools.com/)
 * JavaScript Design Patterns from [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/index.html) by **Addy Osmani**
